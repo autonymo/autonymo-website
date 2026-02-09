@@ -21,7 +21,6 @@ import {
   Bell,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Particles } from "@/components/ui/particles";
 
 /* ─── Dashboard Illustration ─────────────────────────────────── */
 function RealEstateIllustration() {
@@ -213,14 +212,6 @@ export default function RealEstateOS() {
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
       {/* ──────── HERO — Left heading + Right illustration ──────── */}
       <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
-        <Particles
-          className="absolute inset-0 z-0 bg-transparent"
-          quantity={60}
-          size={1}
-          color="#A39E97"
-          staticity={60}
-          ease={40}
-        />
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — Heading */}

@@ -3,7 +3,6 @@
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { Particles } from "@/components/ui/particles";
 
 export default function Blog() {
   const featuredPost = {
@@ -56,14 +55,6 @@ export default function Blog() {
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
       {/* Hero */}
       <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
-        <Particles
-          className="absolute inset-0 z-0 bg-transparent"
-          quantity={80}
-          size={1.2}
-          color="#A39E97"
-          staticity={60}
-          ease={40}
-        />
         <div className="max-w-6xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

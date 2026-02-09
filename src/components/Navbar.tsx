@@ -98,11 +98,12 @@ export const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 group">
             <Image
-              src="/Logo%20Images/autonymo_logo_transparent%20(1).png"
+              src="/logo.png"
               alt="Autonymo"
               width={32}
               height={32}
               className="w-8 h-8 object-contain"
+              priority
             />
             <span className="font-display text-xl font-bold tracking-tight text-charcoal">
               Autonymo

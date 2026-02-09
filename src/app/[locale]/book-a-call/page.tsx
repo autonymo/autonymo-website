@@ -3,7 +3,6 @@
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Calendar, Clock, Globe, CheckCircle2, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { Particles } from "@/components/ui/particles";
 
 export default function BookACall() {
   const benefits = [
@@ -36,14 +35,6 @@ export default function BookACall() {
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
       {/* Hero */}
       <section className="relative pt-28 pb-24 px-6 sm:pt-36 sm:pb-32 bg-cream overflow-hidden">
-        <Particles
-          className="absolute inset-0 z-0 bg-transparent"
-          quantity={80}
-          size={1.2}
-          color="#A39E97"
-          staticity={60}
-          ease={40}
-        />
         <div className="max-w-6xl mx-auto relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left: Content */}
