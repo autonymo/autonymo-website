@@ -440,52 +440,47 @@ export default function CustomSolutions() {
         </div>
       </section>
 
-      {/* ──────── CTA — Full-width Book a Call ──────── */}
-      <section className="bg-charcoal">
-        <div className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Have a complex workflow <br />
-                that needs AI?
-              </h2>
-              <p className="mt-6 text-white/60 text-lg leading-relaxed max-w-lg">
-                Start with a free discovery audit. We&apos;ll map your operations,
-                identify the highest-impact automation opportunities, and give you
-                a clear blueprint — even if you don&apos;t work with us.
-              </p>
-              <div className="mt-8">
+      {/* ──────── CTA — Book a Call Card ──────── */}
+      <section className="py-24 px-6 bg-cream">
+        <div className="max-w-6xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
+          <div className="p-12 md:p-20 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  Have a complex workflow <br />
+                  that needs AI?
+                </h2>
+                <p className="text-white/60 text-base leading-relaxed mb-8 max-w-md">
+                  Start with a free discovery audit. We&apos;ll map your operations,
+                  identify the highest-impact automation opportunities, and give you
+                  a clear blueprint — even if you don&apos;t work with us.
+                </p>
                 <Link
                   href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-medium tracking-tight text-charcoal rounded-xl bg-white hover:bg-cream transition-all text-base active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-medium tracking-tight text-charcoal rounded-xl bg-white hover:bg-white/90 transition-all text-base"
                 >
                   Book a Discovery Call
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
-            <div className="hidden lg:flex flex-col gap-4">
-              {[
-                { icon: Clock, text: "30-minute call with a solutions architect" },
-                { icon: Search, text: "Free workflow audit and bottleneck analysis" },
-                { icon: CheckCircle2, text: "Custom blueprint with ROI projections" },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="flex items-center gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/[0.08]"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.08] flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-white/50" />
+              <div className="hidden lg:flex flex-col gap-4">
+                {[
+                  { icon: Clock, text: "30-minute call with a solutions architect" },
+                  { icon: Search, text: "Free workflow audit and bottleneck analysis" },
+                  { icon: CheckCircle2, text: "Custom blueprint with ROI projections" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-4 h-4 text-white/60" />
+                    </div>
+                    <span className="text-white/70 text-sm">{item.text}</span>
                   </div>
-                  <span className="text-white/80 font-medium">{item.text}</span>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
+          {/* Subtle decorative element */}
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-accent-blue/5 to-transparent pointer-events-none" />
         </div>
       </section>
     </div>
