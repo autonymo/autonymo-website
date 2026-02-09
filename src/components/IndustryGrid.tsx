@@ -88,20 +88,28 @@ export function IndustryGrid() {
                 transition={{ delay: index * 0.08 }}
               >
                 <Link href={industry.href} className="block group h-full">
-                  <div className="p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-300 flex flex-col h-full relative cursor-pointer hover:shadow-md">
-                    <ArrowUpRight className="absolute top-6 right-6 w-4 h-4 text-warm-gray/50 group-hover:text-charcoal/50 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                  <div className="p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-300 flex flex-col h-full relative cursor-pointer hover:shadow-md overflow-hidden group-hover:bg-cream/30">
+                    {/* Background Icon */}
+                    <IndustryIcon
+                      className={`absolute -top-8 -left-8 w-48 h-48 ${industry.iconColor} opacity-[0.06] transform -rotate-12 pointer-events-none transition-transform duration-500 group-hover:scale-110`}
+                      strokeWidth={1}
+                      style={{
+                        maskImage: "linear-gradient(to bottom right, black 50%, transparent 100%)",
+                        WebkitMaskImage: "linear-gradient(to bottom right, black 40%, transparent 90%)",
+                      }}
+                    />
 
-                    <div className={`w-10 h-10 rounded-xl ${industry.color} flex items-center justify-center mb-4`}>
-                      <IndustryIcon className={`w-5 h-5 ${industry.iconColor}`} />
+                    <ArrowUpRight className="absolute top-6 right-6 w-5 h-5 text-text-muted/40 group-hover:text-charcoal group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300 z-20" />
+
+                    <div className="relative z-10 pt-2 h-full flex flex-col">
+                      <h4 className="font-display text-xl font-bold text-charcoal mb-3 pr-8">
+                        {t(`industries.${industry.key}.title`)}
+                      </h4>
+
+                      <p className="text-text-muted text-pretty leading-relaxed">
+                        {t(`industries.${industry.key}.description`)}
+                      </p>
                     </div>
-
-                    <h4 className="font-display text-lg font-bold text-charcoal mb-2 pr-8">
-                      {t(`industries.${industry.key}.title`)}
-                    </h4>
-
-                    <p className="text-text-muted text-sm leading-relaxed">
-                      {t(`industries.${industry.key}.description`)}
-                    </p>
                   </div>
                 </Link>
               </motion.div>
