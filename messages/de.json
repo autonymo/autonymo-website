@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Autonymo — KI- & Automatisierungsagentur",
-    "description": "Wir entwickeln KI-gestützte Betriebssysteme für Immobilien, Gesundheitswesen und maßgeschneiderte Geschäftslösungen."
+    "title": "Autonymo — KI-Betriebssysteme für Ihre Branche",
+    "description": "Wir entwerfen, entwickeln und implementieren vollständige KI-Betriebssysteme für Immobilien, Gesundheitswesen und maßgeschneiderte Geschäftslösungen. In Wochen einsatzbereit, nicht Monaten."
   },
   "nav": {
     "solutions": "Lösungen",
@@ -18,138 +18,191 @@
     "deepDiveBlogs": "Vertiefende Artikel",
     "deepDiveBlogsDesc": "Tiefgehende Analysen zu KI-Automatisierung und Strategien.",
     "realEstateOS": "Real Estate OS",
-    "realEstateOSDesc": "KI-gestützte Immobilienverwaltung, Eigentümerakquise und Vertragsautomatisierung.",
+    "realEstateOSDesc": "KI-gestützte Lead-Antwort, Immobilienverwaltung und Vertragsautomatisierung für Immobilienagenturen.",
     "healthServicesOS": "Health Services OS",
-    "healthServicesOSDesc": "Intelligente Terminplanung, Diagnostik und Patientenmanagement.",
-    "customSolutionsDesc": "Maßgeschneiderte KI-Implementierungen für Ihre Geschäftsanforderungen.",
+    "healthServicesOSDesc": "Intelligente Terminplanung, Patientenreaktivierung und klinische Dokumentation für moderne Praxen.",
+    "customSolutionsDesc": "Maßgeschneiderte KI-Implementierungen für Ihre Geschäftsabläufe und Branche.",
     "mobileMenu": "Menü"
   },
   "hero": {
-    "title": "KI-Lösungen entwickelt für",
-    "titleHighlight": "Ihre Branche.",
-    "subtitle": "Wir entwerfen, entwickeln und implementieren intelligente Betriebssysteme für Immobilien, Gesundheitswesen und mehr — damit sich Ihr Team auf das Wesentliche konzentrieren kann.",
+    "title": "Wir bauen die KI-Systeme,",
+    "titleHighlight": "die Ihr Unternehmen steuern.",
+    "subtitle": "Vollständige KI-Betriebssysteme, zugeschnitten auf Ihre Branche — keine Einzellösungen. Wir ersetzen manuelle Prozesse durch intelligente Systeme, die rund um die Uhr arbeiten.",
     "cta": "Erstgespräch vereinbaren",
-    "ctaSecondary": "Lösungen erkunden",
-    "trustedBy": "Angetrieben von führenden KI-Technologien"
+    "ctaSecondary": "Was wir bauen",
+    "trustedBy": "Teams in Spanien, Deutschland und darüber hinaus vertrauen uns",
+    "valueProp1": "In Wochen einsatzbereit, nicht Monaten",
+    "valueProp2": "Funktioniert mit Ihren bestehenden Tools",
+    "valueProp3": "Laufender Support inklusive"
   },
-  "industries": {
-    "label": "Branchenlösungen",
-    "title": "Wählen Sie Ihre Branche.",
-    "titleLine2": "Wir kümmern uns um die KI.",
-    "subtitle": "Jedes OS ist ein vollständiges KI-Betriebssystem, zugeschnitten auf die Workflows, Vorschriften und Wachstumstreiber Ihrer Branche.",
-    "realEstate": {
-      "name": "Real Estate OS",
-      "tagline": "KI-gestützte Immobilienoperationen",
-      "description": "Ein vollständiges Betriebssystem für Immobilienteams. Eigentümer akquirieren, kalte Leads reaktivieren und Verträge automatisieren — alles KI-gestützt.",
-      "features": {
-        "ownerCapture": "Eigentümerakquise",
-        "reengagement": "Eigentümer-Reaktivierung",
-        "contractHub": "KI-Immobilienvertrags-Hub"
-      },
-      "cta": "Real Estate OS erkunden"
-    },
-    "healthServices": {
-      "name": "Health Services OS",
-      "tagline": "KI-gestützte Gesundheitsoperationen",
-      "description": "Das intelligente Rückgrat für moderne Gesundheitseinrichtungen. Patiententerminplanung, KI-gestützte Diagnostik und Versicherungsverifizierung in einem einheitlichen System.",
-      "features": {
-        "scheduling": "Intelligente Patientenplanung",
-        "diagnostics": "KI-gestützte Diagnostik",
-        "insurance": "Versicherungsverifizierung"
-      },
-      "cta": "Health Services OS erkunden"
-    },
-    "custom": {
-      "name": "Individuelle Lösungen",
-      "tagline": "Maßgeschneiderte KI für jede Branche",
-      "description": "Ihre Branche nicht dabei? Wir entwickeln maßgeschneiderte KI-Betriebssysteme für jedes Unternehmen. Unser Beratungsteam entwirft individuelle Lösungen von Grund auf.",
-      "features": {
-        "workflows": "Individuelle Workflow-Automatisierung",
-        "agents": "Maßgeschneiderte KI-Agenten",
-        "integration": "Systemintegration"
-      },
-      "cta": "Ihr Projekt besprechen"
-    },
-    "comingSoon": "Demnächst"
+  "explainer": {
+    "text": "Was ist ein KI-Betriebssystem?",
+    "description": "Eine vernetzte Suite von KI-gestützten Tools, entwickelt für Ihre Branche: automatisierte Lead-Antwort, intelligente Terminplanung, Dokumentenerstellung, Echtzeit-Dashboards und mehr — alles zusammenarbeitend, manuelle Prozesse in Ihrem gesamten Betrieb ersetzend."
   },
-  "capabilities": {
-    "label": "Kernfähigkeiten",
-    "title": "Die Werkzeuge, die Ihr Team wirklich braucht — ab dem ersten Tag einsatzbereit",
-    "automation": {
-      "title": "Automatisierungsagenten",
-      "description": "Automatisieren Sie wiederkehrende Workflows in Ihrem Unternehmen. Befreien Sie Ihr Team von manuellen Aufgaben und machen Sie Ihre Abläufe schneller, intelligenter und effizienter."
-    },
-    "voice": {
-      "title": "KI-Sprachagent",
-      "description": "Bearbeiten Sie ein- und ausgehende Anrufe automatisch — qualifizieren Sie Leads, beantworten Sie Fragen oder vereinbaren Sie Termine in mehreren Sprachen.",
-      "tags": ["Vision", "Planung", "Marketing"]
-    },
-    "leads": {
-      "title": "Lead-Qualifizierung",
-      "description": "Erfassen und qualifizieren Sie Leads automatisch über alle Kanäle. Unsere Systeme priorisieren die besten Chancen und synchronisieren Daten direkt mit Ihrem CRM oder ERP.",
-      "tags": ["Konversion", "Vertrieb"]
-    },
-    "analytics": {
-      "title": "Daten & Analytik",
-      "description": "Verwandeln Sie Ihre Daten in Entscheidungen. Wir integrieren KI- und ML-Modelle, um Erkenntnisse zu gewinnen, Trends zu erkennen und versteckte Chancen aufzudecken."
+  "whatWeBuild": {
+    "label": "Was Wir Bauen",
+    "title": "Branchenspezifische KI-Plattformen, keine generischen Tools.",
+    "subtitle": "Jedes System basiert auf den tatsächlichen Arbeitsabläufen Ihrer Branche — integriert mit Ihren bestehenden Tools, in Wochen einsatzbereit.",
+    "tabs": {
+      "realEstate": {
+        "label": "Real Estate OS",
+        "tagline": "Alles, was eine moderne Immobilienagentur braucht, um mit KI zu arbeiten.",
+        "cta": "Real Estate OS erkunden",
+        "modules": {
+          "module1": {
+            "title": "Lead-Antwort-Engine",
+            "description": "Reagieren Sie auf Portal-Leads in Sekunden via WhatsApp — nicht Stunden. Automatische Vorqualifizierung, Anreicherung und intelligente Agentenverteilung."
+          },
+          "module2": {
+            "title": "Aktive Immobilienverwaltung",
+            "description": "Warnungen bei stehenden Objekten, Preisüberwachung, Besichtigungsberichte für Eigentümer und Aktivitätsverfolgung für jedes Objekt in Ihrem Portfolio."
+          },
+          "module3": {
+            "title": "Eigentümer-Beziehungs-Engine",
+            "description": "Reaktivieren Sie frühere Eigentümer mit Marktberichten und automatisierten Nurturing-Sequenzen. Bauen Sie Vertrauen auf, bevor sie einen Agenturwechsel erwägen."
+          },
+          "module4": {
+            "title": "Vertragsautomatisierung",
+            "description": "Erstellen Sie Reservierungen, Vorverträge und Provisionsvereinbarungen mit wenigen Klicks. Dokumenten-Checklisten und Abschluss-Meilenstein-Tracking inklusive."
+          }
+        }
+      },
+      "healthServices": {
+        "label": "Health Services OS",
+        "tagline": "Speziell entwickelt für Kliniken, Zahnarztpraxen und Wellnesszentren.",
+        "cta": "Health Services OS erkunden",
+        "modules": {
+          "module1": {
+            "title": "Intelligente Terminplanung",
+            "description": "KI-gestützte Buchungen über alle Behandler. Füllt automatisch Absagelücken, reduziert Nichterscheinen und optimiert die Behandlungszeit."
+          },
+          "module2": {
+            "title": "Patientenreaktivierung",
+            "description": "Automatisierte Ansprache inaktiver Patienten mit personalisierten Recall-Kampagnen. Reaktivieren Sie Patienten, die seit Monaten nicht mehr da waren."
+          },
+          "module3": {
+            "title": "Patienten-Kommunikations-Hub",
+            "description": "Einheitliche WhatsApp-, E-Mail- und SMS-Kommunikation. Automatische Bestätigungen, Nachfassaktionen und Post-Visit-Bewertungsanfragen."
+          },
+          "module4": {
+            "title": "Versicherung & Dokumentation",
+            "description": "Automatisieren Sie Leistungsüberprüfungen, Abrechnungen und klinische Dokumentation. Reduzieren Sie den Verwaltungsaufwand und beschleunigen Sie Erstattungen."
+          }
+        }
+      },
+      "custom": {
+        "label": "Individuelle Lösungen",
+        "tagline": "Ihr Unternehmen ist einzigartig. Ihr KI-System sollte es auch sein.",
+        "cta": "Ihr Projekt besprechen",
+        "modules": {
+          "module1": {
+            "title": "Workflow-Automatisierung",
+            "description": "Erfassen und automatisieren Sie jeden Geschäftsprozess end-to-end — von einfachem Task-Routing bis zur komplexen Multi-System-Orchestrierung."
+          },
+          "module2": {
+            "title": "Maßgeschneiderte KI-Agenten",
+            "description": "Speziell entwickelte KI-Agenten, trainiert mit Ihren Daten und Geschäftslogik. Nicht generisch — konzipiert für Ihre spezifischen Abläufe."
+          },
+          "module3": {
+            "title": "Systemintegration",
+            "description": "Verbinden Sie CRMs, ERPs, Datenbanken, APIs und Legacy-Systeme zu einem intelligenten, automatisierten Ökosystem."
+          },
+          "module4": {
+            "title": "Dashboards & Analytik",
+            "description": "Echtzeit-Betriebsdashboards, konzipiert um Ihre KPIs, Datenquellen und Entscheidungsprozesse."
+          }
+        }
+      }
     }
   },
-  "benefits": {
-    "label": "Was Autonymo auszeichnet",
-    "title": "Gebaut für die Anforderungen",
-    "titleLine2": "des modernen Unternehmens.",
-    "speed": {
-      "title": "Geschwindigkeit",
-      "description": "Schnellere Wertschöpfung mit unseren Enterprise-KI-Lösungen und KI-Agenten-Marketplace."
-    },
-    "control": {
-      "title": "Kontrolle",
-      "description": "Die Stärke einer standardisierten Plattform, gebaut für Unternehmensanforderungen."
-    },
-    "bookMeeting": {
-      "title": "Termin buchen",
-      "description": "Bereit, Ihre Abläufe zu transformieren?",
-      "cta": "Jetzt buchen"
-    },
-    "flexibility": {
-      "title": "Flexibilität",
-      "description": "Übernehmen Sie die Kontrolle mit nahtloser Anbindung an jedes KI-Modell, jede Datenquelle, Unternehmens-App oder Infrastruktur."
-    },
-    "depth": {
-      "title": "Tiefgreifende Fähigkeiten",
-      "description": "Eine Agentenplattform mit der Tiefe, sich an jede Interaktion, jeden Workflow und jedes Unternehmensökosystem anzupassen."
-    },
-    "experience": {
-      "title": "Bewährte Erfahrung",
-      "description": "Wir sind ein AI-first-Unternehmen, das seine Technologie und seinen Erfolg Hand in Hand mit globalen Unternehmenskunden aufgebaut hat."
+  "industryGrid": {
+    "label": "Branchen",
+    "title": "KI-Betriebssysteme für Ihre Branche.",
+    "subtitle": "Wir bauen vollständige KI-Systeme, zugeschnitten darauf, wie Ihre Branche tatsächlich funktioniert — keine generische Automatisierung, die monatelange Anpassung braucht.",
+    "industries": {
+      "realEstate": {
+        "title": "Immobilien",
+        "description": "Automatisieren Sie Lead-Antwort, Immobilienverwaltung und Verträge für Agenturen und Hausverwaltungen."
+      },
+      "healthcare": {
+        "title": "Gesundheit & Dental",
+        "description": "Intelligente Terminplanung, Patientenreaktivierung und klinische Dokumentation für moderne Praxen."
+      },
+      "professional": {
+        "title": "Professionelle Dienstleistungen",
+        "description": "Optimieren Sie Kundenaufnahme, Dokumentenerstellung und Projektabläufe für Kanzleien, Steuerberater und Beratungsunternehmen."
+      },
+      "industrial": {
+        "title": "Industrie & Fertigung",
+        "description": "Produktionsüberwachung, Lieferkettenautomatisierung und Qualitätskontrollsysteme für mittelständische Hersteller."
+      },
+      "agencies": {
+        "title": "Agenturen",
+        "description": "Skalieren Sie Ihre Dienstleistung, automatisieren Sie Reporting und steigern Sie die Kundenkapazität ohne zusätzliches Personal."
+      },
+      "other": {
+        "title": "Weitere Branchen",
+        "description": "Ihre Branche nicht dabei? Wir führen ein KI-Audit durch und bauen genau das, was Sie brauchen."
+      }
     }
+  },
+  "beforeAfter": {
+    "label": "Warum Autonymo",
+    "title": "Ihre Abläufe stehen vor einer Veränderung.",
+    "subtitle": "Hören Sie auf, Arbeitsabläufe mit Tabellen und manuellen Nachfassaktionen zu flicken. Starten Sie mit einem intelligenten Betriebssystem.",
+    "before": {
+      "title": "Vorher — Manuelle Abläufe",
+      "items": {
+        "item1": "Leads warten stundenlang — Interessenten gehen, bevor Sie antworten",
+        "item2": "Mitarbeiter ertrinken in Verwaltung, Dateneingabe und manuellen Nachfassaktionen",
+        "item3": "Skalierung bedeutet mehr Personal für jedes neue Konto",
+        "item4": "Informationen verstreut über Tools, Posteingänge und Tabellen",
+        "item5": "Entscheidungen basierend auf Bauchgefühl, nicht auf Echtzeitdaten",
+        "item6": "Jeder neue Prozess dauert Monate zur Einrichtung und Optimierung"
+      }
+    },
+    "after": {
+      "title": "Nachher — Autonymo OS",
+      "items": {
+        "item1": "KI antwortet auf Anfragen in Sekunden, 24/7 — kein Lead bleibt unbearbeitet",
+        "item2": "Automatisierte Workflows erledigen die repetitive Arbeit, damit Ihr Team sich auf Wertschöpfung konzentriert",
+        "item3": "Dasselbe Team bewältigt 3-5x mehr, mit KI als Unterstützung",
+        "item4": "Ein einheitliches System mit Echtzeit-Dashboards und vernetzten Daten",
+        "item5": "KI liefert Erkenntnisse, erkennt Muster und empfiehlt Maßnahmen",
+        "item6": "Neue Funktionen in Tagen bereitgestellt, nicht Monaten"
+      }
+    },
+    "bottomNote": "Die Teams, die bereits Autonymo nutzen, arbeiten auf einem anderen Level"
   },
   "howItWorks": {
-    "label": "So funktioniert es",
-    "title": "Der Einstieg ist einfach",
+    "label": "So Funktioniert Es",
+    "title": "Vom Erstgespräch zum Live-System.",
     "steps": {
       "discovery": {
         "step": "01",
-        "title": "Erstgespräch",
-        "description": "Wir lernen Ihr Unternehmen kennen, analysieren Ihre Workflows und identifizieren die wirkungsvollsten Bereiche, in denen KI echte Ergebnisse liefern kann."
+        "timeline": "Woche 1",
+        "title": "Analyse & Audit",
+        "description": "Wir erfassen Ihre Arbeitsabläufe, Ihren Tech-Stack und Ihre Schmerzpunkte. Sie erhalten einen priorisierten KI-Implementierungs-Fahrplan mit Zeitplänen und erwartetem ROI."
       },
       "build": {
         "step": "02",
-        "title": "Entwicklung & Integration",
-        "description": "Wir entwerfen, entwickeln und verbinden Ihre maßgeschneiderten KI-Agenten und Automatisierungen direkt mit Ihren bestehenden Systemen."
+        "timeline": "Wochen 2-4",
+        "title": "Entwicklung & Konfiguration",
+        "description": "Wir entwerfen und bauen Ihr KI-Betriebssystem, integriert mit Ihren bestehenden Tools — CRM, WhatsApp, E-Mail, Kalender und mehr."
       },
       "launch": {
         "step": "03",
-        "title": "Launch & Support",
-        "description": "Wir testen alles end-to-end, gehen mit Ihrem Team live und bieten laufende Optimierung und eine 30-tägige Supportphase."
+        "timeline": "Woche 4-5",
+        "title": "Launch & Schulung",
+        "description": "Ihr System geht live. Wir schulen Ihr Team praxisnah und optimieren die Performance während einer 30-tägigen Supportphase."
       }
     }
   },
   "cta": {
-    "title": "Bereit, das Undenkbare",
+    "title": "Bereit, Ihre Abläufe",
     "titleLine2": "zu automatisieren?",
-    "subtitle": "Schließen Sie sich den zukunftsorientierten Teams an, die Autonymo nutzen, um ihre Abläufe in einen Wettbewerbsvorteil zu verwandeln.",
-    "button": "Termin buchen"
+    "subtitle": "Vereinbaren Sie ein kostenloses Erstgespräch. Wir erfassen Ihre Arbeitsabläufe und zeigen Ihnen genau, wo KI den größten Einfluss auf Ihr Unternehmen haben kann.",
+    "button": "Erstgespräch vereinbaren"
   },
   "footer": {
     "solutions": "Lösungen",

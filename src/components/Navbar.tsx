@@ -6,6 +6,7 @@ import { ArrowDownRight, Globe, ArrowUpRight, Menu, X, Building2, Heart, Setting
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import Image from "next/image";
 
 export const Navbar = () => {
   const t = useTranslations("nav");
@@ -95,10 +96,14 @@ export const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-charcoal rounded-lg flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
-              <div className="w-4 h-4 border-2 border-white rounded-sm rotate-45" />
-            </div>
+          <Link href="/" className="flex items-center gap-1.5 group">
+            <Image
+              src="/Logo%20Images/autonymo_logo_transparent%20(1).png"
+              alt="Autonymo"
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain transition-transform duration-500 group-hover:rotate-12"
+            />
             <span className="font-display text-xl font-bold tracking-tight text-charcoal">
               Autonymo
             </span>
@@ -122,11 +127,11 @@ export const Navbar = () => {
               </button>
             </div>
             <Link
-              href={{ pathname: "/", hash: "benefits" }}
+              href={{ pathname: "/", hash: "why-autonymo" }}
               onClick={closeAll}
               className="text-sm font-medium text-text-muted hover:text-charcoal transition-colors"
             >
-              {t("benefits")}
+              {t("industries")}
             </Link>
             <Link
               href={{ pathname: "/", hash: "how-it-works" }}
@@ -170,6 +175,36 @@ export const Navbar = () => {
                   className={`w-3 h-3 transition-transform duration-300 ${isLangOpen ? "rotate-180" : ""}`}
                 />
               </button>
+              <AnimatePresence>
+                {isLangOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute top-[calc(100%+8px)] right-0 w-36 bg-white/90 backdrop-blur-2xl border border-sand rounded-xl shadow-lg p-1 z-50"
+                  >
+                    <div className="flex flex-col gap-0.5">
+                      {locales.map((loc) => (
+                        <button
+                          key={loc}
+                          onClick={() => switchLocale(loc)}
+                          className={`w-full text-left px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-300 group flex items-center justify-between hover:bg-cream ${loc === locale
+                            ? "text-charcoal bg-cream"
+                            : "text-text-muted hover:text-charcoal"
+                            }`}
+                        >
+                          {tLang(loc)}
+                          <div
+                            className={`w-1.5 h-1.5 rounded-full bg-accent-blue transition-opacity duration-300 ${loc === locale ? "opacity-100" : "opacity-0"
+                              }`}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Book a Call CTA */}
@@ -303,39 +338,7 @@ export const Navbar = () => {
         )}
       </AnimatePresence>
 
-      {/* Language Dropdown */}
-      <AnimatePresence>
-        {isLangOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-[calc(100%+8px)] right-3 w-36 bg-white/90 backdrop-blur-2xl border border-sand rounded-xl shadow-lg p-1 z-50"
-          >
-            <div className="flex flex-col gap-0.5">
-              {locales.map((loc) => (
-                <button
-                  key={loc}
-                  onClick={() => switchLocale(loc)}
-                  className={`w-full text-left px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-300 group flex items-center justify-between hover:bg-cream ${
-                    loc === locale
-                      ? "text-charcoal bg-cream"
-                      : "text-text-muted hover:text-charcoal"
-                  }`}
-                >
-                  {tLang(loc)}
-                  <div
-                    className={`w-1.5 h-1.5 rounded-full bg-accent-blue transition-opacity duration-300 ${
-                      loc === locale ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -416,11 +419,10 @@ export const Navbar = () => {
                   <button
                     key={loc}
                     onClick={() => switchLocale(loc)}
-                    className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
-                      loc === locale
-                        ? "bg-charcoal text-white"
-                        : "bg-cream text-text-muted hover:bg-sand/50"
-                    }`}
+                    className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${loc === locale
+                      ? "bg-charcoal text-white"
+                      : "bg-cream text-text-muted hover:bg-sand/50"
+                      }`}
                   >
                     {localeLabels[loc]}
                   </button>

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Autonymo — Agència d'IA i Automatització",
-    "description": "Construïm sistemes operatius potenciats per IA per a Immobiliària, Serveis de Salut i solucions empresarials personalitzades."
+    "title": "Autonymo — Sistemes Operatius d'IA per a la Teva Indústria",
+    "description": "Dissenyem, construïm i despleguem sistemes operatius d'IA complets per a Immobiliària, Salut i solucions empresarials personalitzades. Llest en setmanes, no mesos."
   },
   "nav": {
     "solutions": "Solucions",
@@ -18,138 +18,191 @@
     "deepDiveBlogs": "Articles en Profunditat",
     "deepDiveBlogsDesc": "Anàlisis profundes sobre automatització i IA.",
     "realEstateOS": "Real Estate OS",
-    "realEstateOSDesc": "Gestió immobiliària potenciada per IA, captació de propietaris i automatització de contractes.",
+    "realEstateOSDesc": "Resposta automàtica a leads, gestió d'immobles i automatització de contractes per a agències immobiliàries.",
     "healthServicesOS": "Health Services OS",
-    "healthServicesOSDesc": "Programació intel·ligent, diagnòstics i gestió de pacients.",
-    "customSolutionsDesc": "Implementacions d'IA personalitzades adaptades a les necessitats del teu negoci.",
+    "healthServicesOSDesc": "Programació intel·ligent, reactivació de pacients i documentació clínica per a consultes modernes.",
+    "customSolutionsDesc": "Implementacions d'IA personalitzades adaptades als fluxos de treball del teu negoci i indústria.",
     "mobileMenu": "Menú"
   },
   "hero": {
-    "title": "Solucions d'IA dissenyades per a",
-    "titleHighlight": "la teva indústria.",
-    "subtitle": "Dissenyem, construïm i despleguem sistemes operatius intel·ligents per a Immobiliària, Serveis de Salut i més — perquè el teu equip es pugui centrar en el que realment importa.",
-    "cta": "Reservar una Trucada",
-    "ctaSecondary": "Explorar Solucions",
-    "trustedBy": "Impulsat per les tecnologies d'IA líders"
+    "title": "Construïm els sistemes d'IA",
+    "titleHighlight": "que gestionen el teu negoci.",
+    "subtitle": "Sistemes operatius d'IA complets adaptats a la teva indústria — no eines soltes. Substituïm les operacions manuals per sistemes intel·ligents que treballen 24/7.",
+    "cta": "Reservar Trucada de Descobriment",
+    "ctaSecondary": "Veure Què Construïm",
+    "trustedBy": "Equips de confiança a Espanya, Alemanya i més enllà",
+    "valueProp1": "Llest en setmanes, no mesos",
+    "valueProp2": "Compatible amb les teves eines actuals",
+    "valueProp3": "Suport continu inclòs"
   },
-  "industries": {
-    "label": "Solucions per Indústria",
-    "title": "Tria la teva indústria.",
-    "titleLine2": "Nosaltres ens encarreguem de la IA.",
-    "subtitle": "Cada OS és un sistema operatiu complet potenciat per IA, adaptat als fluxos de treball, regulacions i motors de creixement de la teva indústria.",
-    "realEstate": {
-      "name": "Real Estate OS",
-      "tagline": "Operacions Immobiliàries amb IA",
-      "description": "Un sistema operatiu complet per a equips immobiliaris. Capta propietaris, reactiva leads freds i automatitza contractes — tot potenciat per IA.",
-      "features": {
-        "ownerCapture": "Captació de Propietaris",
-        "reengagement": "Reactivació de Propietaris",
-        "contractHub": "Hub de Contractes Immobiliaris amb IA"
-      },
-      "cta": "Explorar Real Estate OS"
-    },
-    "healthServices": {
-      "name": "Health Services OS",
-      "tagline": "Operacions Sanitàries amb IA",
-      "description": "La columna vertebral intel·ligent per a pràctiques mèdiques modernes. Automatitza la programació de pacients, diagnòstics assistits per IA i verificació d'assegurances en un sistema unificat.",
-      "features": {
-        "scheduling": "Programació Intel·ligent de Pacients",
-        "diagnostics": "Diagnòstics Assistits per IA",
-        "insurance": "Verificació d'Assegurances"
-      },
-      "cta": "Explorar Health Services OS"
-    },
-    "custom": {
-      "name": "Solucions Personalitzades",
-      "tagline": "IA a Mida per a Qualsevol Indústria",
-      "description": "No veus la teva indústria? Construïm sistemes operatius d'IA a mida per a qualsevol negoci. El nostre equip de consultoria dissenya solucions personalitzades des de zero.",
-      "features": {
-        "workflows": "Automatització de Fluxos Personalitzats",
-        "agents": "Agents d'IA a Mida",
-        "integration": "Integració de Sistemes"
-      },
-      "cta": "Parlem del Teu Projecte"
-    },
-    "comingSoon": "Properament"
+  "explainer": {
+    "text": "Què és un Sistema Operatiu d'IA?",
+    "description": "Un conjunt connectat d'eines impulsades per IA dissenyades per a la teva indústria: resposta automàtica a leads, programació intel·ligent, generació de documents, dashboards en temps real i més — tot funcionant en conjunt, substituint processos manuals a tota la teva operació."
   },
-  "capabilities": {
-    "label": "Capacitats Principals",
-    "title": "Les eines que el teu equip realment necessita — llestes per funcionar des del primer dia",
-    "automation": {
-      "title": "Agents d'Automatització",
-      "description": "Automatitza fluxos de treball repetitius a tot el teu negoci. Allibera el teu equip de tasques manuals i fes que les teves operacions siguin més ràpides, intel·ligents i eficients."
-    },
-    "voice": {
-      "title": "Agent de Veu IA",
-      "description": "Gestiona trucades entrants i sortints automàticament — qualifica leads, respon preguntes o agenda cites en múltiples idiomes.",
-      "tags": ["Visió", "Planificació", "Màrqueting"]
-    },
-    "leads": {
-      "title": "Qualificació de Leads",
-      "description": "Captura i qualifica leads automàticament a tots els canals. Els nostres sistemes prioritzen les millors oportunitats i sincronitzen dades directament amb el teu CRM o ERP.",
-      "tags": ["Conversió", "Vendes"]
-    },
-    "analytics": {
-      "title": "Dades i Analítica",
-      "description": "Converteix les teves dades en decisions. Integrem models d'IA i ML per extreure insights, identificar tendències i descobrir oportunitats amagades a les teves dades."
+  "whatWeBuild": {
+    "label": "Què Construïm",
+    "title": "Plataformes d'IA específiques per a la teva indústria, no eines genèriques.",
+    "subtitle": "Cada sistema està construït al voltant dels fluxos de treball reals de la teva indústria — integrat amb les teves eines existents, llest per desplegar en setmanes.",
+    "tabs": {
+      "realEstate": {
+        "label": "Real Estate OS",
+        "tagline": "Tot el que una agència immobiliària moderna necessita per funcionar amb IA.",
+        "cta": "Explorar Real Estate OS",
+        "modules": {
+          "module1": {
+            "title": "Motor de Resposta a Leads",
+            "description": "Respon a leads de portals en segons per WhatsApp — no en hores. Pre-qualificació automàtica, enriquiment i distribució intel·ligent a agents."
+          },
+          "module2": {
+            "title": "Gestió Activa d'Immobles",
+            "description": "Alertes d'immobles estancats, monitorització de preus, informes post-visita a propietaris i seguiment d'activitat per a cada immoble de la teva cartera."
+          },
+          "module3": {
+            "title": "Motor de Relació amb Propietaris",
+            "description": "Reactiva propietaris anteriors amb informes de mercat i seqüències de nurturing automatitzades. Genera confiança abans que considerin canviar d'agència."
+          },
+          "module4": {
+            "title": "Automatització de Contractes",
+            "description": "Genera reserves, arres i acords de comissió en clics. Checklists de documentació i seguiment de fites de tancament inclosos."
+          }
+        }
+      },
+      "healthServices": {
+        "label": "Health Services OS",
+        "tagline": "Dissenyat específicament per a clíniques, consultes dentals i centres de benestar.",
+        "cta": "Explorar Health Services OS",
+        "modules": {
+          "module1": {
+            "title": "Programació Intel·ligent",
+            "description": "Reserves impulsades per IA entre professionals. Omple automàticament forats per cancel·lació, redueix absències i optimitza el temps de consulta."
+          },
+          "module2": {
+            "title": "Reactivació de Pacients",
+            "description": "Contacte automatitzat amb pacients inactius mitjançant campanyes de recall personalitzades. Reactiva pacients que no han visitat en mesos."
+          },
+          "module3": {
+            "title": "Hub de Comunicació amb Pacients",
+            "description": "Comunicacions unificades per WhatsApp, email i SMS. Confirmacions automàtiques, seguiments i sol·licituds de ressenyes post-visita."
+          },
+          "module4": {
+            "title": "Assegurances i Documentació",
+            "description": "Automatitza verificacions d'elegibilitat, processament de reclamacions i generació de notes clíniques. Redueix la càrrega administrativa i accelera els reemborsaments."
+          }
+        }
+      },
+      "custom": {
+        "label": "Solucions Personalitzades",
+        "tagline": "El teu negoci és únic. El teu sistema d'IA també hauria de ser-ho.",
+        "cta": "Parlar del Teu Projecte",
+        "modules": {
+          "module1": {
+            "title": "Automatització de Fluxos de Treball",
+            "description": "Mapeja i automatitza qualsevol procés de negoci de principi a fi — des d'enrutament simple de tasques fins a orquestració complexa multi-sistema."
+          },
+          "module2": {
+            "title": "Agents d'IA Personalitzats",
+            "description": "Agents d'IA dissenyats a mida, entrenats amb les teves dades i lògica de negoci. No genèrics — dissenyats al voltant de les teves operacions específiques."
+          },
+          "module3": {
+            "title": "Integració de Sistemes",
+            "description": "Connecta CRMs, ERPs, bases de dades, APIs i sistemes legacy en un ecosistema intel·ligent i automatitzat."
+          },
+          "module4": {
+            "title": "Dashboards i Analítica",
+            "description": "Dashboards operacionals en temps real dissenyats al voltant dels teus KPIs, fonts de dades i fluxos de presa de decisions."
+          }
+        }
+      }
     }
   },
-  "benefits": {
-    "label": "El que ens diferencia",
-    "title": "Construït per a les exigències",
-    "titleLine2": "de l'empresa moderna.",
-    "speed": {
-      "title": "Velocitat",
-      "description": "Temps de valor més ràpid amb les nostres solucions d'IA empresarial i marketplace d'agents IA."
-    },
-    "control": {
-      "title": "Control",
-      "description": "El poder d'una plataforma estandarditzada construïda per a les exigències de l'empresa."
-    },
-    "bookMeeting": {
-      "title": "Reserva una reunió",
-      "description": "Preparat per transformar les teves operacions?",
-      "cta": "Reservar Ara"
-    },
-    "flexibility": {
-      "title": "Flexibilitat",
-      "description": "Pren el control amb connexió fluida a qualsevol model d'IA, font de dades, aplicació empresarial o infraestructura que necessitis."
-    },
-    "depth": {
-      "title": "Capacitats profundes",
-      "description": "Una plataforma d'agents amb la profunditat per adaptar-se a cada interacció, flux de treball i ecosistema empresarial."
-    },
-    "experience": {
-      "title": "Experiència demostrada",
-      "description": "Som una empresa AI-first que ha construït la seva tecnologia i èxit juntament amb clients empresarials globals."
+  "industryGrid": {
+    "label": "Indústries",
+    "title": "Sistemes operatius d'IA per a la teva indústria.",
+    "subtitle": "Construïm sistemes d'IA complets adaptats a com funciona realment la teva indústria — no automatització genèrica que necessita mesos de personalització.",
+    "industries": {
+      "realEstate": {
+        "title": "Immobiliària",
+        "description": "Automatitza resposta a leads, gestió d'immobles i contractes per a agències i gestors de propietats."
+      },
+      "healthcare": {
+        "title": "Salut i Dental",
+        "description": "Programació intel·ligent, reactivació de pacients i documentació clínica per a consultes modernes."
+      },
+      "professional": {
+        "title": "Serveis Professionals",
+        "description": "Optimitza la captació de clients, generació de documents i fluxos de projecte per a despatxos d'advocats, assessories i consultores."
+      },
+      "industrial": {
+        "title": "Industrial i Manufactura",
+        "description": "Monitorització de producció, automatització de cadena de subministrament i sistemes de control de qualitat per a fabricants mitjans."
+      },
+      "agencies": {
+        "title": "Agències",
+        "description": "Escala el lliurament de serveis, automatitza informes i augmenta la capacitat de clients sense contractar."
+      },
+      "other": {
+        "title": "Altres Indústries",
+        "description": "No veus la teva indústria? Realitzem una auditoria d'IA i construïm exactament el que necessites."
+      }
     }
+  },
+  "beforeAfter": {
+    "label": "Per Què Autonymo",
+    "title": "Les teves operacions estan a punt de canviar.",
+    "subtitle": "Deixa de pedaçar fluxos de treball amb fulls de càlcul i seguiments manuals. Comença a funcionar amb un sistema operatiu intel·ligent.",
+    "before": {
+      "title": "Abans — Operacions Manuals",
+      "items": {
+        "item1": "Els leads esperen hores — els prospectes marxen abans que responguis",
+        "item2": "L'equip s'ofega en administració, entrada de dades i seguiments manuals",
+        "item3": "Escalar significa contractar més persones per cada nou compte",
+        "item4": "Informació dispersa entre eines, safates d'entrada i fulls de càlcul",
+        "item5": "Decisions basades en intuïció, no en dades en temps real",
+        "item6": "Cada nou procés tarda mesos a configurar-se i optimitzar-se"
+      }
+    },
+    "after": {
+      "title": "Després — Autonymo OS",
+      "items": {
+        "item1": "La IA respon a consultes en segons, 24/7 — cap lead es queda sense atendre",
+        "item2": "Fluxos automatitzats gestionen el treball repetitiu perquè el teu equip s'enfoqui en el valor",
+        "item3": "El mateix equip gestiona 3-5x més amb la IA fent la feina pesada",
+        "item4": "Un sistema unificat amb dashboards en temps real i dades connectades",
+        "item5": "La IA detecta insights, identifica patrons i recomana accions",
+        "item6": "Noves capacitats desplegades en dies, no mesos"
+      }
+    },
+    "bottomNote": "Els equips que ja utilitzen Autonymo operen a una velocitat diferent"
   },
   "howItWorks": {
     "label": "Com Funciona",
-    "title": "Començar és fàcil",
+    "title": "De la primera trucada al sistema en producció.",
     "steps": {
       "discovery": {
         "step": "01",
-        "title": "Trucada de Descobriment",
-        "description": "Aprenem sobre el teu negoci, mapegem els teus fluxos de treball i identifiquem les àrees de major impacte on la IA pot generar resultats reals."
+        "timeline": "Setmana 1",
+        "title": "Descobriment i Auditoria",
+        "description": "Mapegem els teus fluxos de treball, stack tecnològic i punts de dolor. Reps un roadmap d'implementació d'IA prioritzat amb terminis i ROI esperat."
       },
       "build": {
         "step": "02",
-        "title": "Construir i Integrar",
-        "description": "Dissenyem, desenvolupem i connectem els teus agents d'IA personalitzats i automatitzacions directament als teus sistemes existents."
+        "timeline": "Setmanes 2-4",
+        "title": "Construcció i Configuració",
+        "description": "Dissenyem i construïm el teu sistema operatiu d'IA, integrat amb les teves eines existents — CRM, WhatsApp, email, calendari i més."
       },
       "launch": {
         "step": "03",
-        "title": "Llançar i Donar Suport",
-        "description": "Provem tot de punta a punta, llancem amb el teu equip i proporcionem optimització contínua i un període de suport de 30 dies."
+        "timeline": "Setmana 4-5",
+        "title": "Llançament i Formació",
+        "description": "El teu sistema entra en producció. Formem el teu equip de forma pràctica i optimitzem el rendiment durant una finestra de suport de 30 dies."
       }
     }
   },
   "cta": {
     "title": "Preparat per automatitzar",
-    "titleLine2": "l'impensable?",
-    "subtitle": "Uneix-te als equips visionaris que fan servir Autonymo per transformar les seves operacions en un avantatge competitiu.",
-    "button": "Reservar una Trucada"
+    "titleLine2": "les teves operacions?",
+    "subtitle": "Reserva una trucada de descobriment gratuïta. Mapejarem els teus fluxos de treball i et mostrarem exactament on la IA pot tenir el major impacte en el teu negoci.",
+    "button": "Reservar Trucada de Descobriment"
   },
   "footer": {
     "solutions": "Solucions",

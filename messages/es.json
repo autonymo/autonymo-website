@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Autonymo — Agencia de IA y Automatización",
-    "description": "Construimos sistemas operativos potenciados por IA para Inmobiliaria, Servicios de Salud y soluciones empresariales personalizadas."
+    "title": "Autonymo — Sistemas Operativos de IA para Tu Industria",
+    "description": "Diseñamos, construimos y desplegamos sistemas operativos de IA completos para Inmobiliaria, Salud y soluciones empresariales personalizadas. Listos en semanas, no meses."
   },
   "nav": {
     "solutions": "Soluciones",
@@ -18,138 +18,191 @@
     "deepDiveBlogs": "Artículos en Profundidad",
     "deepDiveBlogsDesc": "Análisis profundo sobre automatización e IA.",
     "realEstateOS": "Real Estate OS",
-    "realEstateOSDesc": "Gestión inmobiliaria potenciada por IA, captación de propietarios y automatización de contratos.",
+    "realEstateOSDesc": "Respuesta automática a leads, gestión de propiedades y automatización de contratos para agencias inmobiliarias.",
     "healthServicesOS": "Health Services OS",
-    "healthServicesOSDesc": "Programación inteligente, diagnósticos y gestión de pacientes.",
-    "customSolutionsDesc": "Implementaciones de IA personalizadas adaptadas a las necesidades de tu negocio.",
+    "healthServicesOSDesc": "Programación inteligente, reactivación de pacientes y documentación clínica para consultas modernas.",
+    "customSolutionsDesc": "Implementaciones de IA personalizadas adaptadas a los flujos de trabajo de tu negocio e industria.",
     "mobileMenu": "Menú"
   },
   "hero": {
-    "title": "Soluciones de IA diseñadas para",
-    "titleHighlight": "tu industria.",
-    "subtitle": "Diseñamos, construimos y desplegamos sistemas operativos inteligentes para Inmobiliaria, Servicios de Salud y más — para que tu equipo se enfoque en lo que realmente importa.",
-    "cta": "Reservar una Llamada",
-    "ctaSecondary": "Explorar Soluciones",
-    "trustedBy": "Impulsados por las tecnologías de IA líderes"
+    "title": "Construimos los sistemas de IA",
+    "titleHighlight": "que gestionan tu negocio.",
+    "subtitle": "Sistemas operativos de IA completos adaptados a tu industria — no herramientas sueltas. Sustituimos las operaciones manuales por sistemas inteligentes que trabajan 24/7.",
+    "cta": "Reservar Llamada de Descubrimiento",
+    "ctaSecondary": "Ver Qué Construimos",
+    "trustedBy": "Equipos de confianza en España, Alemania y más allá",
+    "valueProp1": "Listo en semanas, no meses",
+    "valueProp2": "Compatible con tus herramientas actuales",
+    "valueProp3": "Soporte continuo incluido"
   },
-  "industries": {
-    "label": "Soluciones por Industria",
-    "title": "Elige tu industria.",
-    "titleLine2": "Nosotros nos encargamos de la IA.",
-    "subtitle": "Cada OS es un sistema operativo completo potenciado por IA, adaptado a los flujos de trabajo, regulaciones y motores de crecimiento de tu industria.",
-    "realEstate": {
-      "name": "Real Estate OS",
-      "tagline": "Operaciones Inmobiliarias con IA",
-      "description": "Un sistema operativo completo para equipos inmobiliarios. Capta propietarios, reactiva leads fríos y automatiza contratos — todo potenciado por IA.",
-      "features": {
-        "ownerCapture": "Captación de Propietarios",
-        "reengagement": "Reactivación de Propietarios",
-        "contractHub": "Hub de Contratos Inmobiliarios con IA"
-      },
-      "cta": "Explorar Real Estate OS"
-    },
-    "healthServices": {
-      "name": "Health Services OS",
-      "tagline": "Operaciones Sanitarias con IA",
-      "description": "La columna vertebral inteligente para prácticas médicas modernas. Automatiza la programación de pacientes, diagnósticos asistidos por IA y verificación de seguros en un sistema unificado.",
-      "features": {
-        "scheduling": "Programación Inteligente de Pacientes",
-        "diagnostics": "Diagnósticos Asistidos por IA",
-        "insurance": "Verificación de Seguros"
-      },
-      "cta": "Explorar Health Services OS"
-    },
-    "custom": {
-      "name": "Soluciones Personalizadas",
-      "tagline": "IA a Medida para Cualquier Industria",
-      "description": "¿No ves tu industria? Construimos sistemas operativos de IA a medida para cualquier negocio. Nuestro equipo de consultoría diseña soluciones personalizadas desde cero.",
-      "features": {
-        "workflows": "Automatización de Flujos Personalizados",
-        "agents": "Agentes de IA a Medida",
-        "integration": "Integración de Sistemas"
-      },
-      "cta": "Hablemos de Tu Proyecto"
-    },
-    "comingSoon": "Próximamente"
+  "explainer": {
+    "text": "¿Qué es un Sistema Operativo de IA?",
+    "description": "Un conjunto conectado de herramientas impulsadas por IA diseñadas para tu industria: respuesta automática a leads, programación inteligente, generación de documentos, dashboards en tiempo real y más — todo funcionando en conjunto, sustituyendo procesos manuales en toda tu operación."
   },
-  "capabilities": {
-    "label": "Capacidades Principales",
-    "title": "Las herramientas que tu equipo realmente necesita — listas para funcionar desde el día uno",
-    "automation": {
-      "title": "Agentes de Automatización",
-      "description": "Automatiza flujos de trabajo repetitivos en todo tu negocio. Libera a tu equipo de tareas manuales y haz que tus operaciones sean más rápidas, inteligentes y eficientes."
-    },
-    "voice": {
-      "title": "Agente de Voz IA",
-      "description": "Gestiona llamadas entrantes y salientes automáticamente — califica leads, responde preguntas o agenda citas en múltiples idiomas.",
-      "tags": ["Visión", "Planificación", "Marketing"]
-    },
-    "leads": {
-      "title": "Calificación de Leads",
-      "description": "Captura y califica leads automáticamente en todos los canales. Nuestros sistemas priorizan las mejores oportunidades y sincronizan datos directamente con tu CRM o ERP.",
-      "tags": ["Conversión", "Ventas"]
-    },
-    "analytics": {
-      "title": "Datos y Analítica",
-      "description": "Convierte tus datos en decisiones. Integramos modelos de IA y ML para extraer insights, identificar tendencias y descubrir oportunidades ocultas en tus datos."
+  "whatWeBuild": {
+    "label": "Lo Que Construimos",
+    "title": "Plataformas de IA específicas para tu industria, no herramientas genéricas.",
+    "subtitle": "Cada sistema está construido alrededor de los flujos de trabajo reales de tu industria — integrado con tus herramientas existentes, listo para desplegar en semanas.",
+    "tabs": {
+      "realEstate": {
+        "label": "Real Estate OS",
+        "tagline": "Todo lo que una agencia inmobiliaria moderna necesita para funcionar con IA.",
+        "cta": "Explorar Real Estate OS",
+        "modules": {
+          "module1": {
+            "title": "Motor de Respuesta a Leads",
+            "description": "Responde a leads de portales en segundos por WhatsApp — no en horas. Pre-cualificación automática, enriquecimiento y distribución inteligente a agentes."
+          },
+          "module2": {
+            "title": "Gestión Activa de Propiedades",
+            "description": "Alertas de propiedades estancadas, monitorización de precios, informes post-visita a propietarios y seguimiento de actividad para cada propiedad de tu cartera."
+          },
+          "module3": {
+            "title": "Motor de Relación con Propietarios",
+            "description": "Reactiva propietarios anteriores con informes de mercado y secuencias de nurturing automatizadas. Genera confianza antes de que consideren cambiar de agencia."
+          },
+          "module4": {
+            "title": "Automatización de Contratos",
+            "description": "Genera reservas, arras y acuerdos de comisión en clics. Checklists de documentación y seguimiento de hitos de cierre incluidos."
+          }
+        }
+      },
+      "healthServices": {
+        "label": "Health Services OS",
+        "tagline": "Diseñado específicamente para clínicas, consultas dentales y centros de bienestar.",
+        "cta": "Explorar Health Services OS",
+        "modules": {
+          "module1": {
+            "title": "Programación Inteligente",
+            "description": "Reservas impulsadas por IA entre profesionales. Rellena automáticamente huecos por cancelación, reduce ausencias y optimiza el tiempo de consulta."
+          },
+          "module2": {
+            "title": "Reactivación de Pacientes",
+            "description": "Contacto automatizado con pacientes inactivos mediante campañas de recall personalizadas. Reactiva pacientes que no han visitado en meses."
+          },
+          "module3": {
+            "title": "Hub de Comunicación con Pacientes",
+            "description": "Comunicaciones unificadas por WhatsApp, email y SMS. Confirmaciones automáticas, seguimientos y solicitudes de reseñas post-visita."
+          },
+          "module4": {
+            "title": "Seguros y Documentación",
+            "description": "Automatiza verificaciones de elegibilidad, procesamiento de reclamaciones y generación de notas clínicas. Reduce la carga administrativa y acelera los reembolsos."
+          }
+        }
+      },
+      "custom": {
+        "label": "Soluciones Personalizadas",
+        "tagline": "Tu negocio es único. Tu sistema de IA también debería serlo.",
+        "cta": "Hablar de Tu Proyecto",
+        "modules": {
+          "module1": {
+            "title": "Automatización de Flujos de Trabajo",
+            "description": "Mapea y automatiza cualquier proceso de negocio de principio a fin — desde enrutamiento simple de tareas hasta orquestación compleja multi-sistema."
+          },
+          "module2": {
+            "title": "Agentes de IA Personalizados",
+            "description": "Agentes de IA diseñados a medida, entrenados con tus datos y lógica de negocio. No genéricos — diseñados alrededor de tus operaciones específicas."
+          },
+          "module3": {
+            "title": "Integración de Sistemas",
+            "description": "Conecta CRMs, ERPs, bases de datos, APIs y sistemas legacy en un ecosistema inteligente y automatizado."
+          },
+          "module4": {
+            "title": "Dashboards y Analítica",
+            "description": "Dashboards operacionales en tiempo real diseñados alrededor de tus KPIs, fuentes de datos y flujos de toma de decisiones."
+          }
+        }
+      }
     }
   },
-  "benefits": {
-    "label": "Lo que nos diferencia",
-    "title": "Construido para las exigencias",
-    "titleLine2": "de la empresa moderna.",
-    "speed": {
-      "title": "Velocidad",
-      "description": "Tiempo de valor más rápido con nuestras soluciones de IA empresarial y marketplace de agentes IA."
-    },
-    "control": {
-      "title": "Control",
-      "description": "El poder de una plataforma estandarizada construida para las exigencias de la empresa."
-    },
-    "bookMeeting": {
-      "title": "Reserva una reunión",
-      "description": "¿Listo para transformar tus operaciones?",
-      "cta": "Reservar Ahora"
-    },
-    "flexibility": {
-      "title": "Flexibilidad",
-      "description": "Toma el control con conexión fluida a cualquier modelo de IA, fuente de datos, aplicación empresarial o infraestructura que necesites."
-    },
-    "depth": {
-      "title": "Capacidades profundas",
-      "description": "Una plataforma de agentes con la profundidad para adaptarse a cada interacción, flujo de trabajo y ecosistema empresarial."
-    },
-    "experience": {
-      "title": "Experiencia comprobada",
-      "description": "Somos una empresa AI-first que ha construido su tecnología y éxito junto con clientes empresariales globales."
+  "industryGrid": {
+    "label": "Industrias",
+    "title": "Sistemas operativos de IA para tu industria.",
+    "subtitle": "Construimos sistemas de IA completos adaptados a cómo funciona realmente tu industria — no automatización genérica que necesita meses de personalización.",
+    "industries": {
+      "realEstate": {
+        "title": "Inmobiliaria",
+        "description": "Automatiza respuesta a leads, gestión de propiedades y contratos para agencias e inmobiliarias."
+      },
+      "healthcare": {
+        "title": "Salud y Dental",
+        "description": "Programación inteligente, reactivación de pacientes y documentación clínica para consultas modernas."
+      },
+      "professional": {
+        "title": "Servicios Profesionales",
+        "description": "Optimiza la captación de clientes, generación de documentos y flujos de proyecto para bufetes, asesorías y consultoras."
+      },
+      "industrial": {
+        "title": "Industrial y Manufactura",
+        "description": "Monitorización de producción, automatización de cadena de suministro y sistemas de control de calidad para fabricantes medianos."
+      },
+      "agencies": {
+        "title": "Agencias",
+        "description": "Escala la entrega de servicios, automatiza informes y aumenta la capacidad de clientes sin contratar."
+      },
+      "other": {
+        "title": "Otras Industrias",
+        "description": "¿No ves tu industria? Realizamos una auditoría de IA y construimos exactamente lo que necesitas."
+      }
     }
+  },
+  "beforeAfter": {
+    "label": "Por Qué Autonymo",
+    "title": "Tus operaciones están a punto de cambiar.",
+    "subtitle": "Deja de parchear flujos de trabajo con hojas de cálculo y seguimientos manuales. Empieza a funcionar con un sistema operativo inteligente.",
+    "before": {
+      "title": "Antes — Operaciones Manuales",
+      "items": {
+        "item1": "Los leads esperan horas — los prospectos se van antes de que respondas",
+        "item2": "El equipo se ahoga en administración, entrada de datos y seguimientos manuales",
+        "item3": "Escalar significa contratar más personas por cada nueva cuenta",
+        "item4": "Información dispersa entre herramientas, bandejas de entrada y hojas de cálculo",
+        "item5": "Decisiones basadas en intuición, no en datos en tiempo real",
+        "item6": "Cada nuevo proceso tarda meses en configurarse y optimizarse"
+      }
+    },
+    "after": {
+      "title": "Después — Autonymo OS",
+      "items": {
+        "item1": "La IA responde a consultas en segundos, 24/7 — ningún lead se queda sin atender",
+        "item2": "Flujos automatizados gestionan el trabajo repetitivo para que tu equipo se enfoque en el valor",
+        "item3": "El mismo equipo gestiona 3-5x más con la IA haciendo el trabajo pesado",
+        "item4": "Un sistema unificado con dashboards en tiempo real y datos conectados",
+        "item5": "La IA detecta insights, identifica patrones y recomienda acciones",
+        "item6": "Nuevas capacidades desplegadas en días, no meses"
+      }
+    },
+    "bottomNote": "Los equipos que ya usan Autonymo operan a una velocidad diferente"
   },
   "howItWorks": {
     "label": "Cómo Funciona",
-    "title": "Empezar es fácil",
+    "title": "De la primera llamada al sistema en producción.",
     "steps": {
       "discovery": {
         "step": "01",
-        "title": "Llamada de Descubrimiento",
-        "description": "Aprendemos sobre tu negocio, mapeamos tus flujos de trabajo e identificamos las áreas de mayor impacto donde la IA puede generar resultados reales."
+        "timeline": "Semana 1",
+        "title": "Descubrimiento y Auditoría",
+        "description": "Mapeamos tus flujos de trabajo, stack tecnológico y puntos de dolor. Recibes un roadmap de implementación de IA priorizado con plazos y ROI esperado."
       },
       "build": {
         "step": "02",
-        "title": "Construir e Integrar",
-        "description": "Diseñamos, desarrollamos y conectamos tus agentes de IA personalizados y automatizaciones directamente en tus sistemas existentes."
+        "timeline": "Semanas 2-4",
+        "title": "Construcción y Configuración",
+        "description": "Diseñamos y construimos tu sistema operativo de IA, integrado con tus herramientas existentes — CRM, WhatsApp, email, calendario y más."
       },
       "launch": {
         "step": "03",
-        "title": "Lanzar y Dar Soporte",
-        "description": "Probamos todo de punta a punta, lanzamos con tu equipo y proporcionamos optimización continua y un período de soporte de 30 días."
+        "timeline": "Semana 4-5",
+        "title": "Lanzamiento y Formación",
+        "description": "Tu sistema entra en producción. Formamos a tu equipo de forma práctica y optimizamos el rendimiento durante una ventana de soporte de 30 días."
       }
     }
   },
   "cta": {
     "title": "¿Listo para automatizar",
-    "titleLine2": "lo impensable?",
-    "subtitle": "Únete a los equipos visionarios que usan Autonymo para transformar sus operaciones en una ventaja competitiva.",
-    "button": "Reservar una Llamada"
+    "titleLine2": "tus operaciones?",
+    "subtitle": "Reserva una llamada de descubrimiento gratuita. Mapearemos tus flujos de trabajo y te mostraremos exactamente dónde la IA puede tener el mayor impacto en tu negocio.",
+    "button": "Reservar Llamada de Descubrimiento"
   },
   "footer": {
     "solutions": "Soluciones",
