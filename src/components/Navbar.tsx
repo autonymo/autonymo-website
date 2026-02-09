@@ -51,7 +51,7 @@ export const Navbar = () => {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="relative z-50 px-3 py-3 bg-white/80 backdrop-blur-xl border-x border-b border-sand rounded-b-xl"
+                className="relative z-50 px-3 py-2 bg-white/80 backdrop-blur-xl border-x border-b border-sand rounded-b-xl"
             >
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">

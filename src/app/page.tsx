@@ -730,60 +730,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 bg-off-white border-t border-sand">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
-            <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="flex items-center gap-2.5 group mb-6">
-                <div className="relative w-8 h-8 flex items-center justify-center overflow-hidden rounded-lg bg-charcoal">
-                  <div className="absolute inset-0 bg-accent-blue opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span className="relative text-white font-bold text-sm select-none">A</span>
-                </div>
-                <span className="font-display text-lg font-bold tracking-tight text-charcoal">
-                  Autonymo
-                </span>
-              </Link>
-              <p className="text-text-muted text-sm leading-relaxed">
-                Next-generation AI systems for the modern enterprise.
-              </p>
-            </div>
-            <div>
-              <h5 className="font-display font-bold text-charcoal mb-4">Product</h5>
-              <ul className="space-y-2 text-sm text-text-muted">
-                <li><Link href="#ai-solutions" className="hover:text-charcoal transition-colors">AI Solutions</Link></li>
-                <li><Link href="#benefits" className="hover:text-charcoal transition-colors">Benefits</Link></li>
-                <li><Link href="#pricing" className="hover:text-charcoal transition-colors">Pricing</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-display font-bold text-charcoal mb-4">Company</h5>
-              <ul className="space-y-2 text-sm text-text-muted">
-                <li><Link href="#our-team" className="hover:text-charcoal transition-colors">Our Team</Link></li>
-                <li><Link href="/about" className="hover:text-charcoal transition-colors">About</Link></li>
-                <li><Link href="/careers" className="hover:text-charcoal transition-colors">Careers</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-display font-bold text-charcoal mb-4">Legal</h5>
-              <ul className="space-y-2 text-sm text-text-muted">
-                <li><Link href="/privacy" className="hover:text-charcoal transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-charcoal transition-colors">Terms of Service</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-sand flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-text-muted text-xs">
-              © {new Date().getFullYear()} Autonymo Inc. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-text-muted">
-              <a href="#" className="hover:text-charcoal transition-colors text-xs">Twitter</a>
-              <a href="#" className="hover:text-charcoal transition-colors text-xs">LinkedIn</a>
-              <a href="#" className="hover:text-charcoal transition-colors text-xs">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+
     </div>
   );
 }
