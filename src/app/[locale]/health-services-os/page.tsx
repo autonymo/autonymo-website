@@ -193,7 +193,7 @@ function HealthIllustration() {
 
 export default function HealthServicesOS() {
   return (
-    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-white font-sans overflow-x-hidden">
       {/* ──────── HERO — Left heading + Right illustration ──────── */}
       <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">

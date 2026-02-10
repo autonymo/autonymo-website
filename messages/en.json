@@ -21,6 +21,8 @@
     "realEstateOSDesc": "AI-powered lead response, listing management, and contract automation for real estate agencies.",
     "healthServicesOS": "Health Services OS",
     "healthServicesOSDesc": "Smart scheduling, patient reactivation, and clinical documentation for modern practices.",
+    "leadGenerationOS": "Lead Generation OS",
+    "leadGenerationOSDesc": "AI-powered lead capture, scoring, nurturing, and outbound calling to fill your pipeline automatically.",
     "customSolutionsDesc": "Custom AI implementations tailored to your business workflows and industry.",
     "mobileMenu": "Menu"
   },
@@ -87,6 +89,29 @@
           "module4": {
             "title": "Insurance & Documentation",
             "description": "Automate eligibility checks, claims processing, and clinical note generation. Reduce admin burden and speed up reimbursements."
+          }
+        }
+      },
+      "leadGeneration": {
+        "label": "Lead Generation OS",
+        "tagline": "AI-powered pipeline automation for sales teams that want to close more.",
+        "cta": "Explore Lead Generation OS",
+        "modules": {
+          "module1": {
+            "title": "Multi-Channel Capture",
+            "description": "Capture leads from web forms, social ads, LinkedIn, landing pages, and referrals into one unified pipeline — enriched and scored automatically."
+          },
+          "module2": {
+            "title": "AI Lead Scoring",
+            "description": "Score every lead in real time based on behavioral signals, firmographic data, and intent indicators. Prioritize the hottest opportunities."
+          },
+          "module3": {
+            "title": "Smart Nurture Sequences",
+            "description": "Deploy personalized email, LinkedIn, and SMS campaigns that adapt content and timing based on each prospect's engagement."
+          },
+          "module4": {
+            "title": "AI Outbound Calling",
+            "description": "Automated cold outreach and follow-up calls with AI voice agents that qualify prospects and book meetings on your behalf."
           }
         }
       },
@@ -218,6 +243,7 @@
     "copyright": "© {year} Autonymo. All rights reserved.",
     "realEstateOS": "Real Estate OS",
     "healthServicesOS": "Health Services OS",
+    "leadGenerationOS": "Lead Generation OS",
     "customSolutions": "Custom Solutions"
   },
   "languages": {

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowDownRight, Globe, ArrowUpRight, Menu, X, Building2, Heart, Settings2 } from "lucide-react";
+import { ArrowDownRight, Globe, ArrowUpRight, Menu, X, Building2, Heart, Target, Settings2 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -37,6 +37,14 @@ export const Navbar = () => {
       icon: Heart,
       color: "bg-emerald-50",
       iconColor: "text-emerald-600",
+    },
+    {
+      title: t("leadGenerationOS"),
+      description: t("leadGenerationOSDesc"),
+      href: "/lead-generation-os" as const,
+      icon: Target,
+      color: "bg-purple-50",
+      iconColor: "text-purple-600",
     },
     {
       title: t("customSolutions"),
@@ -240,7 +248,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-[calc(100%+8px)] left-0 w-full z-40 hidden md:grid grid-cols-3 gap-2 px-3 sm:px-0"
+            className="absolute top-[calc(100%+8px)] left-0 w-full z-40 hidden md:grid grid-cols-4 gap-2 px-3 sm:px-0"
           >
             {industries.map((item, index) => (
               <Link

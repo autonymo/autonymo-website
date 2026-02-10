@@ -87,7 +87,7 @@ export default function Home() {
         {/* ──────────────────── FEATURED PLATFORM CARDS (half-visible) ──────────────────── */}
         <section className="pb-16 px-6 bg-transparent relative z-10 -mt-20 sm:-mt-24 lg:-mt-32">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 {
                   title: t("whatWeBuild.tabs.realEstate.label"),
@@ -100,6 +100,12 @@ export default function Home() {
                   intro: t("whatWeBuild.tabs.healthServices.tagline"),
                   color: "bg-[#F5F5F7]",
                   href: "/health-services-os" as const,
+                },
+                {
+                  title: t("whatWeBuild.tabs.leadGeneration.label"),
+                  intro: t("whatWeBuild.tabs.leadGeneration.tagline"),
+                  color: "bg-[#F3F0FF]",
+                  href: "/lead-generation-os" as const,
                 },
                 {
                   title: t("whatWeBuild.tabs.custom.label"),

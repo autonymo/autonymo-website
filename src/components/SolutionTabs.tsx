@@ -18,6 +18,10 @@ import {
   Plug,
   LayoutDashboard,
   TrendingUp,
+  Target,
+  Magnet,
+  Filter,
+  Mail,
   Clock,
   Bell,
   CheckCircle2,
@@ -41,6 +45,12 @@ const tabs = [
     icon: Heart,
     href: "/health-services-os" as const,
     moduleIcons: [Calendar, Users, Phone, FileText],
+  },
+  {
+    key: "leadGeneration" as const,
+    icon: Target,
+    href: "/lead-generation-os" as const,
+    moduleIcons: [Magnet, Filter, Mail, Phone],
   },
   {
     key: "custom" as const,
@@ -291,6 +301,116 @@ function HealthIllustration() {
   );
 }
 
+/* ── Lead Generation OS Illustration ────────────────────────── */
+function LeadGenIllustration() {
+  return (
+    <div className="w-full h-full rounded-xl bg-white border border-sand/80 overflow-hidden relative shadow-sm">
+      {/* Title bar */}
+      <div className="absolute top-0 left-0 right-0 h-9 bg-[#FAFAF8] border-b border-sand/40 flex items-center px-4 gap-1.5">
+        <div className="w-2 h-2 rounded-full bg-charcoal/8" />
+        <div className="w-2 h-2 rounded-full bg-charcoal/8" />
+        <div className="w-2 h-2 rounded-full bg-charcoal/8" />
+        <div className="ml-3 h-4 w-22 bg-charcoal/5 rounded" />
+        <div className="ml-auto flex gap-1.5">
+          <div className="h-5 px-2 rounded bg-charcoal/[0.03] border border-charcoal/[0.06] flex items-center gap-1">
+            <Target className="w-2.5 h-2.5 text-charcoal/20" />
+            <div className="w-3 h-3 rounded-full bg-accent-blue/15 flex items-center justify-center">
+              <span className="text-[6px] font-bold text-accent-blue/60">5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute top-9 left-0 right-0 bottom-0 flex">
+        {/* Sidebar */}
+        <div className="w-[72px] border-r border-sand/30 bg-[#FAFAF8] p-2 flex flex-col gap-1">
+          <div className="h-6 rounded bg-charcoal/[0.06] flex items-center px-1.5 gap-1">
+            <Target className="w-2.5 h-2.5 text-charcoal/25" />
+            <div className="h-1 w-6 bg-charcoal/10 rounded-full" />
+          </div>
+          <div className="h-6 rounded flex items-center px-1.5 gap-1">
+            <Magnet className="w-2.5 h-2.5 text-charcoal/15" />
+            <div className="h-1 w-5 bg-charcoal/5 rounded-full" />
+          </div>
+          <div className="h-6 rounded flex items-center px-1.5 gap-1">
+            <Mail className="w-2.5 h-2.5 text-charcoal/15" />
+            <div className="h-1 w-7 bg-charcoal/5 rounded-full" />
+          </div>
+          <div className="h-6 rounded flex items-center px-1.5 gap-1">
+            <BarChart3 className="w-2.5 h-2.5 text-charcoal/15" />
+            <div className="h-1 w-4 bg-charcoal/5 rounded-full" />
+          </div>
+        </div>
+
+        {/* Main content */}
+        <div className="flex-1 p-3 flex flex-col gap-2.5">
+          {/* Funnel stats */}
+          <div className="grid grid-cols-4 gap-1.5">
+            {[
+              { label: "Captured", value: "1.8k", color: "bg-accent-blue/10" },
+              { label: "Scored", value: "892", color: "bg-accent-blue/8" },
+              { label: "Nurtured", value: "634", color: "bg-accent-blue/6" },
+              { label: "Won", value: "187", color: "bg-success/8" },
+            ].map((stat, i) => (
+              <div key={i} className={`${stat.color} rounded-lg border border-sand/30 p-1.5 text-center`}>
+                <span className="font-display text-xs font-bold text-charcoal/30 block">{stat.value}</span>
+                <span className="text-[5px] text-charcoal/15 font-medium">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Channel chart */}
+          <div className="bg-[#FAFAF8] rounded-lg border border-sand/30 p-2 flex flex-col gap-1.5">
+            <div className="flex items-center justify-between mb-0.5">
+              <div className="h-1.5 w-16 bg-charcoal/10 rounded-full" />
+              <div className="h-3 px-1.5 rounded bg-accent-blue/8 flex items-center">
+                <span className="text-[6px] font-semibold text-accent-blue/50">Live</span>
+              </div>
+            </div>
+            <div className="flex items-end gap-1 h-8">
+              {[65, 48, 38, 25, 18].map((h, i) => (
+                <div key={i} className="flex-1 flex flex-col items-center gap-0.5">
+                  <div
+                    className={`w-full rounded-sm ${i === 0 ? 'bg-accent-blue/40' : 'bg-accent-blue/15'}`}
+                    style={{ height: `${h}%` }}
+                  />
+                  <span className="text-[5px] text-charcoal/15">{['Web', 'Ads', 'LI', 'Em', 'Ref'][i]}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Active sequences */}
+          <div className="flex-1 bg-[#FAFAF8] rounded-lg border border-sand/30 p-2 flex flex-col gap-1">
+            <div className="h-1.5 w-20 bg-charcoal/10 rounded-full mb-0.5" />
+            {[
+              { status: "calling", channel: "AI Call" },
+              { status: "email", channel: "Seq #3" },
+              { status: "booked", channel: "Meeting" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-1.5 h-5 px-1.5 rounded bg-white/80 border border-sand/20">
+                <div className={`w-1 h-1 rounded-full ${item.status === "calling" ? "bg-green-400" : item.status === "booked" ? "bg-success/40" : "bg-accent-blue/40"}`} />
+                <div className="h-1 w-8 bg-charcoal/8 rounded-full" />
+                <div className="ml-auto flex items-center gap-1">
+                  <div className={`h-3 px-1 rounded flex items-center ${
+                    item.status === "booked" ? "bg-success/8" : item.status === "calling" ? "bg-green-50" : "bg-accent-blue/8"
+                  }`}>
+                    <span className={`text-[5px] font-semibold ${
+                      item.status === "booked" ? "text-success/50" : item.status === "calling" ? "text-green-600/50" : "text-accent-blue/50"
+                    }`}>
+                      {item.channel}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── Custom Solutions Illustration ──────────────────────────── */
 function CustomIllustration() {
   return (
@@ -385,7 +505,7 @@ function CustomIllustration() {
   );
 }
 
-const illustrations = [RealEstateIllustration, HealthIllustration, CustomIllustration];
+const illustrations = [RealEstateIllustration, HealthIllustration, LeadGenIllustration, CustomIllustration];
 
 export function SolutionTabs() {
   const t = useTranslations("whatWeBuild");

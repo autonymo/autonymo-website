@@ -14,6 +14,7 @@ const Footer = () => {
     [t("solutions")]: [
       { name: t("realEstateOS"), href: "/real-estate-os" as const },
       { name: t("healthServicesOS"), href: "/health-services-os" as const },
+      { name: t("leadGenerationOS"), href: "/lead-generation-os" as const },
       { name: t("customSolutions"), href: "/custom-solutions" as const },
     ],
     [t("company")]: [
@@ -22,7 +23,6 @@ const Footer = () => {
       { name: t("bookCall"), href: "/book-a-call" as const },
     ],
     [t("social")]: [
-      { name: "Twitter", href: "#" as const },
       { name: "LinkedIn", href: "#" as const },
       { name: "Instagram", href: "#" as const },
     ],
@@ -67,7 +67,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="text-text-muted hover:text-charcoal transition-colors text-sm font-medium flex items-center gap-1 group"
+                        className="text-text-muted hover:text-charcoal transition-colors text-sm font-medium flex items-center gap-1 group whitespace-nowrap"
                       >
                         {link.name}
                         <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0 group-hover:text-accent-blue" />

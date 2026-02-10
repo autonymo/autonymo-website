@@ -440,6 +440,73 @@ export default function CustomSolutions() {
         </div>
       </section>
 
+      {/* ──────── EXISTING OS PLATFORMS ──────── */}
+      <section className="py-24 px-6 bg-white border-y border-sand">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
+              Or Start With a Proven System
+            </h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
+              We also have ready-to-deploy <br />
+              AI operating systems.
+            </h3>
+            <p className="text-text-muted text-lg leading-relaxed mt-4">
+              If your business fits one of our existing verticals, you can get started faster
+              with a pre-built system that&apos;s already proven — and still fully customizable.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Users,
+                title: "Real Estate OS",
+                desc: "AI-powered lead response, listing management, and contract automation for real estate agencies.",
+                href: "/real-estate-os" as const,
+                color: "bg-blue-50",
+                iconColor: "text-blue-600",
+              },
+              {
+                icon: CheckCircle2,
+                title: "Health Services OS",
+                desc: "Smart scheduling, patient reactivation, and clinical documentation for modern practices.",
+                href: "/health-services-os" as const,
+                color: "bg-emerald-50",
+                iconColor: "text-emerald-600",
+              },
+              {
+                icon: Zap,
+                title: "Lead Generation OS",
+                desc: "AI-powered lead capture, scoring, nurturing, and outbound calling to fill your pipeline automatically.",
+                href: "/lead-generation-os" as const,
+                color: "bg-purple-50",
+                iconColor: "text-purple-600",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Link href={item.href} className="block group h-full">
+                  <div className="p-6 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-300 flex flex-col h-full relative cursor-pointer">
+                    <ArrowUpRight className="absolute top-6 right-6 w-5 h-5 text-warm-gray group-hover:text-charcoal group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                    <div className={`w-10 h-10 rounded-xl ${item.color} flex items-center justify-center mb-4`}>
+                      <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                    </div>
+                    <h4 className="font-display text-lg font-bold text-charcoal mb-2 pr-8">{item.title}</h4>
+                    <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ──────── CTA — Book a Call Card ──────── */}
       <section className="py-24 px-6 bg-cream">
         <div className="max-w-6xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
