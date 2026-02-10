@@ -35,7 +35,7 @@ export default function BookACall() {
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
       {/* Hero */}
       <section className="relative pt-28 pb-24 px-6 sm:pt-36 sm:pb-32 bg-cream overflow-hidden">
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-7xl mx-auto relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left: Content */}
             <motion.div
@@ -135,7 +135,7 @@ export default function BookACall() {
 
       {/* Trust Section */}
       <section className="py-16 px-6 bg-cream border-y border-sand">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
             Why Teams Choose Autonymo
           </h2>

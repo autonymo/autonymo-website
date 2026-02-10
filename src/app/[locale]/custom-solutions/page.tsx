@@ -151,7 +151,7 @@ export default function CustomSolutions() {
             <line x1="1000" y1="0" x2="0" y2="1000" stroke="rgba(163, 158, 151, 0.08)" strokeWidth="1" />
           </svg>
         </div>
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — Heading */}
             <motion.div
@@ -195,7 +195,7 @@ export default function CustomSolutions() {
 
       {/* ──────── WHO IT'S FOR ──────── */}
       <section className="py-16 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-10">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               Who This Is For
@@ -242,7 +242,7 @@ export default function CustomSolutions() {
 
       {/* ──────── THE PROBLEM ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               The Problem
@@ -294,7 +294,7 @@ export default function CustomSolutions() {
 
       {/* ──────── HOW WE SOLVE IT — Vertical Flow ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               How We Solve It
@@ -385,7 +385,7 @@ export default function CustomSolutions() {
 
       {/* ──────── WHAT WE BUILD — Left text + Right list ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
@@ -442,7 +442,7 @@ export default function CustomSolutions() {
 
       {/* ──────── EXISTING OS PLATFORMS ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-12">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               Or Start With a Proven System
@@ -509,7 +509,7 @@ export default function CustomSolutions() {
 
       {/* ──────── CTA — Book a Call Card ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
           <div className="p-12 md:p-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -524,7 +524,7 @@ export default function CustomSolutions() {
                 </p>
                 <Link
                   href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-medium tracking-tight text-charcoal rounded-xl bg-white hover:bg-white/90 transition-all text-base"
+                  className="inline-flex items-center justify-center gap-2 font-medium tracking-tight text-charcoal text-base bg-white rounded-xl px-8 py-3.5 hover:opacity-90 transition-colors active:scale-95"
                 >
                   Book a Discovery Call
                   <ArrowRight className="w-4 h-4" />

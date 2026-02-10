@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import React, { memo, useState } from "react";
+import { motion } from "motion/react";
 import {
   ArrowUpRight,
   Building2,
@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import CardSwap, { Card } from "./CardSwap";
 
 const tabs = [
   {
@@ -63,7 +64,7 @@ const tabs = [
 const moduleKeys = ["module1", "module2", "module3", "module4"] as const;
 
 /* ── Real Estate OS Illustration ────────────────────────────── */
-function RealEstateIllustration() {
+const RealEstateIllustration = memo(function RealEstateIllustration() {
   return (
     <div className="w-full h-full rounded-xl bg-white border border-sand/80 overflow-hidden relative shadow-sm">
       {/* Title bar */}
@@ -173,10 +174,10 @@ function RealEstateIllustration() {
       </div>
     </div>
   );
-}
+});
 
 /* ── Health Services OS Illustration ────────────────────────── */
-function HealthIllustration() {
+const HealthIllustration = memo(function HealthIllustration() {
   return (
     <div className="w-full h-full rounded-xl bg-white border border-sand/80 overflow-hidden relative shadow-sm">
       {/* Title bar */}
@@ -238,13 +239,12 @@ function HealthIllustration() {
               {Array.from({ length: 15 }).map((_, i) => (
                 <div
                   key={i}
-                  className={`h-3 rounded-sm ${
-                    [2, 5, 7, 11, 13].includes(i)
-                      ? "bg-charcoal/8 border border-charcoal/[0.06]"
-                      : i === 3
+                  className={`h-3 rounded-sm ${[2, 5, 7, 11, 13].includes(i)
+                    ? "bg-charcoal/8 border border-charcoal/[0.06]"
+                    : i === 3
                       ? "bg-accent-blue/10 border border-accent-blue/15"
                       : "bg-white border border-sand/20"
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -282,12 +282,10 @@ function HealthIllustration() {
                 </div>
                 <div className="h-1 w-8 bg-charcoal/8 rounded-full" />
                 <div className="ml-auto flex items-center gap-1">
-                  <div className={`h-3 px-1 rounded flex items-center ${
-                    patient.type === "confirmed" ? "bg-success/8" : patient.type === "reactivated" ? "bg-accent-blue/8" : "bg-charcoal/[0.04]"
-                  }`}>
-                    <span className={`text-[5px] font-semibold ${
-                      patient.type === "confirmed" ? "text-success/50" : patient.type === "reactivated" ? "text-accent-blue/50" : "text-charcoal/25"
+                  <div className={`h-3 px-1 rounded flex items-center ${patient.type === "confirmed" ? "bg-success/8" : patient.type === "reactivated" ? "bg-accent-blue/8" : "bg-charcoal/[0.04]"
                     }`}>
+                    <span className={`text-[5px] font-semibold ${patient.type === "confirmed" ? "text-success/50" : patient.type === "reactivated" ? "text-accent-blue/50" : "text-charcoal/25"
+                      }`}>
                       {patient.type === "confirmed" ? "CONF" : patient.type === "reactivated" ? "REACT" : "PEND"}
                     </span>
                   </div>
@@ -299,10 +297,10 @@ function HealthIllustration() {
       </div>
     </div>
   );
-}
+});
 
 /* ── Lead Generation OS Illustration ────────────────────────── */
-function LeadGenIllustration() {
+const LeadGenIllustration = memo(function LeadGenIllustration() {
   return (
     <div className="w-full h-full rounded-xl bg-white border border-sand/80 overflow-hidden relative shadow-sm">
       {/* Title bar */}
@@ -392,12 +390,10 @@ function LeadGenIllustration() {
                 <div className={`w-1 h-1 rounded-full ${item.status === "calling" ? "bg-green-400" : item.status === "booked" ? "bg-success/40" : "bg-accent-blue/40"}`} />
                 <div className="h-1 w-8 bg-charcoal/8 rounded-full" />
                 <div className="ml-auto flex items-center gap-1">
-                  <div className={`h-3 px-1 rounded flex items-center ${
-                    item.status === "booked" ? "bg-success/8" : item.status === "calling" ? "bg-green-50" : "bg-accent-blue/8"
-                  }`}>
-                    <span className={`text-[5px] font-semibold ${
-                      item.status === "booked" ? "text-success/50" : item.status === "calling" ? "text-green-600/50" : "text-accent-blue/50"
+                  <div className={`h-3 px-1 rounded flex items-center ${item.status === "booked" ? "bg-success/8" : item.status === "calling" ? "bg-green-50" : "bg-accent-blue/8"
                     }`}>
+                    <span className={`text-[5px] font-semibold ${item.status === "booked" ? "text-success/50" : item.status === "calling" ? "text-green-600/50" : "text-accent-blue/50"
+                      }`}>
                       {item.channel}
                     </span>
                   </div>
@@ -409,10 +405,10 @@ function LeadGenIllustration() {
       </div>
     </div>
   );
-}
+});
 
 /* ── Custom Solutions Illustration ──────────────────────────── */
-function CustomIllustration() {
+const CustomIllustration = memo(function CustomIllustration() {
   return (
     <div className="w-full h-full rounded-xl bg-white border border-sand/80 overflow-hidden relative shadow-sm">
       {/* Title bar */}
@@ -503,20 +499,27 @@ function CustomIllustration() {
       </div>
     </div>
   );
-}
+});
 
 const illustrations = [RealEstateIllustration, HealthIllustration, LeadGenIllustration, CustomIllustration];
 
 export function SolutionTabs() {
   const t = useTranslations("whatWeBuild");
   const [activeTab, setActiveTab] = useState(0);
+  const [swapTrigger, setSwapTrigger] = useState(0);
+
+  const handleTabClick = (index: number) => {
+    if (index === activeTab) return;
+    setActiveTab(index);
+    setSwapTrigger((n) => n + 1);
+  };
 
   const currentTab = tabs[activeTab];
-  const Illustration = illustrations[activeTab];
+
 
   return (
     <section id="solutions" className="py-14 px-6 bg-cream">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-8">
           <motion.h2
@@ -537,19 +540,18 @@ export function SolutionTabs() {
         </div>
 
         {/* Tab Bar */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-4">
           {tabs.map((tab, index) => {
             const isActive = index === activeTab;
             const TabIcon = tab.icon;
             return (
               <button
                 key={tab.key}
-                onClick={() => setActiveTab(index)}
-                className={`group flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 border ${
-                  isActive
-                    ? "bg-charcoal text-white border-charcoal shadow-lg shadow-charcoal/10"
-                    : "bg-white text-text-muted border-sand hover:border-warm-gray hover:text-charcoal"
-                }`}
+                onClick={() => handleTabClick(index)}
+                className={`group flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 border ${isActive
+                  ? "bg-charcoal text-white border-charcoal shadow-lg shadow-charcoal/10"
+                  : "bg-white text-text-muted border-sand hover:border-warm-gray hover:text-charcoal"
+                  }`}
               >
                 <TabIcon className={`w-4 h-4 ${isActive ? "text-white" : ""}`} />
                 {t(`tabs.${tab.key}.label`)}
@@ -559,69 +561,76 @@ export function SolutionTabs() {
         </div>
 
         {/* Tab Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-white rounded-2xl border border-sand overflow-hidden shadow-sm"
-          >
-            {/* Tagline bar */}
-            <div className="px-8 pt-6 pb-0">
-              <p className="text-text-muted text-sm font-medium">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-2xl border border-sand overflow-hidden shadow-sm"
+        >
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {/* Left: Modules List */}
+            <div className="p-8 flex flex-col gap-1">
+              {/* Tagline */}
+              <p className="text-text-muted text-sm font-medium mb-2">
                 {t(`tabs.${currentTab.key}.tagline`)}
               </p>
-            </div>
-
-            {/* Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Left: Modules List */}
-              <div className="p-8 flex flex-col gap-1">
-                {moduleKeys.map((moduleKey, i) => {
-                  const ModuleIcon = currentTab.moduleIcons[i];
-                  return (
-                    <div
-                      key={moduleKey}
-                      className="group flex items-start gap-4 p-4 rounded-xl hover:bg-cream/70 transition-colors duration-200"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-[#FAFAF8] border border-sand/60 flex items-center justify-center flex-shrink-0">
-                        <ModuleIcon className="w-[18px] h-[18px] text-charcoal/40" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-display text-sm font-bold text-charcoal mb-1">
-                          {t(`tabs.${currentTab.key}.modules.${moduleKey}.title`)}
-                        </h4>
-                        <p className="text-text-muted text-xs leading-relaxed">
-                          {t(`tabs.${currentTab.key}.modules.${moduleKey}.description`)}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-
-                {/* CTA Link */}
-                <div className="mt-4 ml-4">
-                  <Link
-                    href={currentTab.href}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-blue hover:text-charcoal transition-colors group/link"
+              {moduleKeys.map((moduleKey, i) => {
+                const ModuleIcon = currentTab.moduleIcons[i];
+                return (
+                  <div
+                    key={moduleKey}
+                    className="group flex items-start gap-4 p-4 rounded-xl hover:bg-cream/70 transition-colors duration-200"
                   >
-                    {t(`tabs.${currentTab.key}.cta`)}
-                    <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                  </Link>
-                </div>
-              </div>
+                    <div className="w-10 h-10 rounded-xl bg-[#FAFAF8] border border-sand/60 flex items-center justify-center flex-shrink-0">
+                      <ModuleIcon className="w-[18px] h-[18px] text-charcoal/40" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-display text-sm font-bold text-charcoal mb-1">
+                        {t(`tabs.${currentTab.key}.modules.${moduleKey}.title`)}
+                      </h4>
+                      <p className="text-text-muted text-xs leading-relaxed">
+                        {t(`tabs.${currentTab.key}.modules.${moduleKey}.description`)}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
 
-              {/* Right: Illustration */}
-              <div className="p-8 flex items-center justify-center bg-[#FAFAF8]/50 border-t lg:border-t-0 lg:border-l border-sand/50">
-                <div className="w-full aspect-[4/3]">
-                  <Illustration />
-                </div>
+              {/* CTA Link */}
+              <div className="mt-4 ml-4">
+                <Link
+                  href={currentTab.href}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-blue hover:text-charcoal transition-colors group/link"
+                >
+                  {t(`tabs.${currentTab.key}.cta`)}
+                  <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                </Link>
               </div>
             </div>
-          </motion.div>
-        </AnimatePresence>
+
+            {/* Right: Illustration — oversized cards clipped at edges */}
+            <div className="relative overflow-hidden bg-[#FAFAF8] border-t lg:border-t-0 lg:border-l border-sand/50 self-stretch flex items-end justify-end min-h-[360px]">
+              <CardSwap
+                trigger={swapTrigger}
+                width={580}
+                height={440}
+                cardDistance={60}
+                verticalDistance={70}
+                skewAmount={4}
+                easing="elastic"
+                className="translate-x-[6%] translate-y-[14%]"
+              >
+                {illustrations.map((Illustration, i) => (
+                  <Card key={i} customClass="!bg-transparent !border-none !rounded-xl overflow-hidden">
+                    <Illustration />
+                  </Card>
+                ))}
+              </CardSwap>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

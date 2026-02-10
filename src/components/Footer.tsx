@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 
 const Footer = () => {
   const t = useTranslations("footer");
@@ -34,7 +35,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto z-10 px-3 sm:px-0">
+    <div className="relative w-full max-w-7xl mx-auto z-10 px-3 sm:px-0">
       <motion.footer
         initial={{ y: 24, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -46,10 +47,14 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-10">
             {/* Brand Column */}
             <div className="col-span-2">
-              <Link href="/" className="flex items-center gap-2 mb-6 group">
-                <div className="w-10 h-10 bg-charcoal rounded-xl flex items-center justify-center transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
-                  <div className="w-5 h-5 border-2 border-white rounded-sm rotate-45" />
-                </div>
+              <Link href="/" className="flex items-center gap-1.5 mb-6 group">
+                <Image
+                  src="/logo.png"
+                  alt="Autonymo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9"
+                />
                 <span className="font-display text-2xl font-bold tracking-tight text-charcoal">
                   Autonymo
                 </span>

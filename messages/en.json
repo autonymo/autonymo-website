@@ -9,7 +9,7 @@
     "benefits": "Benefits",
     "process": "Process",
     "about": "About",
-    "customSolutions": "Custom Solutions",
+    "customSolutions": "CustomOS",
     "blog": "Blog",
     "bookCall": "Book a Call",
     "more": "More",
@@ -19,11 +19,11 @@
     "blogsDesc": "Insights on AI automation, industry trends, and strategies.",
     "caseStudies": "Case Studies",
     "caseStudiesDesc": "See how businesses are running on Autonymo OS.",
-    "realEstateOS": "Real Estate OS",
+    "realEstateOS": "EstateOS",
     "realEstateOSDesc": "AI-powered lead response, listing management, and contract automation for real estate agencies.",
-    "healthServicesOS": "Health Services OS",
+    "healthServicesOS": "HealthOS",
     "healthServicesOSDesc": "Smart scheduling, patient reactivation, and clinical documentation for modern practices.",
-    "leadGenerationOS": "Lead Generation OS",
+    "leadGenerationOS": "LeadOS",
     "leadGenerationOSDesc": "AI-powered lead capture, scoring, nurturing, and outbound calling to fill your pipeline automatically.",
     "customSolutionsDesc": "Custom AI implementations tailored to your business workflows and industry.",
     "mobileMenu": "Menu"
@@ -49,7 +49,7 @@
     "subtitle": "Each system is built around your industry's actual workflows — integrated with your existing tools, ready to deploy in weeks.",
     "tabs": {
       "realEstate": {
-        "label": "Real Estate OS",
+        "label": "EstateOS",
         "tagline": "Everything a modern real estate agency needs to run on AI.",
         "cta": "Explore Real Estate OS",
         "modules": {
@@ -72,7 +72,7 @@
         }
       },
       "healthServices": {
-        "label": "Health Services OS",
+        "label": "HealthOS",
         "tagline": "Purpose-built for clinics, dental practices, and wellness centers.",
         "cta": "Explore Health Services OS",
         "modules": {
@@ -95,7 +95,7 @@
         }
       },
       "leadGeneration": {
-        "label": "Lead Generation OS",
+        "label": "LeadOS",
         "tagline": "AI-powered pipeline automation for sales teams that want to close more.",
         "cta": "Explore Lead Generation OS",
         "modules": {
@@ -118,7 +118,7 @@
         }
       },
       "custom": {
-        "label": "Custom Solutions",
+        "label": "CustomOS",
         "tagline": "Your business is unique. Your AI system should be too.",
         "cta": "Discuss Your Project",
         "modules": {
@@ -243,10 +243,10 @@
     "terms": "Terms of Service",
     "cookies": "Cookies",
     "copyright": "© {year} Autonymo. All rights reserved.",
-    "realEstateOS": "Real Estate OS",
-    "healthServicesOS": "Health Services OS",
-    "leadGenerationOS": "Lead Generation OS",
-    "customSolutions": "Custom Solutions"
+    "realEstateOS": "EstateOS",
+    "healthServicesOS": "HealthOS",
+    "leadGenerationOS": "LeadOS",
+    "customSolutions": "CustomOS"
   },
   "languages": {
     "en": "English",

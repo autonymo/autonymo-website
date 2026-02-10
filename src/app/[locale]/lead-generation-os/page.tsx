@@ -81,7 +81,7 @@ function LeadGenIllustration() {
                 <div className="flex -space-x-1.5">
                   {['bg-accent-blue', 'bg-purple-500', 'bg-green-500'].map((bg, i) => (
                     <div key={i} className={`w-5 h-5 rounded-full ${bg} border-2 border-white flex items-center justify-center`}>
-                      <span className="text-[7px] font-bold text-white">{['AI','S','M'][i]}</span>
+                      <span className="text-[7px] font-bold text-white">{['AI', 'S', 'M'][i]}</span>
                     </div>
                   ))}
                 </div>
@@ -220,7 +220,7 @@ export default function LeadGenerationOS() {
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
       {/* ──────── HERO — Left heading + Right illustration ──────── */}
       <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — Heading */}
             <motion.div
@@ -264,7 +264,7 @@ export default function LeadGenerationOS() {
 
       {/* ──────── STATS — Full-width with descriptions ──────── */}
       <section className="py-16 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {[
               { metric: "5×", label: "More qualified meetings", desc: "AI pre-qualifies every lead before your team picks up the phone" },
@@ -291,7 +291,7 @@ export default function LeadGenerationOS() {
 
       {/* ──────── THE PROBLEM ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               The Problem
@@ -345,7 +345,7 @@ export default function LeadGenerationOS() {
 
       {/* ──────── HOW WE SOLVE IT — Vertical Flow ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               How We Solve It
@@ -436,7 +436,7 @@ export default function LeadGenerationOS() {
 
       {/* ──────── WHAT'S INCLUDED — Left text + Right list ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
@@ -483,7 +483,7 @@ export default function LeadGenerationOS() {
 
       {/* ──────── OUR PROCESS — Timeline cards ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               Our Process
@@ -518,7 +518,7 @@ export default function LeadGenerationOS() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-8 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
+                className="group p-6 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
               >
                 <span className="font-display text-xs font-bold text-accent-blue uppercase tracking-wider bg-accent-blue/5 px-3 py-1 rounded-full self-start mb-5">
                   {item.step}
@@ -531,9 +531,94 @@ export default function LeadGenerationOS() {
         </div>
       </section>
 
+      {/* ──────── CASE STUDIES ──────── */}
+      <section className="py-24 px-6 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
+              Case Studies
+            </h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
+              Real results from sales teams <br />
+              running on Autonymo.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                company: "Velox SaaS",
+                location: "Barcelona, Spain",
+                logo: "VS",
+                logoBg: "bg-accent-blue",
+                challenge: "A B2B SaaS startup with 4 SDRs manually prospecting on LinkedIn and cold-emailing 50 leads/day. Response rates hovered at 2%, and reps spent 70% of their time on research and data entry.",
+                results: [
+                  { metric: "5×", label: "More meetings booked" },
+                  { metric: "12%", label: "Response rate (from 2%)" },
+                  { metric: "€95K", label: "Pipeline added in 60 days" },
+                ],
+                quote: "Our SDRs went from sending 50 cold emails a day to showing up at 10 qualified meetings a week. The AI does the grunt work better than we ever could.",
+                person: "Marc Puig, Head of Sales",
+              },
+              {
+                company: "Greenline Consulting",
+                location: "Amsterdam, Netherlands",
+                logo: "GC",
+                logoBg: "bg-charcoal",
+                challenge: "A consulting firm relying on referrals and occasional events for lead generation. No outbound system, no lead scoring, and the founder was the only person doing business development.",
+                results: [
+                  { metric: "47", label: "Qualified meetings in month 1" },
+                  { metric: "3×", label: "Pipeline vs. previous quarter" },
+                  { metric: "0hrs", label: "Founder time on prospecting" },
+                ],
+                quote: "I went from spending half my week on outreach to zero. The AI books better meetings than I did — and it never takes a day off.",
+                person: "Sophie van Dijk, Founder & CEO",
+              },
+            ].map((study, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-white rounded-2xl border border-sand overflow-hidden flex flex-col"
+              >
+                <div className="p-8 flex-1">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className={`w-10 h-10 rounded-xl ${study.logoBg} flex items-center justify-center`}>
+                      <span className="text-xs font-bold text-white">{study.logo}</span>
+                    </div>
+                    <div>
+                      <div className="font-display text-sm font-bold text-charcoal">{study.company}</div>
+                      <div className="text-xs text-text-muted">{study.location}</div>
+                    </div>
+                  </div>
+
+                  <p className="text-text-muted text-sm leading-relaxed mb-6">{study.challenge}</p>
+
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    {study.results.map((r, j) => (
+                      <div key={j} className="text-center">
+                        <div className="font-display text-2xl font-bold text-charcoal">{r.metric}</div>
+                        <div className="text-[11px] text-text-muted mt-0.5">{r.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-sand bg-cream/50 px-8 py-5">
+                  <p className="text-sm text-charcoal italic leading-relaxed mb-2">&ldquo;{study.quote}&rdquo;</p>
+                  <p className="text-xs text-text-muted font-medium">{study.person}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ──────── CTA — Book a Call Card ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
           <div className="p-12 md:p-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -548,7 +633,7 @@ export default function LeadGenerationOS() {
                 </p>
                 <Link
                   href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-medium tracking-tight text-charcoal rounded-xl bg-white hover:bg-white/90 transition-all text-base"
+                  className="inline-flex items-center justify-center gap-2 font-medium tracking-tight text-charcoal text-base bg-white rounded-xl px-8 py-3.5 hover:opacity-90 transition-colors active:scale-95"
                 >
                   Book a Discovery Call
                   <ArrowRight className="w-4 h-4" />

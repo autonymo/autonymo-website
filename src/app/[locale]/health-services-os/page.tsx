@@ -196,7 +196,7 @@ export default function HealthServicesOS() {
     <div className="flex flex-col min-h-screen bg-white font-sans overflow-x-hidden">
       {/* ──────── HERO — Left heading + Right illustration ──────── */}
       <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — Heading */}
             <motion.div
@@ -241,7 +241,7 @@ export default function HealthServicesOS() {
 
       {/* ──────── STATS — Full-width with descriptions ──────── */}
       <section className="py-16 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {[
               { metric: "50%", label: "Fewer no-shows", desc: "AI-powered reminders and smart rescheduling keep your chairs full" },
@@ -268,7 +268,7 @@ export default function HealthServicesOS() {
 
       {/* ──────── THE PROBLEM ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               The Problem
@@ -321,7 +321,7 @@ export default function HealthServicesOS() {
 
       {/* ──────── HOW WE SOLVE IT — Vertical Flow ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               How We Solve It
@@ -412,7 +412,7 @@ export default function HealthServicesOS() {
 
       {/* ──────── WHAT'S INCLUDED — Left text + Right list ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
@@ -469,7 +469,7 @@ export default function HealthServicesOS() {
 
       {/* ──────── OUR PROCESS — Timeline cards ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               Our Process
@@ -504,7 +504,7 @@ export default function HealthServicesOS() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-8 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
+                className="group p-6 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
               >
                 <span className="font-display text-xs font-bold text-accent-blue uppercase tracking-wider bg-accent-blue/5 px-3 py-1 rounded-full self-start mb-5">
                   {item.step}
@@ -517,50 +517,135 @@ export default function HealthServicesOS() {
         </div>
       </section>
 
-      {/* ──────── CTA — Full-width Book a Call ──────── */}
-      <section className="bg-charcoal">
-        <div className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Let&apos;s talk about freeing <br />
-                your practice from admin.
-              </h2>
-              <p className="mt-6 text-white/60 text-lg leading-relaxed max-w-lg">
-                Book a free 30-minute call. We&apos;ll walk through your current
-                patient workflow, identify the biggest bottlenecks, and show you
-                exactly how AI can help — no pressure, no obligation.
-              </p>
-              <div className="mt-8">
+      {/* ──────── CASE STUDIES ──────── */}
+      <section className="py-24 px-6 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
+              Case Studies
+            </h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
+              Real results from practices <br />
+              running on Autonymo.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                company: "Clínica Salud Integral",
+                location: "Madrid, Spain",
+                logo: "CS",
+                logoBg: "bg-green-500",
+                challenge: "A multi-specialty clinic with 8 providers losing €12K/month to no-shows. The front desk was overwhelmed with 200+ daily calls, and patients waited 3+ minutes on hold.",
+                results: [
+                  { metric: "52%", label: "Fewer no-shows" },
+                  { metric: "€14K", label: "Monthly revenue recovered" },
+                  { metric: "0s", label: "Hold time for patients" },
+                ],
+                quote: "Our front desk went from drowning in phone calls to actually focusing on the patients in front of them. The AI handles everything else.",
+                person: "Dr. Ana Ruiz, Clinic Director",
+              },
+              {
+                company: "Zahnklinik Berger",
+                location: "Berlin, Germany",
+                logo: "ZB",
+                logoBg: "bg-charcoal",
+                challenge: "A dental practice with 3 locations struggling to fill cancellation gaps and reactivate lapsed patients. Staff spent 6 hours daily on manual appointment confirmations.",
+                results: [
+                  { metric: "94%", label: "Cancellation slots recovered" },
+                  { metric: "340", label: "Patients reactivated in 90 days" },
+                  { metric: "6hrs", label: "Daily admin time saved" },
+                ],
+                quote: "When a patient cancels at 7am, the slot is filled by 7:15. We didn't think that was possible without hiring more staff.",
+                person: "Thomas Berger, Practice Owner",
+              },
+            ].map((study, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-white rounded-2xl border border-sand overflow-hidden flex flex-col"
+              >
+                <div className="p-8 flex-1">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className={`w-10 h-10 rounded-xl ${study.logoBg} flex items-center justify-center`}>
+                      <span className="text-xs font-bold text-white">{study.logo}</span>
+                    </div>
+                    <div>
+                      <div className="font-display text-sm font-bold text-charcoal">{study.company}</div>
+                      <div className="text-xs text-text-muted">{study.location}</div>
+                    </div>
+                  </div>
+
+                  <p className="text-text-muted text-sm leading-relaxed mb-6">{study.challenge}</p>
+
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    {study.results.map((r, j) => (
+                      <div key={j} className="text-center">
+                        <div className="font-display text-2xl font-bold text-charcoal">{r.metric}</div>
+                        <div className="text-[11px] text-text-muted mt-0.5">{r.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-sand bg-cream/50 px-8 py-5">
+                  <p className="text-sm text-charcoal italic leading-relaxed mb-2">&ldquo;{study.quote}&rdquo;</p>
+                  <p className="text-xs text-text-muted font-medium">{study.person}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────── CTA — Book a Call Card ──────── */}
+      <section className="py-24 px-6 bg-cream">
+        <div className="max-w-7xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
+          <div className="p-12 md:p-20 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  Let&apos;s talk about freeing <br />
+                  your practice from admin.
+                </h2>
+                <p className="text-white/60 text-base leading-relaxed mb-8 max-w-md">
+                  Book a free 30-minute call. We&apos;ll walk through your current
+                  patient workflow, identify the biggest bottlenecks, and show you
+                  exactly how AI can help — no pressure, no obligation.
+                </p>
                 <Link
                   href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-medium tracking-tight text-charcoal rounded-xl bg-white hover:bg-cream transition-all text-base active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2 font-medium tracking-tight text-charcoal text-base bg-white rounded-xl px-8 py-3.5 hover:opacity-90 transition-colors active:scale-95"
                 >
                   Book a Discovery Call
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
-            <div className="hidden lg:flex flex-col gap-4">
-              {[
-                { icon: Clock, text: "30-minute call with a healthcare automation specialist" },
-                { icon: ShieldCheck, text: "We understand HIPAA, GDPR, and patient privacy" },
-                { icon: CheckCircle2, text: "Walk away with a clear automation roadmap" },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="flex items-center gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/[0.08]"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.08] flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-white/50" />
-                  </div>
-                  <span className="text-white/80 font-medium">{item.text}</span>
-                </motion.div>
-              ))}
+              <div className="hidden lg:flex flex-col gap-4">
+                {[
+                  { icon: Clock, text: "30-minute call with a healthcare automation specialist" },
+                  { icon: ShieldCheck, text: "We understand HIPAA, GDPR, and patient privacy" },
+                  { icon: CheckCircle2, text: "Walk away with a clear automation roadmap" },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-white/[0.08] flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-white/50" />
+                    </div>
+                    <span className="text-white/80 font-medium">{item.text}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

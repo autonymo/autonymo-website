@@ -55,7 +55,7 @@ export default function About() {
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
       {/* Hero */}
       <section className="relative pt-28 pb-24 px-6 sm:pt-36 sm:pb-32 bg-cream overflow-hidden">
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-7xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ export default function About() {
 
       {/* Story */}
       <section className="py-24 px-6 bg-cream border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
@@ -133,7 +133,7 @@ export default function About() {
 
       {/* Values */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               Our Values
@@ -173,7 +173,7 @@ export default function About() {
 
       {/* Team */}
       <section className="py-24 px-6 bg-cream border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               The Founders
@@ -217,7 +217,7 @@ export default function About() {
 
       {/* CTA */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-5xl mx-auto p-12 md:p-20 rounded-xl bg-charcoal text-white text-center relative overflow-hidden">
+        <div className="max-w-7xl mx-auto p-12 md:p-20 rounded-2xl bg-charcoal text-white text-center relative overflow-hidden">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
             Want to work with us?
           </h2>
@@ -227,7 +227,7 @@ export default function About() {
           </p>
           <Link
             href="/book-a-call"
-            className="inline-flex items-center justify-center px-8 py-2.5 font-medium tracking-tight text-white rounded-lg bg-accent-blue text-lg"
+            className="inline-flex items-center justify-center font-medium tracking-tight text-white text-lg bg-accent-blue rounded-xl px-8 py-2.5 hover:opacity-90 transition-colors active:scale-95"
           >
             Get In Touch
           </Link>

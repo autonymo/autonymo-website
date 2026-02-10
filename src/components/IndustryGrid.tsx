@@ -56,7 +56,7 @@ export function IndustryGrid() {
 
   return (
     <section className="py-14 px-6 bg-cream border-y border-sand">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-10">
           <motion.h2

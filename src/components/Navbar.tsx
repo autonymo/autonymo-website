@@ -27,7 +27,7 @@ export const Navbar = () => {
       description: t("realEstateOSDesc"),
       href: "/real-estate-os" as const,
       icon: Building2,
-      color: "bg-blue-50",
+      color: "bg-[#E8F0FE]",
       iconColor: "text-blue-600",
     },
     {
@@ -35,7 +35,7 @@ export const Navbar = () => {
       description: t("healthServicesOSDesc"),
       href: "/health-services-os" as const,
       icon: Heart,
-      color: "bg-emerald-50",
+      color: "bg-[#F5F5F7]",
       iconColor: "text-emerald-600",
     },
     {
@@ -43,7 +43,7 @@ export const Navbar = () => {
       description: t("leadGenerationOSDesc"),
       href: "/lead-generation-os" as const,
       icon: Target,
-      color: "bg-purple-50",
+      color: "bg-[#F3F0FF]",
       iconColor: "text-purple-600",
     },
     {
@@ -51,7 +51,7 @@ export const Navbar = () => {
       description: t("customSolutionsDesc"),
       href: "/custom-solutions" as const,
       icon: Settings2,
-      color: "bg-amber-50",
+      color: "bg-[#F0F4F8]",
       iconColor: "text-amber-600",
     },
   ];
@@ -59,7 +59,7 @@ export const Navbar = () => {
   const moreLinks = [
     { title: t("about"), href: "/about" as const },
     { title: t("blog"), href: "/blog" as const },
-    { title: t("newsletter"), href: "#" as const },
+    { title: t("caseStudies"), href: "/case-studies" as const },
   ];
 
   const locales: Locale[] = ["en", "es", "de", "ca"];
@@ -94,7 +94,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div ref={navRef} className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-3 sm:px-0">
+    <div ref={navRef} className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-7xl px-3 sm:px-0">
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -105,7 +105,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 group">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Autonymo"
               width={28}
               height={28}
@@ -126,7 +126,7 @@ export const Navbar = () => {
                   setIsLangOpen(false);
                   setIsMoreOpen(false);
                 }}
-                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal transition-colors focus:outline-none"
+                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal hover:underline underline-offset-4 transition-colors focus:outline-none"
               >
                 {t("solutions")}
                 <ArrowDownRight
@@ -137,7 +137,7 @@ export const Navbar = () => {
             <Link
               href={{ pathname: "/", hash: "how-it-works" }}
               onClick={closeAll}
-              className="text-sm font-medium text-text-muted hover:text-charcoal transition-colors"
+              className="text-sm font-medium text-text-muted hover:text-charcoal hover:underline underline-offset-4 transition-colors"
             >
               {t("process")}
             </Link>
@@ -148,7 +148,7 @@ export const Navbar = () => {
                   setIsSolutionsOpen(false);
                   setIsLangOpen(false);
                 }}
-                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal transition-colors focus:outline-none"
+                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal hover:underline underline-offset-4 transition-colors focus:outline-none"
               >
                 {t("more")}
                 <ArrowDownRight
@@ -247,7 +247,7 @@ export const Navbar = () => {
                 key={index}
                 href={item.href}
                 onClick={closeAll}
-                className="block group bg-white/95 backdrop-blur-2xl border border-sand/80 rounded-2xl shadow-lg p-5 relative overflow-hidden hover:border-warm-gray hover:shadow-xl transition-all duration-300"
+                className="flex flex-col h-full group bg-white/95 backdrop-blur-2xl border border-sand/80 rounded-2xl shadow-lg p-5 relative overflow-hidden hover:border-warm-gray hover:shadow-xl transition-all duration-300"
               >
                 {/* Subtle gradient on hover */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${item.color} pointer-events-none`} style={{ opacity: 0 }} />
@@ -255,7 +255,7 @@ export const Navbar = () => {
 
                 <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-sand group-hover:text-charcoal/50 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div
                     className={`w-9 h-9 rounded-lg ${item.color} flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300`}
                   >
@@ -266,9 +266,24 @@ export const Navbar = () => {
                     {item.title}
                   </h4>
 
-                  <p className="text-text-muted text-[11px] leading-relaxed">
+                  <p className="text-text-muted text-[11px] leading-relaxed mb-4 flex-1">
                     {item.description}
                   </p>
+
+                  {/* Abstract Image representation */}
+                  <div className={`mt-auto aspect-[4/3] rounded-lg ${item.color} border border-sand/50 overflow-hidden relative`}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-1/2 h-[1px] bg-charcoal/5 rotate-45" />
+                      <div className="w-1/2 h-[1px] bg-charcoal/5 -rotate-45" />
+                    </div>
+                    <div className="absolute top-2 left-2 flex gap-1">
+                      <div className="w-1.5 h-1.5 rounded-full bg-charcoal/10" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-charcoal/10" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-charcoal/10" />
+                    </div>
+                    <div className="absolute bottom-2 left-2 right-2 h-1/2 bg-white/40 backdrop-blur-sm rounded-md border border-white/50" />
+                    <div className="absolute top-1/4 right-2 w-6 h-6 bg-white/80 rounded shadow-sm" />
+                  </div>
                 </div>
               </Link>
             ))}

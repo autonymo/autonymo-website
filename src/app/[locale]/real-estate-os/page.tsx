@@ -80,7 +80,7 @@ function RealEstateIllustration() {
                 <div className="flex -space-x-1.5">
                   {['bg-accent-blue', 'bg-green-500', 'bg-yellow-500'].map((bg, i) => (
                     <div key={i} className={`w-5 h-5 rounded-full ${bg} border-2 border-white flex items-center justify-center`}>
-                      <span className="text-[7px] font-bold text-white">{['A','M','C'][i]}</span>
+                      <span className="text-[7px] font-bold text-white">{['A', 'M', 'C'][i]}</span>
                     </div>
                   ))}
                 </div>
@@ -212,7 +212,7 @@ export default function RealEstateOS() {
     <div className="flex flex-col min-h-screen bg-white font-sans overflow-x-hidden">
       {/* ──────── HERO — Left heading + Right illustration ──────── */}
       <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — Heading */}
             <motion.div
@@ -257,7 +257,7 @@ export default function RealEstateOS() {
 
       {/* ──────── STATS — Full-width with descriptions ──────── */}
       <section className="py-16 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {[
               { metric: "3×", label: "Faster lead response", desc: "AI answers in under 2 minutes, day or night" },
@@ -284,21 +284,21 @@ export default function RealEstateOS() {
 
       {/* ──────── THE PROBLEM ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               The Problem
             </h2>
             <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight mb-6">
-               Every hour counts in real estate. <br />
-               Most teams are losing hours they don&apos;t even notice.
-             </h3>
-             <p className="text-text-muted text-lg leading-relaxed mb-8">
-               A lead fills out a form at 11pm. By Monday morning, they&apos;ve already spoken to three other
-               agencies. Your best agents know this, but they&apos;re buried in busywork. Updating the CRM,
-               sending follow-up emails, coordinating viewings. The work that actually wins deals keeps
-               getting pushed to the bottom of the list.
-             </p>
+              Every hour counts in real estate. <br />
+              Most teams are losing hours they don&apos;t even notice.
+            </h3>
+            <p className="text-text-muted text-lg leading-relaxed mb-8">
+              A lead fills out a form at 11pm. By Monday morning, they&apos;ve already spoken to three other
+              agencies. Your best agents know this, but they&apos;re buried in busywork. Updating the CRM,
+              sending follow-up emails, coordinating viewings. The work that actually wins deals keeps
+              getting pushed to the bottom of the list.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -338,7 +338,7 @@ export default function RealEstateOS() {
 
       {/* ──────── HOW WE SOLVE IT — Vertical Flow ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               How We Solve It
@@ -428,7 +428,7 @@ export default function RealEstateOS() {
 
       {/* ──────── WHAT'S INCLUDED — Left text + Right list ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
@@ -475,7 +475,7 @@ export default function RealEstateOS() {
 
       {/* ──────── OUR PROCESS — Timeline cards ──────── */}
       <section className="py-24 px-6 bg-white border-y border-sand">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               Our Process
@@ -510,7 +510,7 @@ export default function RealEstateOS() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-8 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
+                className="group p-6 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
               >
                 <span className="font-display text-xs font-bold text-accent-blue uppercase tracking-wider bg-accent-blue/5 px-3 py-1 rounded-full self-start mb-5">
                   {item.step}
@@ -523,9 +523,94 @@ export default function RealEstateOS() {
         </div>
       </section>
 
+      {/* ──────── CASE STUDIES ──────── */}
+      <section className="py-24 px-6 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
+              Case Studies
+            </h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
+              Real results from real estate teams <br />
+              running on Autonymo.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                company: "Prisma Real Estate",
+                location: "Barcelona, Spain",
+                logo: "PR",
+                logoBg: "bg-accent-blue",
+                challenge: "A 12-agent team spending 4+ hours daily on manual lead entry from Idealista and Fotocasa. Response times averaged 6 hours, and 30% of leads went uncontacted.",
+                results: [
+                  { metric: "< 90s", label: "Average response time" },
+                  { metric: "42%", label: "More viewings booked" },
+                  { metric: "€18K", label: "Monthly revenue increase" },
+                ],
+                quote: "We went from losing leads overnight to booking viewings before breakfast. The AI handles everything we used to dread.",
+                person: "Jordi Martínez, Agency Director",
+              },
+              {
+                company: "NordHaus Properties",
+                location: "Munich, Germany",
+                logo: "NH",
+                logoBg: "bg-charcoal",
+                challenge: "A luxury brokerage struggling with international buyers across timezones. Agents couldn't keep up with multilingual inquiries and complex qualification requirements.",
+                results: [
+                  { metric: "4", label: "Languages handled by AI" },
+                  { metric: "67%", label: "Less admin time per agent" },
+                  { metric: "3×", label: "Qualified pipeline growth" },
+                ],
+                quote: "Our AI agent qualifies German, English, Spanish, and Arabic inquiries at 2am. We wake up to a pipeline full of serious buyers.",
+                person: "Lena Schulz, Managing Partner",
+              },
+            ].map((study, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-white rounded-2xl border border-sand overflow-hidden flex flex-col"
+              >
+                <div className="p-8 flex-1">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className={`w-10 h-10 rounded-xl ${study.logoBg} flex items-center justify-center`}>
+                      <span className="text-xs font-bold text-white">{study.logo}</span>
+                    </div>
+                    <div>
+                      <div className="font-display text-sm font-bold text-charcoal">{study.company}</div>
+                      <div className="text-xs text-text-muted">{study.location}</div>
+                    </div>
+                  </div>
+
+                  <p className="text-text-muted text-sm leading-relaxed mb-6">{study.challenge}</p>
+
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    {study.results.map((r, j) => (
+                      <div key={j} className="text-center">
+                        <div className="font-display text-2xl font-bold text-charcoal">{r.metric}</div>
+                        <div className="text-[11px] text-text-muted mt-0.5">{r.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-sand bg-cream/50 px-8 py-5">
+                  <p className="text-sm text-charcoal italic leading-relaxed mb-2">&ldquo;{study.quote}&rdquo;</p>
+                  <p className="text-xs text-text-muted font-medium">{study.person}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ──────── CTA — Book a Call Card ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
           <div className="p-12 md:p-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -540,7 +625,7 @@ export default function RealEstateOS() {
                 </p>
                 <Link
                   href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-medium tracking-tight text-charcoal rounded-xl bg-white hover:bg-white/90 transition-all text-base"
+                  className="inline-flex items-center justify-center gap-2 font-medium tracking-tight text-charcoal text-base bg-white rounded-xl px-8 py-3.5 hover:opacity-90 transition-colors active:scale-95"
                 >
                   Book a Discovery Call
                   <ArrowRight className="w-4 h-4" />

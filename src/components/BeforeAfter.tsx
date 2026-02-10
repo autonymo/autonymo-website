@@ -12,7 +12,7 @@ export function BeforeAfter() {
 
   return (
     <section id="why-autonymo" className="py-14 px-6 bg-cream">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-10">
           <motion.h2

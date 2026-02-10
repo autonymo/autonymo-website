@@ -18,7 +18,7 @@ export default function Home() {
       {/* ──────────────────── HERO SECTION ──────────────────── */}
       <div className="bg-cream rounded-b-3xl border-b border-sand/30 relative overflow-hidden">
         <section className="relative pt-32 pb-40 px-6 sm:pt-44 sm:pb-48 lg:pt-52 lg:pb-60">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center">
               <div className="relative inline-block">
                 {/* Subtle radial blur behind text */}
@@ -38,17 +38,14 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <div className="relative z-20 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,var(--color-sand)_0%,transparent_70%)] opacity-30 pointer-events-none" />
-
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative p-1 rounded-2xl border border-sand/20 bg-white/30 backdrop-blur-md"
                 >
                   <Link
                     href="/book-a-call"
-                    className="inline-flex items-center justify-center px-8 py-3 font-medium tracking-tight text-white rounded-xl bg-charcoal text-lg shadow-xl shadow-charcoal/10 hover:bg-black transition-all active:scale-95"
+                    className="inline-flex items-center justify-center font-medium tracking-tight text-white text-lg bg-charcoal rounded-xl px-8 py-3 hover:bg-charcoal/90 transition-colors active:scale-95"
                   >
                     {t("hero.cta")}
                   </Link>
@@ -85,8 +82,8 @@ export default function Home() {
 
         {/* ──────────────────── FEATURED PLATFORM CARDS (half-visible) ──────────────────── */}
         <section className="pb-16 px-6 bg-transparent relative z-10 -mt-20 sm:-mt-24 lg:-mt-32">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               {[
                 {
                   title: t("whatWeBuild.tabs.realEstate.label"),
@@ -122,7 +119,7 @@ export default function Home() {
                 >
                   <Link
                     href={card.href}
-                    className="block bg-white rounded-xl border border-sand p-8 relative flex-col h-full overflow-hidden group hover:border-warm-gray transition-colors duration-300 cursor-pointer"
+                    className="flex bg-white rounded-xl border border-sand p-6 relative flex-col h-full overflow-hidden group hover:border-warm-gray transition-colors duration-300 cursor-pointer"
                   >
                     <ArrowUpRight className="absolute top-8 right-8 w-6 h-6 text-warm-gray group-hover:text-charcoal/70 group-hover:scale-125 group-hover:-translate-y-1.5 group-hover:translate-x-1.5 transition-all duration-300" />
 
@@ -157,7 +154,7 @@ export default function Home() {
 
       {/* ──────────────────── SOCIAL PROOF STRIP ──────────────────── */}
       <section className="py-4 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <p className="text-center text-xs font-semibold text-text-muted/50 uppercase tracking-widest">
             {t("hero.trustedBy")}
           </p>
@@ -172,7 +169,7 @@ export default function Home() {
 
       {/* ──────────────────── HOW IT WORKS SECTION ──────────────────── */}
       <section id="how-it-works" className="py-14 px-6 bg-cream border-y border-sand relative overflow-hidden">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-10">
             <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
               {t("howItWorks.label")}
@@ -224,19 +221,9 @@ export default function Home() {
       </section>
 
       {/* ──────────────────── FINAL CTA SECTION ──────────────────── */}
-      <section className="py-14 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto p-12 md:p-20 rounded-xl bg-charcoal text-white text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-multiply">
-            <Threads
-              color={[0.64, 0.62, 0.59]}
-              amplitude={0.5}
-              distance={0.15}
-              enableMouseInteraction={false}
-              speed={0.2}
-            />
-          </div>
-
-          <div className="relative z-10 flex flex-col items-center">
+      <section className="py-14 px-3 sm:px-px bg-cream">
+        <div className="max-w-7xl mx-auto p-12 md:p-20 rounded-xl bg-charcoal text-white text-center relative overflow-hidden shadow-2xl">
+          <div className="flex flex-col items-center">
             <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight">
               {t("cta.title")} <br />
               {t("cta.titleLine2")}
@@ -246,7 +233,7 @@ export default function Home() {
             </p>
             <Link
               href="/book-a-call"
-              className="inline-flex items-center justify-center px-8 py-4 font-medium tracking-tight text-charcoal rounded-lg bg-white hover:bg-white/90 transition-colors text-lg shadow-sm"
+              className="inline-flex items-center justify-center font-medium tracking-tight text-charcoal text-lg bg-white rounded-xl px-8 py-4 hover:bg-white/90 transition-colors active:scale-95"
             >
               {t("cta.button")}
               <ArrowUpRight className="ml-2 w-5 h-5 text-charcoal" />
