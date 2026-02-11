@@ -540,7 +540,7 @@ export function SolutionTabs() {
         </div>
 
         {/* Tab Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 mb-4 max-w-xl">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-4">
           {tabs.map((tab, index) => {
             const isActive = index === activeTab;
             const TabIcon = tab.icon;
