@@ -2,7 +2,6 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import Threads from "@/components/Threads";
 import { SolutionTabs } from "@/components/SolutionTabs";
 import { IndustryGrid } from "@/components/IndustryGrid";
 import { useTranslations } from "next-intl";
@@ -68,16 +67,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Threads Overlay */}
-          <div className="absolute -top-[15%] left-0 right-0 bottom-0 z-0 pointer-events-none">
-            <Threads
-              color={[0.64, 0.62, 0.59]}
-              amplitude={0.5}
-              distance={0.15}
-              enableMouseInteraction={false}
-              speed={0.4}
-            />
-          </div>
         </section>
 
         {/* ──────────────────── FEATURED PLATFORM CARDS (half-visible) ──────────────────── */}
