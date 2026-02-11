@@ -9,7 +9,7 @@
     "benefits": "Benefits",
     "process": "Process",
     "about": "About",
-    "customSolutions": "CustomOS",
+    "customSolutions": "Custom Solutions",
     "blog": "Blog",
     "bookCall": "Book a Call",
     "more": "More",
@@ -19,11 +19,11 @@
     "blogsDesc": "Insights on AI automation, industry trends, and strategies.",
     "caseStudies": "Case Studies",
     "caseStudiesDesc": "See how businesses are running on Autonymo OS.",
-    "realEstateOS": "EstateOS",
+    "realEstateOS": "Real Estate OS",
     "realEstateOSDesc": "AI-powered lead response, listing management, and contract automation for real estate agencies.",
-    "healthServicesOS": "HealthOS",
+    "healthServicesOS": "Health Services OS",
     "healthServicesOSDesc": "Smart scheduling, patient reactivation, and clinical documentation for modern practices.",
-    "leadGenerationOS": "LeadOS",
+    "leadGenerationOS": "Lead Gen OS",
     "leadGenerationOSDesc": "AI-powered lead capture, scoring, nurturing, and outbound calling to fill your pipeline automatically.",
     "customSolutionsDesc": "Custom AI implementations tailored to your business workflows and industry.",
     "mobileMenu": "Menu"
@@ -243,10 +243,10 @@
     "terms": "Terms of Service",
     "cookies": "Cookies",
     "copyright": "© {year} Autonymo. All rights reserved.",
-    "realEstateOS": "EstateOS",
-    "healthServicesOS": "HealthOS",
-    "leadGenerationOS": "LeadOS",
-    "customSolutions": "CustomOS"
+    "realEstateOS": "Real Estate OS",
+    "healthServicesOS": "Health Services OS",
+    "leadGenerationOS": "Lead Gen OS",
+    "customSolutions": "Custom Solutions"
   },
   "languages": {
     "en": "English",

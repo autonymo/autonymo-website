@@ -126,7 +126,7 @@ export const Navbar = () => {
                   setIsLangOpen(false);
                   setIsMoreOpen(false);
                 }}
-                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal hover:underline underline-offset-4 transition-colors focus:outline-none"
+                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal transition-colors focus:outline-none"
               >
                 {t("solutions")}
                 <ArrowDownRight
@@ -137,7 +137,7 @@ export const Navbar = () => {
             <Link
               href={{ pathname: "/", hash: "how-it-works" }}
               onClick={closeAll}
-              className="text-sm font-medium text-text-muted hover:text-charcoal hover:underline underline-offset-4 transition-colors"
+              className="text-sm font-medium text-text-muted hover:text-charcoal transition-colors"
             >
               {t("process")}
             </Link>
@@ -148,7 +148,7 @@ export const Navbar = () => {
                   setIsSolutionsOpen(false);
                   setIsLangOpen(false);
                 }}
-                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal hover:underline underline-offset-4 transition-colors focus:outline-none"
+                className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal transition-colors focus:outline-none"
               >
                 {t("more")}
                 <ArrowDownRight
@@ -262,7 +262,7 @@ export const Navbar = () => {
                     <item.icon className={`w-4 h-4 ${item.iconColor}`} />
                   </div>
 
-                  <h4 className="font-display text-[15px] font-bold text-charcoal mb-1.5 leading-tight">
+                  <h4 className="font-display text-[15px] font-bold text-charcoal mb-1.5 leading-tight group-hover:underline underline-offset-4">
                     {item.title}
                   </h4>
 

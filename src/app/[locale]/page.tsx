@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
       {/* ──────────────────── HERO SECTION ──────────────────── */}
-      <div className="bg-cream rounded-b-3xl border-b border-sand/30 relative overflow-hidden will-change-transform">
+      <div className="bg-cream rounded-b-3xl border-b border-sand/30 relative overflow-hidden">
         <section className="relative pt-32 pb-40 px-6 sm:pt-44 sm:pb-48 lg:pt-52 lg:pb-60">
           <div className="max-w-7xl mx-auto">
             <div className="text-center">
@@ -45,7 +45,7 @@ export default function Home() {
                 >
                   <Link
                     href="/book-a-call"
-                    className="inline-flex items-center justify-center font-medium tracking-tight text-white text-lg bg-charcoal rounded-xl px-8 py-3 hover:bg-charcoal/90 transition-colors active:scale-95"
+                    className="inline-flex items-center justify-center font-medium tracking-tight text-white text-lg bg-charcoal rounded-xl px-8 py-3"
                   >
                     {t("hero.cta")}
                   </Link>
@@ -75,7 +75,6 @@ export default function Home() {
               amplitude={0.5}
               distance={0.15}
               enableMouseInteraction={false}
-              speed={0.4}
             />
           </div>
         </section>
@@ -121,11 +120,12 @@ export default function Home() {
                     href={card.href}
                     className="flex bg-white rounded-xl border border-sand p-6 relative flex-col h-full overflow-hidden group hover:border-warm-gray transition-colors duration-300 cursor-pointer"
                   >
-                    <ArrowUpRight className="absolute top-8 right-8 w-6 h-6 text-warm-gray group-hover:text-charcoal/70 group-hover:scale-125 group-hover:-translate-y-1.5 group-hover:translate-x-1.5 transition-all duration-300" />
-
-                    <h3 className="font-display text-2xl font-bold text-charcoal mb-4">
-                      {card.title}
-                    </h3>
+                    <div className="flex items-start justify-between gap-3 mb-4">
+                      <h3 className="font-display text-2xl font-bold text-charcoal">
+                        {card.title}
+                      </h3>
+                      <ArrowUpRight className="w-5 h-5 text-warm-gray shrink-0 mt-1 group-hover:text-charcoal/70 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                    </div>
 
                     <p className="text-text-muted text-sm leading-relaxed mb-8 min-h-[3rem] line-clamp-3">
                       {card.intro}

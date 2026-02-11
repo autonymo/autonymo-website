@@ -6,7 +6,6 @@ interface ThreadsProps {
   amplitude?: number;
   distance?: number;
   enableMouseInteraction?: boolean;
-  speed?: number;
 }
 
 const vertexShader = `
@@ -131,7 +130,6 @@ const Threads: React.FC<ThreadsProps> = ({
   amplitude = 1,
   distance = 0,
   enableMouseInteraction = false,
-  speed = 1,
   ...rest
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -140,8 +138,6 @@ const Threads: React.FC<ThreadsProps> = ({
   useEffect(() => {
     if (!containerRef.current) return;
     const container = containerRef.current;
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const renderer = new Renderer({ alpha: true });
     const gl = renderer.gl;
@@ -178,17 +174,6 @@ const Threads: React.FC<ThreadsProps> = ({
     window.addEventListener('resize', resize);
     resize();
 
-    // Render one static frame and stop if user prefers reduced motion
-    if (prefersReducedMotion) {
-      program.uniforms.iTime.value = 0;
-      renderer.render({ scene: mesh });
-      return () => {
-        window.removeEventListener('resize', resize);
-        if (container.contains(gl.canvas)) container.removeChild(gl.canvas);
-        gl.getExtension('WEBGL_lose_context')?.loseContext();
-      };
-    }
-
     let currentMouse = [0.5, 0.5];
     let targetMouse = [0.5, 0.5];
 
@@ -206,31 +191,7 @@ const Threads: React.FC<ThreadsProps> = ({
       container.addEventListener('mouseleave', handleMouseLeave);
     }
 
-    // Pause animation when off-screen
-    let isVisible = true;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isVisible = entry.isIntersecting;
-      },
-      { threshold: 0 }
-    );
-    observer.observe(container);
-
-    // Throttle to ~30fps
-    let lastFrameTime = 0;
-    const frameDuration = 1000 / 30;
-
     function update(t: number) {
-      animationFrameId.current = requestAnimationFrame(update);
-
-      if (t - lastFrameTime < frameDuration) return;
-      lastFrameTime = t;
-
-      // Always advance time so there's no jump when scrolling back
-      program.uniforms.iTime.value = t * 0.001 * speed;
-
-      if (!isVisible) return;
-
       if (enableMouseInteraction) {
         const smoothing = 0.05;
         currentMouse[0] += smoothing * (targetMouse[0] - currentMouse[0]);
@@ -241,14 +202,15 @@ const Threads: React.FC<ThreadsProps> = ({
         program.uniforms.uMouse.value[0] = 0.5;
         program.uniforms.uMouse.value[1] = 0.5;
       }
+      program.uniforms.iTime.value = t * 0.001;
 
       renderer.render({ scene: mesh });
+      animationFrameId.current = requestAnimationFrame(update);
     }
     animationFrameId.current = requestAnimationFrame(update);
 
     return () => {
       if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
-      observer.disconnect();
       window.removeEventListener('resize', resize);
 
       if (enableMouseInteraction) {
@@ -258,9 +220,9 @@ const Threads: React.FC<ThreadsProps> = ({
       if (container.contains(gl.canvas)) container.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-  }, [color, amplitude, distance, enableMouseInteraction, speed]);
+  }, [color, amplitude, distance, enableMouseInteraction]);
 
-  return <div ref={containerRef} className="w-full h-full relative will-change-transform" {...rest} />;
+  return <div ref={containerRef} className="w-full h-full relative" {...rest} />;
 };
 
 export default Threads;
