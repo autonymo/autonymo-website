@@ -540,7 +540,7 @@ export function SolutionTabs() {
         </div>
 
         {/* Tab Bar */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 mb-4 max-w-xl">
           {tabs.map((tab, index) => {
             const isActive = index === activeTab;
             const TabIcon = tab.icon;

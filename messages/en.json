@@ -49,7 +49,7 @@
     "subtitle": "Each system is built around your industry's actual workflows — integrated with your existing tools, ready to deploy in weeks.",
     "tabs": {
       "realEstate": {
-        "label": "EstateOS",
+        "label": "Real Estate OS",
         "tagline": "Everything a modern real estate agency needs to run on AI.",
         "cta": "Explore Real Estate OS",
         "modules": {
@@ -72,7 +72,7 @@
         }
       },
       "healthServices": {
-        "label": "HealthOS",
+        "label": "Health Services OS",
         "tagline": "Purpose-built for clinics, dental practices, and wellness centers.",
         "cta": "Explore Health Services OS",
         "modules": {
@@ -95,7 +95,7 @@
         }
       },
       "leadGeneration": {
-        "label": "LeadOS",
+        "label": "Lead Gen OS",
         "tagline": "AI-powered pipeline automation for sales teams that want to close more.",
         "cta": "Explore Lead Generation OS",
         "modules": {
@@ -118,7 +118,7 @@
         }
       },
       "custom": {
-        "label": "CustomOS",
+        "label": "Custom Solutions",
         "tagline": "Your business is unique. Your AI system should be too.",
         "cta": "Discuss Your Project",
         "modules": {
