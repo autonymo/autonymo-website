@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import Threads from "@/components/Threads";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 
 export default function Home() {
   const t = useTranslations();
@@ -186,6 +187,17 @@ export default function Home() {
                 <span className="font-display text-3xl font-bold text-sand/40 group-hover:text-accent-blue/40 transition-colors duration-300 mb-4 block">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+
+                <div className="flex items-center justify-center h-44 mb-4">
+                  <Image
+                    src={`/illustrations/${pillarKey}-removebg-preview.png`}
+                    alt={t(`howItWorks.pillars.${pillarKey}.title`)}
+                    width={200}
+                    height={200}
+                    className="scale-[1.4] drop-shadow-sm"
+                  />
+                </div>
+
                 <h4 className="font-display text-xl font-bold text-charcoal mb-3">
                   {t(`howItWorks.pillars.${pillarKey}.title`)}
                 </h4>
