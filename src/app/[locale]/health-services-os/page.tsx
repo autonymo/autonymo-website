@@ -9,18 +9,18 @@ import {
   Clock,
   Phone,
   Activity,
-  ArrowRight,
   ArrowUpRight,
+  ArrowDown,
   CheckCircle2,
-  Bell,
   Users,
-  ClipboardList,
-  UserCheck,
   Stethoscope,
-  Brain,
-  Lock,
+  ChevronDown,
 } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import ScrollReveal from "@/components/reactbits/ScrollReveal";
+import WhyWeDifferent from "@/components/WhyWeDifferent";
+import FinalCTA from "@/components/FinalCTA";
 
 /* ─── Health Dashboard Illustration ─────────────────────────── */
 function HealthIllustration() {
@@ -31,12 +31,8 @@ function HealthIllustration() {
       transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className="relative w-full max-w-xl mx-auto"
     >
-      {/* Glow behind card */}
       <div className="absolute -inset-6 bg-gradient-to-br from-green-500/[0.04] via-transparent to-sand/20 rounded-[2rem] blur-2xl pointer-events-none" />
-
-      {/* ── Main dashboard card ── */}
       <div className="relative bg-white rounded-2xl border border-sand/80 shadow-2xl shadow-charcoal/8 overflow-hidden">
-        {/* Title bar */}
         <div className="flex items-center justify-between px-5 py-3 bg-light-gray border-b border-sand/60">
           <div className="flex gap-1.5">
             <div className="w-[10px] h-[10px] rounded-full bg-[#FF5F57]" />
@@ -51,9 +47,7 @@ function HealthIllustration() {
           </div>
           <div className="w-14" />
         </div>
-
         <div className="flex">
-          {/* Sidebar */}
           <div className="w-[52px] bg-charcoal flex flex-col items-center py-4 gap-3.5 shrink-0">
             <div className="w-7 h-7 rounded-lg bg-green-500 flex items-center justify-center">
               <Heart className="w-3.5 h-3.5 text-white" />
@@ -67,10 +61,7 @@ function HealthIllustration() {
               <span className="text-[9px] font-bold text-white">DR</span>
             </div>
           </div>
-
-          {/* Dashboard body */}
           <div className="flex-1 p-5 bg-cream/40 min-h-[340px]">
-            {/* Header row */}
             <div className="flex items-center justify-between mb-4">
               <div>
                 <div className="font-display text-sm font-bold text-charcoal">Today&apos;s Schedule</div>
@@ -80,8 +71,6 @@ function HealthIllustration() {
                 <span className="text-[10px] font-medium text-white bg-green-500 px-2 py-0.5 rounded-full">Live</span>
               </div>
             </div>
-
-            {/* Stats row */}
             <div className="grid grid-cols-3 gap-2.5 mb-4">
               {[
                 { label: "Appointments", value: "18", sub: "2 auto-filled", icon: Calendar },
@@ -98,8 +87,6 @@ function HealthIllustration() {
                 </div>
               ))}
             </div>
-
-            {/* Timeline / Schedule */}
             <div className="bg-white rounded-xl border border-sand/50 p-3 mb-4">
               <div className="flex items-center justify-between mb-2.5">
                 <span className="text-[10px] font-bold text-charcoal">Morning Block</span>
@@ -125,8 +112,6 @@ function HealthIllustration() {
                 ))}
               </div>
             </div>
-
-            {/* Patient satisfaction mini-bar */}
             <div className="bg-white rounded-xl border border-sand/50 p-3">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] font-bold text-charcoal">Patient Satisfaction</span>
@@ -142,14 +127,7 @@ function HealthIllustration() {
           </div>
         </div>
       </div>
-
-      {/* ── Floating: AI Voice Agent card ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 12, x: 12 }}
-        animate={{ opacity: 1, y: 0, x: 0 }}
-        transition={{ delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute -bottom-5 -right-5 bg-white rounded-xl border border-sand shadow-xl shadow-charcoal/10 p-3 flex items-center gap-2.5 z-10"
-      >
+      <motion.div initial={{ opacity: 0, y: 12, x: 12 }} animate={{ opacity: 1, y: 0, x: 0 }} transition={{ delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="absolute -bottom-5 -right-5 bg-white rounded-xl border border-sand shadow-xl shadow-charcoal/10 p-3 flex items-center gap-2.5 z-10">
         <div className="w-9 h-9 rounded-xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center">
           <Phone className="w-4.5 h-4.5 text-accent-blue" />
         </div>
@@ -159,14 +137,7 @@ function HealthIllustration() {
           <div className="text-[9px] text-green-600 font-medium mt-0.5">Revenue saved: €120</div>
         </div>
       </motion.div>
-
-      {/* ── Floating: Compliance badge top-left ── */}
-      <motion.div
-        initial={{ opacity: 0, y: -8, x: -8 }}
-        animate={{ opacity: 1, y: 0, x: 0 }}
-        transition={{ delay: 1.4, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute -top-3 -left-3 bg-charcoal rounded-lg shadow-lg px-3 py-2 flex items-center gap-2 z-10"
-      >
+      <motion.div initial={{ opacity: 0, y: -8, x: -8 }} animate={{ opacity: 1, y: 0, x: 0 }} transition={{ delay: 1.4, duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="absolute -top-3 -left-3 bg-charcoal rounded-lg shadow-lg px-3 py-2 flex items-center gap-2 z-10">
         <div className="w-5 h-5 rounded-md bg-green-500 flex items-center justify-center">
           <ShieldCheck className="w-3 h-3 text-white" />
         </div>
@@ -176,14 +147,7 @@ function HealthIllustration() {
         </div>
         <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
       </motion.div>
-
-      {/* ── Floating: No-show reduction badge ── */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.8, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute -top-2 right-12 bg-white rounded-lg shadow-md border border-sand px-2.5 py-1.5 flex items-center gap-1.5 z-10"
-      >
+      <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.8, duration: 0.4, ease: [0.22, 1, 0.36, 1] }} className="absolute -top-2 right-12 bg-white rounded-lg shadow-md border border-sand px-2.5 py-1.5 flex items-center gap-1.5 z-10">
         <Activity className="w-3 h-3 text-green-500" />
         <span className="text-[9px] font-bold text-charcoal">No-shows ↓ 50%</span>
       </motion.div>
@@ -191,47 +155,76 @@ function HealthIllustration() {
   );
 }
 
+function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <ScrollReveal delay={index * 0.05}>
+      <div className="border-b border-sand">
+        <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-5 text-left cursor-pointer">
+          <span className="font-display text-base font-semibold text-charcoal pr-4">{question}</span>
+          <ChevronDown className={`w-5 h-5 text-warm-gray flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+        </button>
+        <AnimatePresence>
+          {open && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
+              <p className="text-text-muted text-sm leading-relaxed pb-5">{answer}</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </ScrollReveal>
+  );
+}
+
 export default function HealthServicesOS() {
+  const solutions = [
+    { title: "Dormant Patient Reactivation", promise: "Bring back patients who haven\u2019t visited in months.", desc: "Patients who are overdue for treatment receive personalized, automated outreach. They book directly, no manual calls from your front desk needed." },
+    { title: "Multi-Doctor Booking System", promise: "Every practitioner\u2019s schedule stays full, without the coordination headaches.", desc: "Appointments are scheduled intelligently across doctors, rooms, and availability. Conflicts disappear. Empty slots get filled." },
+    { title: "Patient Communication Manager", promise: "Every patient gets the right message at the right time.", desc: "Reminders, follow-ups, and updates flow automatically. Your patients feel cared for. Your team doesn\u2019t spend hours on the phone." },
+    { title: "Post-Visit Review Collector", promise: "Turn happy patients into five-star reviews. Automatically.", desc: "After every visit, patients receive a simple prompt to leave a review. Your online reputation grows without anyone asking awkwardly in person." },
+  ];
+
+  const faqs = [
+    { q: "What tools do you work with?", a: "We work with your existing tools. No forced migrations." },
+    { q: "How long before we see results?", a: "First automation live within 4 weeks." },
+    { q: "What if it doesn\u2019t work?", a: "If we can\u2019t find savings or deliver on time, you don\u2019t pay." },
+    { q: "Do we need technical skills?", a: "No. We deploy, manage, and train your team." },
+    { q: "What happens if we stop?", a: "You keep everything we built. It\u2019s yours." },
+    { q: "How is this different from buying software?", a: "Software is a tool. We\u2019re an operations team." },
+    { q: "Will my staff need technical skills?", a: "No. We train your team on every new system. If they can use a phone, they can use what we build." },
+    { q: "We already use our own practice management system", a: "We integrate with your existing systems. No migration needed." },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-white font-sans overflow-x-hidden">
-      {/* ──────── HERO — Left heading + Right illustration ──────── */}
-      <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
+      {/* ──────── T1: HERO ──────── */}
+      <section className="relative pt-28 pb-24 px-6 sm:pt-36 sm:pb-32 bg-cream overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left — Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4 block font-display">
                 Health Services OS
               </span>
               <h1 className="font-display text-4xl font-bold tracking-tight text-charcoal sm:text-5xl lg:text-6xl leading-[1.08]">
-                Your team heals.
-                <br />
-                <span className="text-warm-gray">Our AI takes care of</span>
-                <br />
-                the rest.
+                Your practitioners treat.{" "}
+                Our AI fills the chairs.
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-text-muted max-w-xl">
-                Your front desk is stretched thin. Patients miss appointments.
-                Insurance paperwork keeps piling up. We build AI systems that
-                handle scheduling, follow-ups, and patient communication so
-                your clinical team can stay focused on what they do best.
+                We become your clinic&apos;s AI operations team. Reactivate dormant patients,
+                fill empty appointment slots, automate patient communication. All deployed on
+                your existing systems, managed by our team, and continuously improved.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  href="/book-a-call"
-                  className="inline-flex items-center justify-center px-8 py-3.5 font-medium tracking-tight text-white rounded-xl bg-charcoal text-base shadow-xl shadow-charcoal/10 hover:bg-black transition-all active:scale-95"
-                >
-                  Book a Discovery Call
+                <Link href="/book-a-call" className="inline-flex items-center justify-center px-8 py-3.5 font-medium tracking-tight text-white rounded-xl bg-charcoal text-base shadow-xl shadow-charcoal/10 hover:bg-black transition-all active:scale-95">
+                  Book a Free Assessment
                   <ArrowUpRight className="ml-2 w-4 h-4" />
                 </Link>
+                <a href="#solutions" className="inline-flex items-center justify-center px-6 py-3.5 font-medium tracking-tight text-charcoal text-base rounded-xl bg-white border border-charcoal/15 hover:border-charcoal/30 transition-all active:scale-95">
+                  See how it works
+                  <ArrowDown className="ml-2 w-4 h-4" />
+                </a>
               </div>
             </motion.div>
-
-            {/* Right — Illustration */}
             <div className="hidden lg:block">
               <HealthIllustration />
             </div>
@@ -239,77 +232,38 @@ export default function HealthServicesOS() {
         </div>
       </section>
 
-      {/* ──────── STATS — Full-width with descriptions ──────── */}
-      <section className="py-16 px-6 bg-white border-y border-sand">
+      {/* ──────── T2: SOCIAL PROOF BAR ──────── */}
+      <section className="py-4 px-6 bg-white border-y border-sand">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {[
-              { metric: "50%", label: "Fewer no-shows", desc: "AI-powered reminders and smart rescheduling keep your chairs full" },
-              { metric: "35%", label: "Faster insurance processing", desc: "Automated eligibility checks and pre-authorizations" },
-              { metric: "8hrs", label: "Admin time saved weekly", desc: "Per staff member, on scheduling, calls, and data entry" },
-              { metric: "98%", label: "Patient satisfaction", desc: "Faster responses and smoother experiences across every touchpoint" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="text-center"
-              >
-                <div className="font-display text-4xl sm:text-5xl font-bold text-charcoal mb-2">{item.metric}</div>
-                <div className="font-display text-sm font-semibold text-charcoal mb-1">{item.label}</div>
-                <div className="text-text-muted text-xs leading-relaxed">{item.desc}</div>
-              </motion.div>
-            ))}
-          </div>
+          <p className="text-center text-sm font-medium text-text-muted/60 tracking-wide">
+            Deployed for clinics across Spain.
+          </p>
         </div>
       </section>
 
-      {/* ──────── THE PROBLEM ──────── */}
+      {/* ──────── T3: THE PROBLEM ──────── */}
       <section className="py-24 px-6 bg-cream">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
-              The Problem
-            </h2>
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">The Problem</h2>
             <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight mb-6">
-              Your team spends more time on admin <br />
-              than on patient care.
+              Empty chairs cost you thousands every week. And your front desk can&apos;t fix it.
             </h3>
             <p className="text-text-muted text-lg leading-relaxed mb-8">
-              Your receptionist juggles phone calls, appointment changes, and insurance questions all day.
-              Patients wait on hold. No-shows cost you thousands each month. And your clinicians spend
-              evenings catching up on documentation instead of going home.
+              You have hundreds of patients who haven&apos;t come back in months. Meanwhile, your
+              team is manually calling, texting, and following up, when they have time, which
+              isn&apos;t often. Appointments get missed, reviews don&apos;t get collected, and
+              scheduling across multiple practitioners is a daily headache. The result: empty
+              slots that should be generating revenue.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {[
-              {
-                icon: Phone,
-                title: "Overwhelmed front desk",
-                desc: "Your staff answers the same 15 questions all day \u2014 hours, availability, insurance coverage. Patients give up and call somewhere else.",
-              },
-              {
-                icon: Calendar,
-                title: "No-shows and empty chairs",
-                desc: "15\u201320% of appointments go unfilled because reminders are inconsistent and rescheduling is manual and slow.",
-              },
-              {
-                icon: FileText,
-                title: "Documentation overload",
-                desc: "Clinical notes, treatment plans, follow-up letters \u2014 your team stays late to catch up on paperwork every single day.",
-              },
+              { icon: Users, title: "Dormant patients not coming back", desc: "Your database has hundreds of patients who need treatment but haven\u2019t booked. Nobody has time to reach out to all of them." },
+              { icon: Calendar, title: "Scheduling chaos", desc: "Coordinating appointments across multiple doctors, rooms, and availability windows takes hours of manual work every week." },
+              { icon: Clock, title: "No time for patient follow-up", desc: "Post-visit reviews, appointment reminders, and reactivation messages fall through the cracks because your team is already stretched thin." },
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="p-6 rounded-xl bg-white border border-sand flex flex-col"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }} className="p-6 rounded-xl bg-white border border-sand flex flex-col">
                 <item.icon className="w-5 h-5 text-charcoal/30 mb-4" />
                 <h4 className="font-display text-lg font-bold text-charcoal mb-2">{item.title}</h4>
                 <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
@@ -319,90 +273,28 @@ export default function HealthServicesOS() {
         </div>
       </section>
 
-      {/* ──────── HOW WE SOLVE IT — Vertical Flow ──────── */}
-      <section className="py-24 px-6 bg-white border-y border-sand">
+      {/* ──────── T4: WHY WE'RE DIFFERENT ──────── */}
+      <WhyWeDifferent
+        industryExample="When we audit a clinic, we typically find that 40-60% of the patient database hasn't been contacted in over 6 months. We don't sell you scheduling software and leave. We build the systems, train your staff, and optimize monthly."
+      />
+
+      {/* ──────── T5: SOLUTION PORTFOLIO ──────── */}
+      <section id="solutions" className="py-24 px-6 bg-cream">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
-            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
-              How We Solve It
-            </h2>
-            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
-              We build an AI layer on top of <br />
-              your practice management system.
-            </h3>
-            <p className="text-text-muted text-lg leading-relaxed mt-4">
-              No rip-and-replace. We integrate with the tools you already use — your PMS, your
-              phone system, your patient portal — and add intelligence on top. Everything gets
-              smarter without disrupting your clinical workflows.
-            </p>
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">What We Deploy</h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Your practice, fully equipped.</h3>
           </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                step: "01",
-                title: "AI handles patient communication",
-                desc: "Your new AI voice agent picks up the phone, confirms appointments, answers FAQs, and handles rescheduling \u2014 in Spanish, English, German, or Catalan. It sounds natural and empathetic, and it works 24/7 so patients never hit voicemail again.",
-                icon: Phone,
-                detail: "Inbound calls \u00b7 Appointment confirmations \u00b7 FAQ handling \u00b7 After-hours coverage",
-              },
-              {
-                step: "02",
-                title: "Smart scheduling fills every gap",
-                desc: "When a patient cancels, the AI immediately contacts patients on your waitlist and fills the slot \u2014 automatically. It optimizes your schedule based on treatment type, provider availability, and chair time to maximize your daily capacity.",
-                icon: Calendar,
-                detail: "Waitlist management \u00b7 Cancellation recovery \u00b7 Schedule optimization \u00b7 No-show prediction",
-              },
-              {
-                step: "03",
-                title: "Insurance and intake on autopilot",
-                desc: "Before a patient walks in, their insurance is already verified, their intake forms are completed, and their history is summarized for the clinician. No clipboard. No scanning. No surprises at checkout.",
-                icon: ClipboardList,
-                detail: "Insurance verification \u00b7 Digital intake forms \u00b7 Patient history summary \u00b7 Pre-auth automation",
-              },
-              {
-                step: "04",
-                title: "Follow-ups and retention run automatically",
-                desc: "After each visit, the AI sends personalized follow-up messages \u2014 care instructions, appointment reminders for the next visit, review requests, and recall notices for overdue patients. Your practice grows on autopilot.",
-                icon: UserCheck,
-                detail: "Post-visit follow-ups \u00b7 Recall campaigns \u00b7 Review requests \u00b7 Reactivation sequences",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                className="group"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-6 items-start">
-                  <div className="flex md:flex-col items-center gap-0">
-                    <div className="w-14 h-14 rounded-2xl bg-cream border border-sand flex items-center justify-center group-hover:border-accent-blue/30 group-hover:bg-accent-blue/5 transition-all duration-300 relative z-10">
-                      <item.icon className="w-6 h-6 text-charcoal/40 group-hover:text-accent-blue transition-colors duration-300" />
-                    </div>
-                    {i < 3 && <div className="hidden md:block w-px flex-1 min-h-[calc(100%-3.5rem)] bg-sand mx-auto" />}
-                  </div>
-
-                  <div className="pb-6 md:pb-10">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="font-display text-xs font-bold text-accent-blue/60 uppercase tracking-wider bg-accent-blue/5 px-2 py-1 rounded-full">
-                        Step {item.step}
-                      </span>
-                    </div>
-                    <h4 className="font-display text-xl sm:text-2xl font-bold text-charcoal mb-3">{item.title}</h4>
-                    <p className="text-text-muted leading-relaxed text-[15px] max-w-2xl mb-4">{item.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.detail.split(" \u00b7 ").map((tag, j) => (
-                        <span
-                          key={j}
-                          className="text-[11px] font-medium text-charcoal/50 bg-cream border border-sand px-2.5 py-1 rounded-lg"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {solutions.map((sol, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}>
+                <div className="h-full p-6 rounded-xl bg-white border border-sand">
+                  <span className="font-display text-3xl font-bold text-accent-blue/30 mb-4 block">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h4 className="font-display text-lg font-bold text-charcoal mb-1">{sol.title}</h4>
+                  <p className="text-accent-blue text-sm font-medium mb-3">{sol.promise}</p>
+                  <p className="text-text-muted text-sm leading-relaxed">{sol.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -410,105 +302,60 @@ export default function HealthServicesOS() {
         </div>
       </section>
 
-      {/* ──────── WHAT'S INCLUDED — Left text + Right list ──────── */}
-      <section className="py-24 px-6 bg-cream">
+      {/* ──────── T6: HOW TO GET STARTED ──────── */}
+      <section className="py-24 px-6 bg-white border-y border-sand">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
-                What&apos;s Included
-              </h2>
-              <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight mb-6">
-                Everything your practice needs, <br />built for patient trust.
-              </h3>
-              <p className="text-text-muted text-lg leading-relaxed mb-8">
-                We design every system with privacy and compliance at its core.
-                Your patient data stays encrypted, access-controlled, and fully
-                under your ownership. We integrate — we don&apos;t replace.
-              </p>
-              <div className="flex flex-col gap-3">
-                {["HIPAA-ready architecture", "End-to-end encryption", "Role-based access controls", "Full audit trail & logging"].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-accent-blue/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle2 className="w-3 h-3 text-accent-blue" />
-                    </div>
-                    <span className="text-charcoal text-sm font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">How to Get Started</h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight mb-6">Start with one win. Scale from there.</h3>
+            <p className="text-text-muted text-lg leading-relaxed mb-12">
+              We begin with a focused engagement: audit your operations, identify the biggest
+              opportunities, and put your first automation live, all within 4 weeks.
+              If the results make sense, we expand. If not, you keep everything we built and
+              walk away. No lock-in. No risk.
+            </p>
+            <div className="flex flex-col items-center gap-4 mb-12">
               {[
-                { icon: Phone, title: "AI Patient Voice Agent", desc: "Handles calls, confirms appointments, answers questions, and routes emergencies \u2014 in multiple languages, 24/7. Patients never hit voicemail." },
-                { icon: Calendar, title: "Smart Scheduling Engine", desc: "Fills cancellation gaps instantly, optimizes provider schedules, and reduces no-shows with predictive reminders." },
-                { icon: ShieldCheck, title: "Insurance & Intake Automation", desc: "Verifies coverage, processes pre-authorizations, and collects intake forms before the patient even arrives." },
-                { icon: Activity, title: "Practice Analytics Dashboard", desc: "Patient flow, revenue per provider, treatment acceptance rates, and operational KPIs \u2014 all in real-time." },
-              ].map((feature, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="flex gap-4 p-5 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-cream border border-sand flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 text-accent-blue" />
-                  </div>
-                  <div>
-                    <h4 className="font-display text-base font-bold text-charcoal mb-1">{feature.title}</h4>
-                    <p className="text-text-muted text-sm leading-relaxed">{feature.desc}</p>
-                  </div>
-                </motion.div>
+                { label: "Audit", desc: "We find what matters" },
+                { label: "Build", desc: "First automation live" },
+                { label: "Decide", desc: "You choose what\u2019s next" },
+              ].map((step, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  {i > 0 && <div className="w-px h-6 bg-sand mb-4" />}
+                  <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="flex items-center gap-4 px-8 py-4 rounded-xl bg-cream border border-sand">
+                    <span className="font-display text-sm font-bold text-accent-blue uppercase">{step.label}</span>
+                    <span className="text-text-muted text-sm">{step.desc}</span>
+                  </motion.div>
+                </div>
               ))}
             </div>
+            <p className="text-text-muted text-sm mb-8 italic">
+              If we can&apos;t find significant operational savings or the first automation isn&apos;t live in 4 weeks, you don&apos;t pay.
+            </p>
+            <Link href="/book-a-call" className="inline-flex items-center justify-center px-8 py-3.5 font-medium tracking-tight text-white rounded-xl bg-charcoal text-base shadow-xl shadow-charcoal/10 hover:bg-black transition-all active:scale-95">
+              Book a Free Assessment
+              <ArrowUpRight className="ml-2 w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ──────── OUR PROCESS — Timeline cards ──────── */}
-      <section className="py-24 px-6 bg-white border-y border-sand">
+      {/* ──────── T7: PROCESS ──────── */}
+      <section className="py-24 px-6 bg-cream">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
-            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
-              Our Process
-            </h2>
-            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
-              From first conversation to <br />
-              live system in 4\u20136 weeks.
-            </h3>
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">How It Works</h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">From first call to live system in 4 weeks.</h3>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "Week 1",
-                title: "Practice Audit",
-                desc: "We shadow your front desk, map patient touchpoints, review your PMS setup, and identify the biggest time and revenue drains. You get a detailed automation roadmap.",
-              },
-              {
-                step: "Week 2\u20134",
-                title: "Build & Integrate",
-                desc: "We build your AI agents, connect your scheduling system, set up insurance automation, and design your analytics dashboard. Everything is tested with real patient data.",
-              },
-              {
-                step: "Week 5\u20136",
-                title: "Launch & Optimize",
-                desc: "We go live alongside your team. For 30 days, we monitor every interaction, fine-tune the AI\u2019s tone and accuracy, and train your staff until the system runs seamlessly.",
-              },
+              { step: "Step 1", title: "Book a call", desc: "15-minute assessment to understand your situation and whether we can help." },
+              { step: "Step 2", title: "We audit your operations", desc: "Weeks 1\u20132: We map your processes, find where time and money are leaking, and put a number on each." },
+              { step: "Step 3", title: "First automation goes live", desc: "Weeks 3\u20134: We take the biggest opportunity and build it. Live, working, saving you time." },
+              { step: "Step 4", title: "You decide what\u2019s next", desc: "Based on results, we map out what else could be automated. You choose the pace." },
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-6 rounded-xl bg-cream border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
-              >
-                <span className="font-display text-xs font-bold text-accent-blue uppercase tracking-wider bg-accent-blue/5 px-3 py-1 rounded-full self-start mb-5">
-                  {item.step}
-                </span>
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }} className="group p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col">
+                <span className="font-display text-xs font-bold text-accent-blue uppercase tracking-wider bg-accent-blue/5 px-3 py-1 rounded-full self-start mb-5">{item.step}</span>
                 <h4 className="font-display text-xl font-bold text-charcoal mb-3">{item.title}</h4>
                 <p className="text-text-muted leading-relaxed text-sm">{item.desc}</p>
               </motion.div>
@@ -517,139 +364,44 @@ export default function HealthServicesOS() {
         </div>
       </section>
 
-      {/* ──────── CASE STUDIES ──────── */}
-      <section className="py-24 px-6 bg-cream">
+      {/* ──────── T8: WHAT TO EXPECT ──────── */}
+      <section className="py-24 px-6 bg-white border-y border-sand">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
-            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">
-              Case Studies
-            </h2>
-            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
-              Real results from practices <br />
-              running on Autonymo.
-            </h3>
+            <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">What to Expect</h2>
+            <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">What your practice can expect.</h3>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              {
-                company: "Clínica Salud Integral",
-                location: "Madrid, Spain",
-                logo: "CS",
-                logoBg: "bg-green-500",
-                challenge: "A multi-specialty clinic with 8 providers losing €12K/month to no-shows. The front desk was overwhelmed with 200+ daily calls, and patients waited 3+ minutes on hold.",
-                results: [
-                  { metric: "52%", label: "Fewer no-shows" },
-                  { metric: "€14K", label: "Monthly revenue recovered" },
-                  { metric: "0s", label: "Hold time for patients" },
-                ],
-                quote: "Our front desk went from drowning in phone calls to actually focusing on the patients in front of them. The AI handles everything else.",
-                person: "Dr. Ana Ruiz, Clinic Director",
-              },
-              {
-                company: "Zahnklinik Berger",
-                location: "Berlin, Germany",
-                logo: "ZB",
-                logoBg: "bg-charcoal",
-                challenge: "A dental practice with 3 locations struggling to fill cancellation gaps and reactivate lapsed patients. Staff spent 6 hours daily on manual appointment confirmations.",
-                results: [
-                  { metric: "94%", label: "Cancellation slots recovered" },
-                  { metric: "340", label: "Patients reactivated in 90 days" },
-                  { metric: "6hrs", label: "Daily admin time saved" },
-                ],
-                quote: "When a patient cancels at 7am, the slot is filled by 7:15. We didn't think that was possible without hiring more staff.",
-                person: "Thomas Berger, Practice Owner",
-              },
-            ].map((study, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white rounded-2xl border border-sand overflow-hidden flex flex-col"
-              >
-                <div className="p-8 flex-1">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className={`w-10 h-10 rounded-xl ${study.logoBg} flex items-center justify-center`}>
-                      <span className="text-xs font-bold text-white">{study.logo}</span>
-                    </div>
-                    <div>
-                      <div className="font-display text-sm font-bold text-charcoal">{study.company}</div>
-                      <div className="text-xs text-text-muted">{study.location}</div>
-                    </div>
-                  </div>
-
-                  <p className="text-text-muted text-sm leading-relaxed mb-6">{study.challenge}</p>
-
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    {study.results.map((r, j) => (
-                      <div key={j} className="text-center">
-                        <div className="font-display text-2xl font-bold text-charcoal">{r.metric}</div>
-                        <div className="text-[11px] text-text-muted mt-0.5">{r.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border-t border-sand bg-cream/50 px-8 py-5">
-                  <p className="text-sm text-charcoal italic leading-relaxed mb-2">&ldquo;{study.quote}&rdquo;</p>
-                  <p className="text-xs text-text-muted font-medium">{study.person}</p>
-                </div>
+              "Typical clinic audit identifies 8\u201312 automation opportunities",
+              "First automation live within 4 weeks",
+              "Average practice saves 15\u201320 hours/month from the first solution",
+              "Patient response time drops from hours to seconds",
+            ].map((text, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-sand">
+                <CheckCircle2 className="w-4 h-4 text-accent-blue flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-charcoal leading-relaxed">{text}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── CTA — Book a Call Card ──────── */}
+      {/* ──────── T9: FAQ ──────── */}
       <section className="py-24 px-6 bg-cream">
-        <div className="max-w-7xl mx-auto rounded-2xl bg-charcoal text-white relative overflow-hidden">
-          <div className="p-12 md:p-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                  Let&apos;s talk about freeing <br />
-                  your practice from admin.
-                </h2>
-                <p className="text-white/60 text-base leading-relaxed mb-8 max-w-md">
-                  Book a free 30-minute call. We&apos;ll walk through your current
-                  patient workflow, identify the biggest bottlenecks, and show you
-                  exactly how AI can help — no pressure, no obligation.
-                </p>
-                <Link
-                  href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 font-medium tracking-tight text-charcoal text-base bg-white rounded-xl px-8 py-3.5 hover:opacity-90 transition-colors active:scale-95"
-                >
-                  Book a Discovery Call
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="hidden lg:flex flex-col gap-4">
-                {[
-                  { icon: Clock, text: "30-minute call with a healthcare automation specialist" },
-                  { icon: ShieldCheck, text: "We understand HIPAA, GDPR, and patient privacy" },
-                  { icon: CheckCircle2, text: "Walk away with a clear automation roadmap" },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex items-center gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/[0.08]"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-white/[0.08] flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-white/50" />
-                    </div>
-                    <span className="text-white/80 font-medium">{item.text}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4">FAQ</h2>
+          <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight mb-12">Common questions</h3>
+          <div>
+            {faqs.map((faq, i) => (
+              <FAQItem key={i} question={faq.q} answer={faq.a} index={i} />
+            ))}
           </div>
         </div>
       </section>
+
+      {/* ──────── T10: FINAL CTA ──────── */}
+      <FinalCTA verticalPhrase="your practice" />
     </div>
   );
 }
