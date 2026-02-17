@@ -3,15 +3,13 @@
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import Threads from "@/components/Threads";
-import { SolutionTabs } from "@/components/SolutionTabs";
-import { IndustryGrid } from "@/components/IndustryGrid";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export default function Home() {
   const t = useTranslations();
 
-  const stepKeys = ["discovery", "build", "launch"] as const;
+  const pillarKeys = ["deploy", "train", "evolve"] as const;
 
   return (
     <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
@@ -57,7 +55,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
-                    href={{ pathname: "/", hash: "solutions" }}
+                    href={{ pathname: "/", hash: "how-it-works" }}
                     className="relative inline-flex items-center justify-center px-8 py-3 font-medium tracking-tight text-charcoal rounded-xl bg-white/80 border border-sand/50 text-lg hover:bg-white transition-all active:scale-95"
                   >
                     {t("hero.ctaSecondary")}
@@ -161,11 +159,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ──────────────────── SOLUTION TABS (What We Build) ──────────────────── */}
-      <SolutionTabs />
-
-      {/* ──────────────────── INDUSTRY GRID ──────────────────── */}
-      <IndustryGrid />
 
       {/* ──────────────────── HOW IT WORKS SECTION ──────────────────── */}
       <section id="how-it-works" className="py-14 px-6 bg-cream border-y border-sand relative overflow-hidden">
@@ -179,41 +172,26 @@ export default function Home() {
             </h3>
           </div>
 
-          {/* Step Cards — 3 columns */}
+          {/* Pillar Cards — 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
-            {stepKeys.map((stepKey, index) => (
+            {pillarKeys.map((pillarKey, index) => (
               <motion.div
-                key={stepKey}
+                key={pillarKey}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col relative min-h-[220px]"
+                className="group p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col relative"
               >
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="font-display text-3xl font-bold text-sand/40 group-hover:text-accent-blue/40 transition-colors duration-300">
-                    {t(`howItWorks.steps.${stepKey}.step`)}
-                  </span>
-                  <span className="text-[10px] font-bold text-accent-blue/60 uppercase tracking-wider bg-accent-blue/5 px-2 py-1 rounded-full">
-                    {t(`howItWorks.steps.${stepKey}.timeline`)}
-                  </span>
-                </div>
-                <h4 className="font-display text-lg font-bold text-charcoal mb-2">
-                  {t(`howItWorks.steps.${stepKey}.title`)}
+                <span className="font-display text-3xl font-bold text-sand/40 group-hover:text-accent-blue/40 transition-colors duration-300 mb-4 block">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h4 className="font-display text-xl font-bold text-charcoal mb-3">
+                  {t(`howItWorks.pillars.${pillarKey}.title`)}
                 </h4>
-                <p className="text-text-muted leading-relaxed text-sm flex-1">
-                  {t(`howItWorks.steps.${stepKey}.description`)}
+                <p className="text-text-muted leading-relaxed text-sm">
+                  {t(`howItWorks.pillars.${pillarKey}.description`)}
                 </p>
-
-                {/* Progress indicator */}
-                <div className="mt-6 pt-4 border-t border-sand/30">
-                  <div className="h-1 bg-cream rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-accent-blue/30 rounded-full transition-all duration-500"
-                      style={{ width: `${((index + 1) / stepKeys.length) * 100}%` }}
-                    />
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>

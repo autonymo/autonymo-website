@@ -25,12 +25,12 @@
     "mobileMenu": "Menú"
   },
   "hero": {
-    "title": "Construimos los sistemas de IA",
-    "titleHighlight": "que gestionan tu negocio.",
-    "subtitle": "Sistemas operativos de IA completos adaptados a tu industria — no herramientas sueltas. Sustituimos las operaciones manuales por sistemas inteligentes que trabajan 24/7.",
-    "cta": "Reservar Llamada de Descubrimiento",
-    "ctaSecondary": "Ver Qué Construimos",
-    "trustedBy": "Equipos de confianza en España, Alemania y más allá",
+    "title": "Construimos y operamos los sistemas de IA",
+    "titleHighlight": "que impulsan tu negocio.",
+    "subtitle": "Desplegamos soluciones probadas, formamos a tu equipo y mejoramos continuamente para que tu negocio se mantenga a la vanguardia mientras la IA evoluciona.",
+    "cta": "Reservar Evaluación Gratuita",
+    "ctaSecondary": "Ver Nuestras Soluciones",
+    "trustedBy": "Trabajando con empresas a nivel global.",
     "valueProp1": "Listo en semanas, no meses",
     "valueProp2": "Compatible con tus herramientas actuales",
     "valueProp3": "Soporte continuo incluido"
@@ -46,7 +46,7 @@
     "tabs": {
       "realEstate": {
         "label": "Real Estate OS",
-        "tagline": "Todo lo que una agencia inmobiliaria moderna necesita para funcionar con IA.",
+        "tagline": "Capta propietarios, responde a leads en segundos, gestiona tu agencia con IA.",
         "cta": "Explorar Real Estate OS",
         "modules": {
           "module1": {
@@ -69,7 +69,7 @@
       },
       "healthServices": {
         "label": "Health Services OS",
-        "tagline": "Diseñado específicamente para clínicas, consultas dentales y centros de bienestar.",
+        "tagline": "Reactiva pacientes, llena sillas, automatiza la comunicación.",
         "cta": "Explorar Health Services OS",
         "modules": {
           "module1": {
@@ -92,7 +92,7 @@
       },
       "custom": {
         "label": "Soluciones Personalizadas",
-        "tagline": "Tu negocio es único. Tu sistema de IA también debería serlo.",
+        "tagline": "Operaciones de IA adaptadas a tu industria y procesos.",
         "cta": "Hablar de Tu Proyecto",
         "modules": {
           "module1": {
@@ -175,34 +175,28 @@
     "bottomNote": "Los equipos que ya usan Autonymo operan a una velocidad diferente"
   },
   "howItWorks": {
-    "label": "Cómo Funciona",
-    "title": "De la primera llamada al sistema en producción.",
-    "steps": {
-      "discovery": {
-        "step": "01",
-        "timeline": "Semana 1",
-        "title": "Descubrimiento y Auditoría",
-        "description": "Mapeamos tus flujos de trabajo, stack tecnológico y puntos de dolor. Recibes un roadmap de implementación de IA priorizado con plazos y ROI esperado."
+    "label": "Cómo Trabajamos",
+    "title": "Tu equipo de operaciones de IA.",
+    "pillars": {
+      "deploy": {
+        "title": "Desplegar",
+        "description": "Construimos y configuramos sistemas de IA sobre tus herramientas existentes. Sin reemplazos forzados."
       },
-      "build": {
-        "step": "02",
-        "timeline": "Semanas 2-4",
-        "title": "Construcción y Configuración",
-        "description": "Diseñamos y construimos tu sistema operativo de IA, integrado con tus herramientas existentes — CRM, WhatsApp, email, calendario y más."
+      "train": {
+        "title": "Formar",
+        "description": "Formamos a tu equipo para trabajar con los nuevos sistemas. No se requieren habilidades técnicas."
       },
-      "launch": {
-        "step": "03",
-        "timeline": "Semana 4-5",
-        "title": "Lanzamiento y Formación",
-        "description": "Tu sistema entra en producción. Formamos a tu equipo de forma práctica y optimizamos el rendimiento durante una ventana de soporte de 30 días."
+      "evolve": {
+        "title": "Evolucionar",
+        "description": "La IA avanza rápido. Evaluamos nuevas capacidades y desplegamos lo que importa para TU negocio. Te mantienes a la vanguardia."
       }
     }
   },
   "cta": {
-    "title": "¿Listo para automatizar",
-    "titleLine2": "tus operaciones?",
-    "subtitle": "Reserva una llamada de descubrimiento gratuita. Mapearemos tus flujos de trabajo y te mostraremos exactamente dónde la IA puede tener el mayor impacto en tu negocio.",
-    "button": "Reservar Llamada de Descubrimiento"
+    "title": "¿Listo para ver qué puede hacer la IA",
+    "titleLine2": "por tu negocio?",
+    "subtitle": "Reserva una evaluación gratuita de 15 minutos. Te mostraremos dónde la IA puede tener el mayor impacto en tus operaciones.",
+    "button": "Reservar Evaluación Gratuita"
   },
   "footer": {
     "solutions": "Soluciones",

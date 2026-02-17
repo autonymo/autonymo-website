@@ -25,12 +25,12 @@
     "mobileMenu": "Menü"
   },
   "hero": {
-    "title": "Wir bauen die KI-Systeme,",
-    "titleHighlight": "die Ihr Unternehmen steuern.",
-    "subtitle": "Vollständige KI-Betriebssysteme, zugeschnitten auf Ihre Branche — keine Einzellösungen. Wir ersetzen manuelle Prozesse durch intelligente Systeme, die rund um die Uhr arbeiten.",
-    "cta": "Erstgespräch vereinbaren",
-    "ctaSecondary": "Was wir bauen",
-    "trustedBy": "Teams in Spanien, Deutschland und darüber hinaus vertrauen uns",
+    "title": "Wir bauen und betreiben die KI-Systeme,",
+    "titleHighlight": "die Ihr Unternehmen antreiben.",
+    "subtitle": "Wir implementieren bewährte Lösungen, schulen Ihr Team und verbessern kontinuierlich, damit Ihr Unternehmen voraus bleibt, während sich KI weiterentwickelt.",
+    "cta": "Kostenlose Bewertung buchen",
+    "ctaSecondary": "Unsere Lösungen",
+    "trustedBy": "Zusammenarbeit mit Unternehmen weltweit.",
     "valueProp1": "In Wochen einsatzbereit, nicht Monaten",
     "valueProp2": "Funktioniert mit Ihren bestehenden Tools",
     "valueProp3": "Laufender Support inklusive"
@@ -46,7 +46,7 @@
     "tabs": {
       "realEstate": {
         "label": "Real Estate OS",
-        "tagline": "Alles, was eine moderne Immobilienagentur braucht, um mit KI zu arbeiten.",
+        "tagline": "Eigentümer gewinnen, auf Leads in Sekunden reagieren, Ihre Agentur mit KI betreiben.",
         "cta": "Real Estate OS erkunden",
         "modules": {
           "module1": {
@@ -69,7 +69,7 @@
       },
       "healthServices": {
         "label": "Health Services OS",
-        "tagline": "Speziell entwickelt für Kliniken, Zahnarztpraxen und Wellnesszentren.",
+        "tagline": "Patienten reaktivieren, Termine füllen, Kommunikation automatisieren.",
         "cta": "Health Services OS erkunden",
         "modules": {
           "module1": {
@@ -92,7 +92,7 @@
       },
       "custom": {
         "label": "Individuelle Lösungen",
-        "tagline": "Ihr Unternehmen ist einzigartig. Ihr KI-System sollte es auch sein.",
+        "tagline": "KI-Operationen zugeschnitten auf Ihre Branche und Prozesse.",
         "cta": "Ihr Projekt besprechen",
         "modules": {
           "module1": {
@@ -175,34 +175,28 @@
     "bottomNote": "Die Teams, die bereits Autonymo nutzen, arbeiten auf einem anderen Level"
   },
   "howItWorks": {
-    "label": "So Funktioniert Es",
-    "title": "Vom Erstgespräch zum Live-System.",
-    "steps": {
-      "discovery": {
-        "step": "01",
-        "timeline": "Woche 1",
-        "title": "Analyse & Audit",
-        "description": "Wir erfassen Ihre Arbeitsabläufe, Ihren Tech-Stack und Ihre Schmerzpunkte. Sie erhalten einen priorisierten KI-Implementierungs-Fahrplan mit Zeitplänen und erwartetem ROI."
+    "label": "Wie Wir Arbeiten",
+    "title": "Ihr KI-Operations-Team.",
+    "pillars": {
+      "deploy": {
+        "title": "Implementieren",
+        "description": "Wir bauen und konfigurieren KI-Systeme auf Ihren bestehenden Tools. Kein Austausch nötig."
       },
-      "build": {
-        "step": "02",
-        "timeline": "Wochen 2-4",
-        "title": "Entwicklung & Konfiguration",
-        "description": "Wir entwerfen und bauen Ihr KI-Betriebssystem, integriert mit Ihren bestehenden Tools — CRM, WhatsApp, E-Mail, Kalender und mehr."
+      "train": {
+        "title": "Schulen",
+        "description": "Wir schulen Ihr Team für die Arbeit mit den neuen Systemen. Keine technischen Kenntnisse erforderlich."
       },
-      "launch": {
-        "step": "03",
-        "timeline": "Woche 4-5",
-        "title": "Launch & Schulung",
-        "description": "Ihr System geht live. Wir schulen Ihr Team praxisnah und optimieren die Performance während einer 30-tägigen Supportphase."
+      "evolve": {
+        "title": "Weiterentwickeln",
+        "description": "KI entwickelt sich schnell. Wir evaluieren neue Fähigkeiten und implementieren, was für IHR Unternehmen zählt. Sie bleiben voraus."
       }
     }
   },
   "cta": {
-    "title": "Bereit, Ihre Abläufe",
-    "titleLine2": "zu automatisieren?",
-    "subtitle": "Vereinbaren Sie ein kostenloses Erstgespräch. Wir erfassen Ihre Arbeitsabläufe und zeigen Ihnen genau, wo KI den größten Einfluss auf Ihr Unternehmen haben kann.",
-    "button": "Erstgespräch vereinbaren"
+    "title": "Bereit zu sehen, was KI",
+    "titleLine2": "für Ihr Unternehmen tun kann?",
+    "subtitle": "Buchen Sie eine kostenlose 15-minütige Bewertung. Wir zeigen Ihnen, wo KI den größten Einfluss auf Ihre Abläufe haben kann.",
+    "button": "Kostenlose Bewertung buchen"
   },
   "footer": {
     "solutions": "Lösungen",

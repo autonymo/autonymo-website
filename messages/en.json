@@ -29,12 +29,12 @@
     "mobileMenu": "Menu"
   },
   "hero": {
-    "title": "We build the AI systems",
-    "titleHighlight": "that run your business.",
-    "subtitle": "Custom AI operating systems designed around your business to streamline how you operate, sharpen every decision, and deliver measurable results.",
-    "cta": "Book a Discovery Call",
-    "ctaSecondary": "See What We Build",
-    "trustedBy": "Trusted by teams across Spain, Germany, and beyond",
+    "title": "We build and run the AI systems",
+    "titleHighlight": "that power your business.",
+    "subtitle": "We deploy proven solutions, train your people, and continuously improve so your business stays ahead as AI evolves.",
+    "cta": "Book a Free Assessment",
+    "ctaSecondary": "See Our Solutions",
+    "trustedBy": "Working with businesses globally.",
     "valueProp1": "Live in weeks, not months",
     "valueProp2": "Works with your existing tools",
     "valueProp3": "Ongoing support included"
@@ -50,7 +50,7 @@
     "tabs": {
       "realEstate": {
         "label": "Real Estate OS",
-        "tagline": "Everything a modern real estate agency needs to run on AI.",
+        "tagline": "Capture owners, respond to leads in seconds, run your agency on AI.",
         "cta": "Explore Real Estate OS",
         "modules": {
           "module1": {
@@ -73,7 +73,7 @@
       },
       "healthServices": {
         "label": "Health Services OS",
-        "tagline": "Purpose-built for clinics, dental practices, and wellness centers.",
+        "tagline": "Reactivate patients, fill chairs, automate communication.",
         "cta": "Explore Health Services OS",
         "modules": {
           "module1": {
@@ -96,7 +96,7 @@
       },
       "leadGeneration": {
         "label": "Lead Gen OS",
-        "tagline": "AI-powered pipeline automation for sales teams that want to close more.",
+        "tagline": "Fill your calendar with qualified leads on autopilot.",
         "cta": "Explore Lead Generation OS",
         "modules": {
           "module1": {
@@ -119,7 +119,7 @@
       },
       "custom": {
         "label": "Custom Solutions",
-        "tagline": "Your business is unique. Your AI system should be too.",
+        "tagline": "AI operations tailored to your industry and processes.",
         "cta": "Discuss Your Project",
         "modules": {
           "module1": {
@@ -202,34 +202,28 @@
     "bottomNote": "The teams already using Autonymo are operating at a different speed"
   },
   "howItWorks": {
-    "label": "How It Works",
-    "title": "From first call to live system.",
-    "steps": {
-      "discovery": {
-        "step": "01",
-        "timeline": "Week 1",
-        "title": "Discovery & Audit",
-        "description": "We map your workflows, tech stack, and pain points. You receive a prioritized AI implementation roadmap with timelines and expected ROI."
+    "label": "How We Work",
+    "title": "Your AI operations team.",
+    "pillars": {
+      "deploy": {
+        "title": "Deploy",
+        "description": "We build and configure AI systems on your existing tools. No rip-and-replace."
       },
-      "build": {
-        "step": "02",
-        "timeline": "Weeks 2-4",
-        "title": "Build & Configure",
-        "description": "We design and build your AI operating system, integrated with your existing tools — CRM, WhatsApp, email, calendar, and more."
+      "train": {
+        "title": "Train",
+        "description": "We train your team to work alongside the new systems. No tech skills required."
       },
-      "launch": {
-        "step": "03",
-        "timeline": "Week 4-5",
-        "title": "Launch & Train",
-        "description": "Your system goes live. We train your team hands-on and optimize performance during a 30-day support window."
+      "evolve": {
+        "title": "Evolve",
+        "description": "AI moves fast. We evaluate new capabilities and deploy what matters for YOUR business. You stay ahead."
       }
     }
   },
   "cta": {
-    "title": "Ready to automate",
-    "titleLine2": "your operations?",
-    "subtitle": "Book a free discovery call. We'll map your workflows and show you exactly where AI can make the biggest impact on your business.",
-    "button": "Book a Discovery Call"
+    "title": "Ready to see what AI",
+    "titleLine2": "can do for your business?",
+    "subtitle": "Book a free 15-minute assessment. We'll show you where AI can make the biggest impact on your operations.",
+    "button": "Book a Free Assessment"
   },
   "footer": {
     "solutions": "Solutions",

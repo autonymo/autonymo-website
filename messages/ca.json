@@ -25,12 +25,12 @@
     "mobileMenu": "Menú"
   },
   "hero": {
-    "title": "Construïm els sistemes d'IA",
-    "titleHighlight": "que gestionen el teu negoci.",
-    "subtitle": "Sistemes operatius d'IA complets adaptats a la teva indústria — no eines soltes. Substituïm les operacions manuals per sistemes intel·ligents que treballen 24/7.",
-    "cta": "Reservar Trucada de Descobriment",
-    "ctaSecondary": "Veure Què Construïm",
-    "trustedBy": "Equips de confiança a Espanya, Alemanya i més enllà",
+    "title": "Construïm i operem els sistemes d'IA",
+    "titleHighlight": "que impulsen el teu negoci.",
+    "subtitle": "Despleguem solucions provades, formem el teu equip i millorem contínuament perquè el teu negoci es mantingui al capdavant mentre la IA evoluciona.",
+    "cta": "Reservar Avaluació Gratuïta",
+    "ctaSecondary": "Veure Les Nostres Solucions",
+    "trustedBy": "Treballant amb empreses a nivell global.",
     "valueProp1": "Llest en setmanes, no mesos",
     "valueProp2": "Compatible amb les teves eines actuals",
     "valueProp3": "Suport continu inclòs"
@@ -46,7 +46,7 @@
     "tabs": {
       "realEstate": {
         "label": "Real Estate OS",
-        "tagline": "Tot el que una agència immobiliària moderna necessita per funcionar amb IA.",
+        "tagline": "Capta propietaris, respon a leads en segons, gestiona la teva agència amb IA.",
         "cta": "Explorar Real Estate OS",
         "modules": {
           "module1": {
@@ -69,7 +69,7 @@
       },
       "healthServices": {
         "label": "Health Services OS",
-        "tagline": "Dissenyat específicament per a clíniques, consultes dentals i centres de benestar.",
+        "tagline": "Reactiva pacients, omple cadires, automatitza la comunicació.",
         "cta": "Explorar Health Services OS",
         "modules": {
           "module1": {
@@ -92,7 +92,7 @@
       },
       "custom": {
         "label": "Solucions Personalitzades",
-        "tagline": "El teu negoci és únic. El teu sistema d'IA també hauria de ser-ho.",
+        "tagline": "Operacions d'IA adaptades a la teva indústria i processos.",
         "cta": "Parlar del Teu Projecte",
         "modules": {
           "module1": {
@@ -175,34 +175,28 @@
     "bottomNote": "Els equips que ja utilitzen Autonymo operen a una velocitat diferent"
   },
   "howItWorks": {
-    "label": "Com Funciona",
-    "title": "De la primera trucada al sistema en producció.",
-    "steps": {
-      "discovery": {
-        "step": "01",
-        "timeline": "Setmana 1",
-        "title": "Descobriment i Auditoria",
-        "description": "Mapegem els teus fluxos de treball, stack tecnològic i punts de dolor. Reps un roadmap d'implementació d'IA prioritzat amb terminis i ROI esperat."
+    "label": "Com Treballem",
+    "title": "El teu equip d'operacions d'IA.",
+    "pillars": {
+      "deploy": {
+        "title": "Desplegar",
+        "description": "Construïm i configurem sistemes d'IA sobre les teves eines existents. Sense reemplaçaments forçats."
       },
-      "build": {
-        "step": "02",
-        "timeline": "Setmanes 2-4",
-        "title": "Construcció i Configuració",
-        "description": "Dissenyem i construïm el teu sistema operatiu d'IA, integrat amb les teves eines existents — CRM, WhatsApp, email, calendari i més."
+      "train": {
+        "title": "Formar",
+        "description": "Formem el teu equip per treballar amb els nous sistemes. No es requereixen habilitats tècniques."
       },
-      "launch": {
-        "step": "03",
-        "timeline": "Setmana 4-5",
-        "title": "Llançament i Formació",
-        "description": "El teu sistema entra en producció. Formem el teu equip de forma pràctica i optimitzem el rendiment durant una finestra de suport de 30 dies."
+      "evolve": {
+        "title": "Evolucionar",
+        "description": "La IA avança ràpid. Avaluem noves capacitats i despleguem el que importa per al TEU negoci. Et mantens al capdavant."
       }
     }
   },
   "cta": {
-    "title": "Preparat per automatitzar",
-    "titleLine2": "les teves operacions?",
-    "subtitle": "Reserva una trucada de descobriment gratuïta. Mapejarem els teus fluxos de treball i et mostrarem exactament on la IA pot tenir el major impacte en el teu negoci.",
-    "button": "Reservar Trucada de Descobriment"
+    "title": "Preparat per veure què pot fer la IA",
+    "titleLine2": "pel teu negoci?",
+    "subtitle": "Reserva una avaluació gratuïta de 15 minuts. Et mostrarem on la IA pot tenir el major impacte en les teves operacions.",
+    "button": "Reservar Avaluació Gratuïta"
   },
   "footer": {
     "solutions": "Solucions",
