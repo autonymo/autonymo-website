@@ -1,20 +1,16 @@
 "use client";
 
-import { motion } from "motion/react";
-import Cal from "@calcom/embed-react";
+import dynamic from "next/dynamic";
 import { CheckCircle2 } from "lucide-react";
+
+const Cal = dynamic(() => import("@calcom/embed-react"), { ssr: false });
 
 export default function BookACall() {
   return (
-    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-clip">
       <section className="relative pt-28 pb-24 px-6 sm:pt-36 sm:pb-32 bg-cream overflow-hidden">
         <div className="max-w-7xl mx-auto relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <span className="text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4 block font-display">
               Book a Free Assessment
             </span>
@@ -32,14 +28,9 @@ export default function BookACall() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="rounded-2xl bg-white border border-sand overflow-hidden"
-          >
+          <div className="rounded-2xl bg-white border border-sand overflow-hidden">
             <Cal
               calLink="arnau-fabrega-nscdht/meeting-arnau-fabrega-autonymo"
               config={{
@@ -52,7 +43,7 @@ export default function BookACall() {
                 overflow: "auto",
               }}
             />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -73,12 +64,8 @@ export default function BookACall() {
               { num: "02", title: "We audit", desc: "We map your operations, find where time and money are leaking, and identify the biggest opportunities." },
               { num: "03", title: "First automation goes live", desc: "We build the highest-impact solution first. Live, working, and saving you time within 4 weeks." },
             ].map((step, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="p-6 rounded-xl bg-white border border-sand"
               >
                 <span className="font-display text-3xl font-bold text-accent-blue/30 mb-4 block">
@@ -86,7 +73,7 @@ export default function BookACall() {
                 </span>
                 <h4 className="font-display text-xl font-bold text-charcoal mb-3">{step.title}</h4>
                 <p className="text-text-muted text-sm leading-relaxed">{step.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

@@ -15,10 +15,12 @@ export const Navbar = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  type Menu = null | "solutions" | "lang" | "more" | "mobile";
+  const [openMenu, setOpenMenu] = useState<Menu>(null);
+  const isSolutionsOpen = openMenu === "solutions";
+  const isLangOpen = openMenu === "lang";
+  const isMoreOpen = openMenu === "more";
+  const isMobileOpen = openMenu === "mobile";
   const navRef = useRef<HTMLDivElement>(null);
 
   const industries = [
@@ -70,16 +72,11 @@ export const Navbar = () => {
     ca: "CA",
   };
 
-  const closeAll = () => {
-    setIsSolutionsOpen(false);
-    setIsLangOpen(false);
-    setIsMoreOpen(false);
-  };
+  const closeAll = () => setOpenMenu(null);
 
   const switchLocale = (newLocale: Locale) => {
     router.replace(pathname, { locale: newLocale });
-    closeAll();
-    setIsMobileOpen(false);
+    setOpenMenu(null);
   };
 
   // Close dropdowns on click outside
@@ -94,12 +91,12 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div ref={navRef} className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-7xl px-3 sm:px-0">
+    <div ref={navRef} className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-7xl px-3 sm:px-0 will-change-transform">
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-50 px-3 py-2 bg-white/80 backdrop-blur-xl border-x border-b border-sand rounded-b-xl"
+        className="relative z-50 px-3 py-2 bg-white border-x border-b border-sand rounded-b-xl"
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -121,11 +118,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             <div>
               <button
-                onClick={() => {
-                  setIsSolutionsOpen(!isSolutionsOpen);
-                  setIsLangOpen(false);
-                  setIsMoreOpen(false);
-                }}
+                onClick={() => setOpenMenu(isSolutionsOpen ? null : "solutions")}
                 className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal transition-colors focus:outline-none"
               >
                 {t("solutions")}
@@ -143,11 +136,7 @@ export const Navbar = () => {
             </Link>
             <div>
               <button
-                onClick={() => {
-                  setIsMoreOpen(!isMoreOpen);
-                  setIsSolutionsOpen(false);
-                  setIsLangOpen(false);
-                }}
+                onClick={() => setOpenMenu(isMoreOpen ? null : "more")}
                 className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-charcoal transition-colors focus:outline-none"
               >
                 {t("more")}
@@ -163,12 +152,8 @@ export const Navbar = () => {
             {/* Language Selector */}
             <div className="relative">
               <button
-                onClick={() => {
-                  setIsLangOpen(!isLangOpen);
-                  setIsSolutionsOpen(false);
-                  setIsMoreOpen(false);
-                }}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-text-muted hover:text-charcoal hover:bg-cream rounded-lg transition-all focus:outline-none"
+                onClick={() => setOpenMenu(isLangOpen ? null : "lang")}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-text-muted hover:text-charcoal hover:bg-cream rounded-lg transition-colors focus:outline-none"
               >
                 <Globe className="w-4 h-4" />
                 {localeLabels[locale]}
@@ -183,14 +168,14 @@ export const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -4 }}
                     transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute top-[calc(100%+8px)] right-0 w-36 bg-white/90 backdrop-blur-2xl border border-sand rounded-xl shadow-lg p-1 z-50"
+                    className="absolute top-[calc(100%+8px)] right-0 w-36 bg-white/95 border border-sand rounded-xl shadow-lg p-1 z-50"
                   >
                     <div className="flex flex-col gap-0.5">
                       {locales.map((loc) => (
                         <button
                           key={loc}
                           onClick={() => switchLocale(loc)}
-                          className={`w-full text-left px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-300 group flex items-center justify-between hover:bg-cream ${loc === locale
+                          className={`w-full text-left px-2.5 py-1.5 text-xs font-medium rounded-lg transition-colors duration-300 group flex items-center justify-between hover:bg-cream ${loc === locale
                             ? "text-charcoal bg-cream"
                             : "text-text-muted hover:text-charcoal"
                             }`}
@@ -211,7 +196,7 @@ export const Navbar = () => {
             {/* Book a Call CTA */}
             <Link
               href="/book-a-call"
-              className="hidden sm:flex items-center gap-1.5 px-5 py-2 text-sm font-semibold text-white bg-charcoal rounded-lg hover:bg-opacity-90 transition-all active:scale-95"
+              className="hidden sm:flex items-center gap-1.5 px-5 py-2 text-sm font-semibold text-white bg-charcoal rounded-lg hover:bg-opacity-90 transition-[background-color,transform] active:scale-95"
             >
               <ArrowUpRight className="w-4 h-4" />
               {t("bookCall")}
@@ -219,7 +204,7 @@ export const Navbar = () => {
 
             {/* Mobile hamburger */}
             <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              onClick={() => setOpenMenu(isMobileOpen ? null : "mobile")}
               className="md:hidden p-2 text-charcoal hover:bg-cream rounded-lg transition-colors"
             >
               {isMobileOpen ? (
@@ -247,13 +232,13 @@ export const Navbar = () => {
                 key={index}
                 href={item.href}
                 onClick={closeAll}
-                className="flex flex-col h-full group bg-white/95 backdrop-blur-2xl border border-sand/80 rounded-2xl shadow-lg p-5 relative overflow-hidden hover:border-warm-gray hover:shadow-xl transition-all duration-300"
+                className="flex flex-col h-full group bg-white/95 border border-sand/80 rounded-2xl shadow-lg p-5 relative overflow-hidden hover:border-warm-gray hover:shadow-xl transition-colors duration-300"
               >
                 {/* Subtle gradient on hover */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${item.color} pointer-events-none`} style={{ opacity: 0 }} />
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 bg-gradient-to-br from-transparent via-transparent to-current pointer-events-none`} />
 
-                <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-sand group-hover:text-charcoal/50 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-sand group-hover:text-charcoal/50 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-colors duration-300" />
 
                 <div className="relative z-10 flex flex-col h-full">
                   <div
@@ -281,7 +266,7 @@ export const Navbar = () => {
                       <div className="w-1.5 h-1.5 rounded-full bg-charcoal/10" />
                       <div className="w-1.5 h-1.5 rounded-full bg-charcoal/10" />
                     </div>
-                    <div className="absolute bottom-2 left-2 right-2 h-1/2 bg-white/40 backdrop-blur-sm rounded-md border border-white/50" />
+                    <div className="absolute bottom-2 left-2 right-2 h-1/2 bg-white/50 rounded-md border border-white/50" />
                     <div className="absolute top-1/4 right-2 w-6 h-6 bg-white/80 rounded shadow-sm" />
                   </div>
                 </div>
@@ -302,19 +287,19 @@ export const Navbar = () => {
             className="absolute top-[calc(100%+6px)] left-3 right-3 sm:left-0 sm:right-0 z-40 hidden md:grid grid-cols-2 gap-2"
           >
             {/* Left: Company Links */}
-            <div className="bg-white/90 backdrop-blur-2xl border border-sand rounded-2xl shadow-lg p-6 h-full">
+            <div className="bg-white/95 border border-sand rounded-2xl shadow-lg p-6 h-full">
               <div className="flex flex-col gap-0.5 items-start">
                 {moreLinks.map((link, index) => (
                   <Link
                     key={index}
                     href={link.href}
                     onClick={closeAll}
-                    className="group flex items-center justify-between py-1.5 px-3 rounded-lg hover:bg-cream transition-all duration-300 w-full max-w-[240px]"
+                    className="group flex items-center justify-between py-1.5 px-3 rounded-lg hover:bg-cream transition-colors duration-300 w-full max-w-[240px]"
                   >
                     <span className="text-sm font-medium text-text-muted group-hover:text-charcoal transition-colors duration-300">
                       {link.title}
                     </span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-charcoal opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-charcoal opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-colors duration-300" />
                   </Link>
                 ))}
               </div>
@@ -323,7 +308,7 @@ export const Navbar = () => {
             {/* Right: Cards */}
             <div className="flex flex-col gap-2">
               {/* Newsletter — Email signup */}
-              <div className="bg-white/90 backdrop-blur-2xl border border-sand rounded-2xl shadow-lg p-5 flex flex-col overflow-hidden">
+              <div className="bg-white/95 border border-sand rounded-2xl shadow-lg p-5 flex flex-col overflow-hidden">
                 <h5 className="text-sm font-bold text-charcoal mb-1">
                   {t("newsletter")}
                 </h5>
@@ -357,13 +342,13 @@ export const Navbar = () => {
                 <Link
                   href="/blog"
                   onClick={closeAll}
-                  className="bg-white/90 backdrop-blur-2xl border border-sand rounded-2xl shadow-lg p-4 flex flex-col hover:border-warm-gray transition-colors group cursor-pointer overflow-hidden"
+                  className="bg-white/95 border border-sand rounded-2xl shadow-lg p-4 flex flex-col hover:border-warm-gray transition-colors group cursor-pointer overflow-hidden"
                 >
                   <div className="flex items-center justify-between mb-1.5">
                     <h5 className="text-sm font-bold text-charcoal">
                       {t("blogs")}
                     </h5>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-warm-gray group-hover:text-charcoal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-warm-gray group-hover:text-charcoal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-colors duration-300" />
                   </div>
                   <p className="text-[10px] text-text-muted leading-relaxed">
                     {t("blogsDesc")}
@@ -406,7 +391,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-[calc(100%+8px)] left-3 right-3 md:hidden z-40 bg-white/95 backdrop-blur-2xl border border-sand rounded-2xl shadow-xl p-6 max-h-[80vh] overflow-y-auto"
+            className="absolute top-[calc(100%+8px)] left-3 right-3 md:hidden z-40 bg-white/95 border border-sand rounded-2xl shadow-xl p-6 max-h-[80vh] overflow-y-auto"
           >
             {/* Industry Solutions */}
             <div className="mb-6">
@@ -418,7 +403,7 @@ export const Navbar = () => {
                   <Link
                     key={index}
                     href={item.href}
-                    onClick={() => setIsMobileOpen(false)}
+                    onClick={closeAll}
                     className="flex items-start gap-3 p-3 rounded-xl hover:bg-cream transition-colors group"
                   >
                     <div
@@ -452,7 +437,7 @@ export const Navbar = () => {
                   <Link
                     key={index}
                     href={link.href}
-                    onClick={() => setIsMobileOpen(false)}
+                    onClick={closeAll}
                     className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-cream transition-colors"
                   >
                     <span className="text-sm font-medium text-text-muted">
@@ -491,8 +476,8 @@ export const Navbar = () => {
             {/* CTA */}
             <Link
               href="/book-a-call"
-              onClick={() => setIsMobileOpen(false)}
-              className="flex items-center justify-center gap-1.5 w-full px-5 py-3 text-sm font-semibold text-white bg-charcoal rounded-xl hover:bg-opacity-90 transition-all active:scale-95"
+              onClick={closeAll}
+              className="flex items-center justify-center gap-1.5 w-full px-5 py-3 text-sm font-semibold text-white bg-charcoal rounded-xl hover:bg-opacity-90 transition-[background-color,transform] active:scale-95"
             >
               <ArrowUpRight className="w-4 h-4" />
               {t("bookCall")}

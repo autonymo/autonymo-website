@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { X, Check } from "lucide-react";
 
 interface WhyWeDifferentProps {
@@ -38,13 +37,7 @@ export default function WhyWeDifferent({ industryExample }: WhyWeDifferentProps)
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left — What Most Vendors Do */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="p-8 rounded-2xl bg-white border border-sand"
-          >
+          <div className="p-8 rounded-2xl bg-white border border-sand">
             <h4 className="font-display text-sm font-bold text-charcoal/50 uppercase tracking-wider mb-6">
               What Most Vendors Do
             </h4>
@@ -58,16 +51,10 @@ export default function WhyWeDifferent({ industryExample }: WhyWeDifferentProps)
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Right — What We Do */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="p-8 rounded-2xl bg-charcoal text-white"
-          >
+          <div className="p-8 rounded-2xl bg-charcoal text-white">
             <h4 className="font-display text-sm font-bold text-white/60 uppercase tracking-wider mb-6">
               What We Do
             </h4>
@@ -84,7 +71,7 @@ export default function WhyWeDifferent({ industryExample }: WhyWeDifferentProps)
             <p className="text-white/50 text-sm leading-relaxed border-t border-white/10 pt-6">
               {industryExample}
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -36,12 +35,8 @@ const Footer = () => {
 
   return (
     <div className="relative w-full max-w-7xl mx-auto z-10 px-3 sm:px-0">
-      <motion.footer
-        initial={{ y: 24, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-white border-x border-t border-sand rounded-t-xl shadow-[0_-10px_40px_-15px_rgba(26,26,26,0.05)] overflow-hidden"
+      <footer
+        className="bg-white border-x border-t border-sand rounded-t-xl overflow-hidden"
       >
         <div className="px-8 pt-12 pb-8">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-10">
@@ -54,6 +49,7 @@ const Footer = () => {
                   width={36}
                   height={36}
                   className="w-9 h-9"
+                  loading="lazy"
                 />
                 <span className="font-display text-2xl font-bold tracking-tight text-charcoal">
                   Autonymo
@@ -91,7 +87,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </motion.footer>
+      </footer>
     </div>
   );
 };

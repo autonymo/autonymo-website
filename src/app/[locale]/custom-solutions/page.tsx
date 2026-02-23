@@ -158,7 +158,7 @@ export default function CustomSolutions() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-clip">
       {/* ──────── T1: HERO ──────── */}
       <section className="relative pt-28 pb-24 px-6 sm:pt-36 sm:pb-32 bg-cream overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -183,11 +183,11 @@ export default function CustomSolutions() {
                 engagement to prove value fast. Then scale from there.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/book-a-call" className="inline-flex items-center justify-center px-8 py-3.5 font-medium tracking-tight text-white rounded-xl bg-charcoal text-base shadow-xl shadow-charcoal/10 hover:bg-black transition-all active:scale-95">
+                <Link href="/book-a-call" className="inline-flex items-center justify-center px-8 py-3.5 font-medium tracking-tight text-white rounded-xl bg-charcoal text-base shadow-xl shadow-charcoal/10 hover:bg-black transition-colors active:scale-95">
                   Book a Free Assessment
                   <ArrowUpRight className="ml-2 w-4 h-4" />
                 </Link>
-                <a href="#solutions" className="inline-flex items-center justify-center px-6 py-3.5 font-medium tracking-tight text-charcoal text-base rounded-xl bg-white border border-charcoal/15 hover:border-charcoal/30 transition-all active:scale-95">
+                <a href="#solutions" className="inline-flex items-center justify-center px-6 py-3.5 font-medium tracking-tight text-charcoal text-base rounded-xl bg-white border border-charcoal/15 hover:border-charcoal/30 transition-colors active:scale-95">
                   See how it works
                   <ArrowDown className="ml-2 w-4 h-4" />
                 </a>
@@ -224,11 +224,11 @@ export default function CustomSolutions() {
               { icon: Code2, title: "Tools that don\u2019t fit", desc: "You\u2019ve tried off-the-shelf software. It solved 60% of the problem and created new ones for the other 40%." },
               { icon: Cpu, title: "No internal AI expertise", desc: "You know AI could help but you don\u2019t have the team to evaluate, build, and maintain the right solutions." },
             ].map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }} className="p-6 rounded-xl bg-white border border-sand flex flex-col">
+              <ScrollReveal key={i} delay={i * 0.08} className="p-6 rounded-xl bg-white border border-sand flex flex-col">
                 <item.icon className="w-5 h-5 text-charcoal/30 mb-4" />
                 <h4 className="font-display text-lg font-bold text-charcoal mb-2">{item.title}</h4>
                 <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -248,7 +248,7 @@ export default function CustomSolutions() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {solutions.map((sol, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}>
+              <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="h-full p-6 rounded-xl bg-white border border-sand">
                   <span className="font-display text-3xl font-bold text-accent-blue/30 mb-4 block">
                     {String(i + 1).padStart(2, "0")}
@@ -256,7 +256,7 @@ export default function CustomSolutions() {
                   <h4 className="font-display text-lg font-bold text-charcoal mb-3">{sol.title}</h4>
                   <p className="text-text-muted text-sm leading-relaxed">{sol.desc}</p>
                 </div>
-              </motion.div>
+              </ScrollReveal>
             ))}
           </div>
           <p className="text-text-muted text-sm leading-relaxed mt-8 max-w-2xl">
@@ -286,17 +286,17 @@ export default function CustomSolutions() {
               ].map((step, i) => (
                 <div key={i} className="flex flex-col items-center">
                   {i > 0 && <div className="w-px h-6 bg-sand mb-4" />}
-                  <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="flex items-center gap-4 px-8 py-4 rounded-xl bg-cream border border-sand">
+                  <ScrollReveal delay={i * 0.1} className="flex items-center gap-4 px-8 py-4 rounded-xl bg-cream border border-sand">
                     <span className="font-display text-sm font-bold text-accent-blue uppercase">{step.label}</span>
                     <span className="text-text-muted text-sm">{step.desc}</span>
-                  </motion.div>
+                  </ScrollReveal>
                 </div>
               ))}
             </div>
             <p className="text-text-muted text-sm mb-8 italic">
               If we can&apos;t find at least €3,000/month in operational savings or the first automation isn&apos;t live in 4 weeks, you don&apos;t pay.
             </p>
-            <Link href="/book-a-call" className="inline-flex items-center justify-center px-8 py-3.5 font-medium tracking-tight text-white rounded-xl bg-charcoal text-base shadow-xl shadow-charcoal/10 hover:bg-black transition-all active:scale-95">
+            <Link href="/book-a-call" className="inline-flex items-center justify-center px-8 py-3.5 font-medium tracking-tight text-white rounded-xl bg-charcoal text-base shadow-xl shadow-charcoal/10 hover:bg-black transition-colors active:scale-95">
               Book a Free Assessment
               <ArrowUpRight className="ml-2 w-4 h-4" />
             </Link>
@@ -318,11 +318,11 @@ export default function CustomSolutions() {
               { step: "Step 3", title: "First automation goes live", desc: "Weeks 3\u20134: We take the biggest opportunity and build it. Live, working, saving you time." },
               { step: "Step 4", title: "You decide what\u2019s next", desc: "Based on results, we map out what else could be automated. You choose the pace." },
             ].map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }} className="group p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col">
+              <ScrollReveal key={i} delay={i * 0.1} className="group p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-colors duration-500 flex flex-col">
                 <span className="font-display text-xs font-bold text-accent-blue uppercase tracking-wider bg-accent-blue/5 px-3 py-1 rounded-full self-start mb-5">{item.step}</span>
                 <h4 className="font-display text-xl font-bold text-charcoal mb-3">{item.title}</h4>
                 <p className="text-text-muted leading-relaxed text-sm">{item.desc}</p>
-              </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -342,10 +342,10 @@ export default function CustomSolutions() {
               "60% reduction in manual work from the first solution",
               "You own everything we build, no vendor lock-in",
             ].map((text, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-sand">
+              <ScrollReveal key={i} delay={i * 0.08} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-sand">
                 <CheckCircle2 className="w-4 h-4 text-accent-blue flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-charcoal leading-relaxed">{text}</span>
-              </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

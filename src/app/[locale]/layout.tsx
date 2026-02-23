@@ -5,6 +5,7 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 export default async function LocaleLayout({
   children,
   params,
@@ -22,9 +23,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Navbar />
-      <main className="flex-grow">{children}</main>
-      <Footer />
+      <SmoothScroll>
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </SmoothScroll>
     </NextIntlClientProvider>
   );
 }

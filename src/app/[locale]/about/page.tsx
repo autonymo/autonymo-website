@@ -2,7 +2,6 @@
 
 import { Link } from "@/i18n/navigation";
 import { Sparkles, Users, Globe, Target, Heart, Zap } from "lucide-react";
-import { motion } from "motion/react";
 
 export default function About() {
   const values = [
@@ -52,16 +51,11 @@ export default function About() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-clip">
       {/* Hero */}
       <section className="relative pt-28 pb-24 px-6 sm:pt-36 sm:pb-32 bg-cream overflow-hidden">
         <div className="max-w-7xl mx-auto relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl"
-          >
+          <div className="max-w-3xl">
             <span className="text-caption text-accent-blue font-bold tracking-[0.08em] uppercase mb-4 block font-display">
               About Autonymo
             </span>
@@ -74,7 +68,7 @@ export default function About() {
               operating systems — not generic tools. We're consultative,
               hands-on, and results-driven.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -108,13 +102,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 rounded-xl bg-white border border-sand"
-            >
+            <div className="p-8 rounded-xl bg-white border border-sand">
               <div className="aspect-[4/3] rounded-xl bg-sand/20 border border-sand/50 overflow-hidden relative">
                 <div className="absolute top-4 left-4 flex gap-1.5">
                   <div className="w-2 h-2 rounded-full bg-charcoal/10" />
@@ -124,9 +112,9 @@ export default function About() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Sparkles className="w-16 h-16 text-accent-blue/20" />
                 </div>
-                <div className="absolute bottom-4 left-4 right-4 h-1/3 bg-white/60 backdrop-blur-sm rounded-xl border border-white/50" />
+                <div className="absolute bottom-4 left-4 right-4 h-1/3 bg-white/70 rounded-xl border border-white/50" />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -146,17 +134,9 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {values.map((value, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.06,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="group p-8 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col relative"
+                className="group p-8 rounded-xl bg-white border border-sand hover:border-warm-gray transition-colors duration-500 flex flex-col relative"
               >
                 <value.icon className="w-5 h-5 text-accent-blue mb-6" />
                 <h4 className="font-display text-xl font-bold text-charcoal mb-3">
@@ -165,7 +145,7 @@ export default function About() {
                 <p className="text-text-muted leading-relaxed text-sm">
                   {value.desc}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -185,17 +165,9 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {team.map((member, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="group p-8 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col"
+                className="group p-8 rounded-xl bg-white border border-sand hover:border-warm-gray transition-colors duration-500 flex flex-col"
               >
                 <div className="w-16 h-16 rounded-2xl bg-sand/30 border border-sand/50 flex items-center justify-center mb-6">
                   <Users className="w-7 h-7 text-charcoal/20" />
@@ -209,7 +181,7 @@ export default function About() {
                 <p className="text-text-muted leading-relaxed text-sm">
                   {member.desc}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

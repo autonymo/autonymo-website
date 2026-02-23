@@ -52,7 +52,7 @@ export default function Blog() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-clip">
       {/* Hero */}
       <section className="relative pt-28 pb-16 px-6 sm:pt-36 sm:pb-20 bg-cream overflow-hidden">
         <div className="max-w-7xl mx-auto relative">
@@ -83,9 +83,9 @@ export default function Blog() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="group p-8 md:p-12 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 relative cursor-pointer"
+            className="group p-8 md:p-12 rounded-xl bg-white border border-sand hover:border-warm-gray transition-[border-color] duration-500 relative cursor-pointer"
           >
-            <ArrowUpRight className="absolute top-8 right-8 md:top-12 md:right-12 w-6 h-6 text-warm-gray group-hover:text-charcoal/70 group-hover:scale-125 group-hover:-translate-y-1.5 group-hover:translate-x-1.5 transition-all duration-300" />
+            <ArrowUpRight className="absolute top-8 right-8 md:top-12 md:right-12 w-6 h-6 text-warm-gray group-hover:text-charcoal/70 group-hover:scale-125 group-hover:-translate-y-1.5 group-hover:translate-x-1.5 transition-[color,transform] duration-300" />
 
             <div className="flex flex-wrap gap-3 mb-6">
               <span className="px-3 py-1 rounded-full bg-accent-blue/10 text-accent-blue text-[10px] font-bold uppercase tracking-widest">
@@ -126,9 +126,9 @@ export default function Blog() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-8 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col relative cursor-pointer"
+                className="group p-8 rounded-xl bg-white border border-sand hover:border-warm-gray transition-[border-color] duration-500 flex flex-col relative cursor-pointer"
               >
-                <ArrowUpRight className="absolute top-8 right-8 w-5 h-5 text-warm-gray group-hover:text-charcoal/70 group-hover:scale-125 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300" />
+                <ArrowUpRight className="absolute top-8 right-8 w-5 h-5 text-warm-gray group-hover:text-charcoal/70 group-hover:scale-125 group-hover:-translate-y-1 group-hover:translate-x-1 transition-[color,transform] duration-300" />
 
                 <span className="px-2.5 py-0.5 rounded-full bg-cream border border-sand text-[9px] font-bold uppercase tracking-wider text-charcoal/40 w-fit mb-4">
                   {post.category}
@@ -170,7 +170,7 @@ export default function Blog() {
               placeholder="your@email.com"
               className="flex-1 px-5 py-3 rounded-lg bg-white/10 border border-white/10 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-accent-blue transition-colors"
             />
-            <button className="px-6 py-3 rounded-lg bg-accent-blue text-white text-sm font-bold hover:bg-accent-blue/90 transition-all active:scale-95">
+            <button className="px-6 py-3 rounded-lg bg-accent-blue text-white text-sm font-bold hover:bg-accent-blue/90 transition-[background-color,transform] active:scale-95">
               Subscribe
             </button>
           </div>

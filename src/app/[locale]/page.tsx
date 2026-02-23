@@ -13,7 +13,7 @@ export default function Home() {
   const pillarKeys = ["deploy", "train", "evolve"] as const;
 
   return (
-    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-cream font-sans overflow-x-clip">
       {/* ──────────────────── HERO SECTION ──────────────────── */}
       <div className="bg-cream rounded-b-3xl border-b border-sand/30 relative overflow-hidden">
         <section className="relative pt-32 pb-40 px-6 sm:pt-44 sm:pb-48 lg:pt-52 lg:pb-60">
@@ -21,7 +21,7 @@ export default function Home() {
             <div className="text-center">
               <div className="relative inline-block">
                 {/* Subtle radial blur behind text */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cream/80 blur-xl rounded-full -z-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-cream/80 rounded-full -z-10" />
 
                 {/* Heading */}
                 <h1 className="relative z-10 font-display text-4xl font-bold tracking-tight text-charcoal sm:text-6xl lg:text-7xl">
@@ -57,7 +57,7 @@ export default function Home() {
                 >
                   <Link
                     href={{ pathname: "/", hash: "how-it-works" }}
-                    className="relative inline-flex items-center justify-center px-8 py-3 font-medium tracking-tight text-charcoal rounded-xl bg-white/80 border border-sand/50 text-lg hover:bg-white transition-all active:scale-95"
+                    className="relative inline-flex items-center justify-center px-8 py-3 font-medium tracking-tight text-charcoal rounded-xl bg-white/80 border border-sand/50 text-lg hover:bg-white transition-[background-color,transform] active:scale-95"
                   >
                     {t("hero.ctaSecondary")}
                     <ArrowUpRight className="ml-2 w-5 h-5" />
@@ -71,8 +71,8 @@ export default function Home() {
           <div className="absolute -top-[15%] left-0 right-0 bottom-0 z-0 pointer-events-none">
             <Threads
               color={[0.64, 0.62, 0.59]}
-              amplitude={0.5}
-              distance={0.15}
+              amplitude={0.65}
+              distance={0.04}
               enableMouseInteraction={false}
             />
           </div>
@@ -108,12 +108,8 @@ export default function Home() {
                   href: "/custom-solutions" as const,
                 },
               ].map((card, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
                     href={card.href}
@@ -123,7 +119,7 @@ export default function Home() {
                       <h3 className="font-display text-2xl font-bold text-charcoal">
                         {card.title}
                       </h3>
-                      <ArrowUpRight className="w-5 h-5 text-warm-gray shrink-0 mt-1 group-hover:text-charcoal/70 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                      <ArrowUpRight className="w-5 h-5 text-warm-gray shrink-0 mt-1 group-hover:text-charcoal/70 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-[color,transform] duration-300" />
                     </div>
 
                     <p className="text-text-muted text-sm leading-relaxed mb-8 min-h-[3rem] line-clamp-3">
@@ -140,11 +136,11 @@ export default function Home() {
                         <div className="w-2 h-2 rounded-full bg-charcoal/10" />
                         <div className="w-2 h-2 rounded-full bg-charcoal/10" />
                       </div>
-                      <div className="absolute bottom-4 left-4 right-4 h-1/2 bg-white/40 backdrop-blur-sm rounded-xl border border-white/50" />
+                      <div className="absolute bottom-4 left-4 right-4 h-1/2 bg-white/50 rounded-xl border border-white/50" />
                       <div className="absolute top-1/4 right-4 w-12 h-12 bg-white/80 rounded-lg shadow-sm" />
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -176,13 +172,9 @@ export default function Home() {
           {/* Pillar Cards — 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
             {pillarKeys.map((pillarKey, index) => (
-              <motion.div
+              <div
                 key={pillarKey}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-all duration-500 flex flex-col relative"
+                className="group p-6 rounded-xl bg-white border border-sand hover:border-warm-gray transition-colors duration-500 flex flex-col relative"
               >
                 <span className="font-display text-3xl font-bold text-sand/40 group-hover:text-accent-blue/40 transition-colors duration-300 mb-4 block">
                   {String(index + 1).padStart(2, "0")}
@@ -194,7 +186,8 @@ export default function Home() {
                     alt={t(`howItWorks.pillars.${pillarKey}.title`)}
                     width={200}
                     height={200}
-                    className="scale-[1.4] drop-shadow-sm"
+                    className="scale-[1.4]"
+                    priority
                   />
                 </div>
 
@@ -204,7 +197,7 @@ export default function Home() {
                 <p className="text-text-muted leading-relaxed text-sm">
                   {t(`howItWorks.pillars.${pillarKey}.description`)}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -212,7 +205,7 @@ export default function Home() {
 
       {/* ──────────────────── FINAL CTA SECTION ──────────────────── */}
       <section className="py-14 px-3 sm:px-px bg-cream">
-        <div className="max-w-7xl mx-auto p-12 md:p-20 rounded-xl bg-charcoal text-white text-center relative overflow-hidden shadow-2xl">
+        <div className="max-w-7xl mx-auto p-12 md:p-20 rounded-xl bg-charcoal text-white text-center relative overflow-hidden shadow-lg">
           <div className="flex flex-col items-center">
             <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight">
               {t("cta.title")} <br />

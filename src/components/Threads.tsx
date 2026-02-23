@@ -1,11 +1,81 @@
 import React, { useEffect, useRef } from 'react';
-import { Renderer, Program, Mesh, Triangle, Color } from 'ogl';
+import { Renderer, Program, Mesh, Triangle, Color, Texture } from 'ogl';
 
 interface ThreadsProps {
   color?: [number, number, number];
   amplitude?: number;
   distance?: number;
   enableMouseInteraction?: boolean;
+}
+
+// JS port of the GLSL Perlin2D hash — bakes two decorrelated noise fields into R+G channels
+function generatePerlinTexture(size: number): Uint8Array {
+  const data = new Uint8Array(size * size * 4);
+
+  function perlin2D(px: number, py: number): number {
+    const pix = Math.floor(px);
+    const piy = Math.floor(py);
+    const pfx = px - pix;
+    const pfy = py - piy;
+    const pfx1 = pfx - 1;
+    const pfy1 = pfy - 1;
+
+    // Hash corners (same mod-71 trick as the GLSL)
+    let ptx0 = pix - Math.floor(pix / 71) * 71;
+    let ptx1 = (pix + 1) - Math.floor((pix + 1) / 71) * 71;
+    let pty0 = piy - Math.floor(piy / 71) * 71;
+    let pty1 = (piy + 1) - Math.floor((piy + 1) / 71) * 71;
+    ptx0 += 26; ptx1 += 26;
+    pty0 += 161; pty1 += 161;
+    const a = ptx0 * ptx0; const b = ptx1 * ptx1;
+    const c = pty0 * pty0; const d = pty1 * pty1;
+    const pt00 = a * c; const pt10 = b * c;
+    const pt01 = a * d; const pt11 = b * d;
+
+    const hx00 = (pt00 / 951.135664) % 1;
+    const hx10 = (pt10 / 951.135664) % 1;
+    const hx01 = (pt01 / 951.135664) % 1;
+    const hx11 = (pt11 / 951.135664) % 1;
+    const hy00 = (pt00 / 642.949883) % 1;
+    const hy10 = (pt10 / 642.949883) % 1;
+    const hy01 = (pt01 / 642.949883) % 1;
+    const hy11 = (pt11 / 642.949883) % 1;
+
+    const gx00 = hx00 - 0.49999; const gy00 = hy00 - 0.49999;
+    const gx10 = hx10 - 0.49999; const gy10 = hy10 - 0.49999;
+    const gx01 = hx01 - 0.49999; const gy01 = hy01 - 0.49999;
+    const gx11 = hx11 - 0.49999; const gy11 = hy11 - 0.49999;
+
+    const s = 1.4142135623730950;
+    const g00 = (1 / Math.sqrt(gx00 * gx00 + gy00 * gy00)) * (gx00 * pfx + gy00 * pfy) * s;
+    const g10 = (1 / Math.sqrt(gx10 * gx10 + gy10 * gy10)) * (gx10 * pfx1 + gy10 * pfy) * s;
+    const g01 = (1 / Math.sqrt(gx01 * gx01 + gy01 * gy01)) * (gx01 * pfx + gy01 * pfy1) * s;
+    const g11 = (1 / Math.sqrt(gx11 * gx11 + gy11 * gy11)) * (gx11 * pfx1 + gy11 * pfy1) * s;
+
+    const bx = pfx * pfx * pfx * (pfx * (pfx * 6 - 15) + 10);
+    const by = pfy * pfy * pfy * (pfy * (pfy * 6 - 15) + 10);
+    const bx1 = 1 - bx;
+    const by1 = 1 - by;
+
+    return g00 * bx1 * by1 + g10 * bx * by1 + g01 * bx1 * by + g11 * bx * by;
+  }
+
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      const i = (y * size + x) * 4;
+      // Map pixel to noise-space so the texture tiles over 16 noise units
+      const nx = (x / size) * 16;
+      const ny = (y / size) * 16;
+      // R channel: first noise field, G channel: second (offset by 100 for decorrelation)
+      const n1 = perlin2D(nx, ny);
+      const n2 = perlin2D(nx + 100, ny + 100);
+      data[i]     = Math.round(((n1 + 1) / 2) * 255); // R
+      data[i + 1] = Math.round(((n2 + 1) / 2) * 255); // G
+      data[i + 2] = 0;
+      data[i + 3] = 255;
+    }
+  }
+  return data;
 }
 
 const vertexShader = `
@@ -27,32 +97,22 @@ uniform vec3 uColor;
 uniform float uAmplitude;
 uniform float uDistance;
 uniform vec2 uMouse;
+uniform sampler2D uNoise;
 
 #define PI 3.1415926538
 
-const int u_line_count = 40;
-const float u_line_width = 7.0;
-const float u_line_blur = 10.0;
+const int u_line_count = 24;
+const float u_line_width = 9.0;
+const float u_line_blur = 5.0;
 
-float Perlin2D(vec2 P) {
-    vec2 Pi = floor(P);
-    vec4 Pf_Pfmin1 = P.xyxy - vec4(Pi, Pi + 1.0);
-    vec4 Pt = vec4(Pi.xy, Pi.xy + 1.0);
-    Pt = Pt - floor(Pt * (1.0 / 71.0)) * 71.0;
-    Pt += vec2(26.0, 161.0).xyxy;
-    Pt *= Pt;
-    Pt = Pt.xzxz * Pt.yyww;
-    vec4 hash_x = fract(Pt * (1.0 / 951.135664));
-    vec4 hash_y = fract(Pt * (1.0 / 642.949883));
-    vec4 grad_x = hash_x - 0.49999;
-    vec4 grad_y = hash_y - 0.49999;
-    vec4 grad_results = inversesqrt(grad_x * grad_x + grad_y * grad_y)
-        * (grad_x * Pf_Pfmin1.xzxz + grad_y * Pf_Pfmin1.yyww);
-    grad_results *= 1.4142135623730950;
-    vec2 blend = Pf_Pfmin1.xy * Pf_Pfmin1.xy * Pf_Pfmin1.xy
-               * (Pf_Pfmin1.xy * (Pf_Pfmin1.xy * 6.0 - 15.0) + 10.0);
-    vec4 blend2 = vec4(blend, vec2(1.0 - blend));
-    return dot(grad_results, blend2.zxzx * blend2.wwyy);
+// Sample pre-baked Perlin noise from texture (R channel)
+float noiseR(vec2 coords) {
+    return texture2D(uNoise, coords / 16.0).r * 2.0 - 1.0;
+}
+
+// Sample pre-baked Perlin noise from texture (G channel — decorrelated)
+float noiseG(vec2 coords) {
+    return texture2D(uNoise, coords / 16.0).g * 2.0 - 1.0;
 }
 
 float pixel(float count, vec2 resolution) {
@@ -72,8 +132,8 @@ float lineFn(vec2 st, float width, float perc, float offset, vec2 mouse, float t
     float blur = smoothstep(split_point, split_point + 0.05, st.x) * perc;
 
     float xnoise = mix(
-        Perlin2D(vec2(time_scaled, st.x + perc) * 2.5),
-        Perlin2D(vec2(time_scaled, st.x + time_scaled) * 3.5) / 1.5,
+        noiseR(vec2(time_scaled, st.x + perc) * 2.5),
+        noiseG(vec2(time_scaled, st.x + time_scaled) * 3.5) / 1.5,
         st.x * 0.3
     );
 
@@ -133,18 +193,34 @@ const Threads: React.FC<ThreadsProps> = ({
   ...rest
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationFrameId = useRef<number>(0);
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
     if (!containerRef.current) return;
     const container = containerRef.current;
 
-    const renderer = new Renderer({ alpha: true });
+    // dpr: 1 — skip retina rendering; soft lines don't benefit from 2x pixels
+    const renderer = new Renderer({ alpha: true, dpr: 1 });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     container.appendChild(gl.canvas);
+
+    // Pre-bake Perlin noise into a 512x512 texture — eliminates all heavy ALU math from the shader
+    const NOISE_SIZE = 512;
+    const noiseData = generatePerlinTexture(NOISE_SIZE);
+    const noiseTex = new Texture(gl, {
+      image: noiseData,
+      width: NOISE_SIZE,
+      height: NOISE_SIZE,
+      wrapS: gl.REPEAT,
+      wrapT: gl.REPEAT,
+      minFilter: gl.LINEAR,
+      magFilter: gl.LINEAR,
+      generateMipmaps: false,
+      flipY: false,
+    });
 
     const geometry = new Triangle(gl);
     const program = new Program(gl, {
@@ -153,71 +229,98 @@ const Threads: React.FC<ThreadsProps> = ({
       uniforms: {
         iTime: { value: 0 },
         iResolution: {
-          value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
+          value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height),
         },
         uColor: { value: new Color(...color) },
         uAmplitude: { value: amplitude },
         uDistance: { value: distance },
-        uMouse: { value: new Float32Array([0.5, 0.5]) }
-      }
+        uMouse: { value: new Float32Array([0.5, 0.5]) },
+        uNoise: { value: noiseTex },
+      },
     });
 
     const mesh = new Mesh(gl, { geometry, program });
 
     function resize() {
-      const { clientWidth, clientHeight } = container;
-      renderer.setSize(clientWidth, clientHeight);
-      program.uniforms.iResolution.value.r = clientWidth;
-      program.uniforms.iResolution.value.g = clientHeight;
-      program.uniforms.iResolution.value.b = clientWidth / clientHeight;
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      // Render at half resolution — 4x fewer pixels; soft blurred lines are indistinguishable
+      renderer.setSize(Math.ceil(w / 2), Math.ceil(h / 2));
+      gl.canvas.style.width = w + 'px';
+      gl.canvas.style.height = h + 'px';
+      program.uniforms.iResolution.value.r = Math.ceil(w / 2);
+      program.uniforms.iResolution.value.g = Math.ceil(h / 2);
+      program.uniforms.iResolution.value.b = w / h;
     }
     window.addEventListener('resize', resize);
     resize();
 
-    let currentMouse = [0.5, 0.5];
-    let targetMouse = [0.5, 0.5];
+    let cx = 0.5, cy = 0.5, tx = 0.5, ty = 0.5;
 
-    function handleMouseMove(e: MouseEvent) {
-      const rect = container.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = 1.0 - (e.clientY - rect.top) / rect.height;
-      targetMouse = [x, y];
+    function onMove(e: MouseEvent) {
+      const r = container.getBoundingClientRect();
+      tx = (e.clientX - r.left) / r.width;
+      ty = 1 - (e.clientY - r.top) / r.height;
     }
-    function handleMouseLeave() {
-      targetMouse = [0.5, 0.5];
-    }
+    function onLeave() { tx = 0.5; ty = 0.5; }
+
     if (enableMouseInteraction) {
-      container.addEventListener('mousemove', handleMouseMove);
-      container.addEventListener('mouseleave', handleMouseLeave);
+      container.addEventListener('mousemove', onMove);
+      container.addEventListener('mouseleave', onLeave);
     }
+
+    // Pause rendering when the hero section scrolls off-screen
+    let isVisible = true;
+    let pausedAt = 0;   // iTime value when we paused
+    let timeOffset = 0; // accumulated offset to subtract from raw timestamp
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const wasVisible = isVisible;
+        isVisible = entry.isIntersecting;
+        if (!isVisible && wasVisible) {
+          // Record the shader time when we pause
+          pausedAt = program.uniforms.iTime.value;
+        }
+        // Resume the loop if it became visible again
+        if (isVisible && !wasVisible) {
+          rafRef.current = requestAnimationFrame((t) => {
+            // Adjust offset so iTime continues from where it paused
+            timeOffset = t * 0.001 - pausedAt;
+            update(t);
+          });
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(container);
 
     function update(t: number) {
-      if (enableMouseInteraction) {
-        const smoothing = 0.05;
-        currentMouse[0] += smoothing * (targetMouse[0] - currentMouse[0]);
-        currentMouse[1] += smoothing * (targetMouse[1] - currentMouse[1]);
-        program.uniforms.uMouse.value[0] = currentMouse[0];
-        program.uniforms.uMouse.value[1] = currentMouse[1];
-      } else {
-        program.uniforms.uMouse.value[0] = 0.5;
-        program.uniforms.uMouse.value[1] = 0.5;
-      }
-      program.uniforms.iTime.value = t * 0.001;
+      // Stop the loop entirely when off-screen — zero GPU cost
+      if (!isVisible) return;
 
+      if (enableMouseInteraction) {
+        cx += 0.05 * (tx - cx);
+        cy += 0.05 * (ty - cy);
+        program.uniforms.uMouse.value[0] = cx;
+        program.uniforms.uMouse.value[1] = cy;
+      }
+
+      program.uniforms.iTime.value = t * 0.001 - timeOffset;
       renderer.render({ scene: mesh });
-      animationFrameId.current = requestAnimationFrame(update);
+      rafRef.current = requestAnimationFrame(update);
     }
-    animationFrameId.current = requestAnimationFrame(update);
+    rafRef.current = requestAnimationFrame(update);
 
     return () => {
-      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+      cancelAnimationFrame(rafRef.current);
+      observer.disconnect();
       window.removeEventListener('resize', resize);
-
       if (enableMouseInteraction) {
-        container.removeEventListener('mousemove', handleMouseMove);
-        container.removeEventListener('mouseleave', handleMouseLeave);
+        container.removeEventListener('mousemove', onMove);
+        container.removeEventListener('mouseleave', onLeave);
       }
       if (container.contains(gl.canvas)) container.removeChild(gl.canvas);
+      gl.deleteTexture(noiseTex.texture);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
   }, [color, amplitude, distance, enableMouseInteraction]);
