@@ -68,7 +68,7 @@ export default function Home() {
           </div>
 
           {/* Threads Overlay */}
-          <div className="absolute -top-[15%] left-0 right-0 bottom-0 z-0 pointer-events-none">
+          <div className="absolute -top-[15%] left-0 right-0 bottom-0 z-0 pointer-events-none will-change-transform">
             <Threads
               color={[0.64, 0.62, 0.59]}
               amplitude={0.65}
@@ -79,7 +79,7 @@ export default function Home() {
         </section>
 
         {/* ──────────────────── FEATURED PLATFORM CARDS (half-visible) ──────────────────── */}
-        <section className="pb-16 px-6 bg-transparent relative z-10 -mt-20 sm:-mt-24 lg:-mt-32">
+        <section className="pb-16 px-6 bg-transparent relative z-10 -mt-20 sm:-mt-24 lg:-mt-32 will-change-transform">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               {[
