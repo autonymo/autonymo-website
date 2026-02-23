@@ -244,12 +244,9 @@ const Threads: React.FC<ThreadsProps> = ({
     function resize() {
       const w = container.clientWidth;
       const h = container.clientHeight;
-      // Render at half resolution — 4x fewer pixels; soft blurred lines are indistinguishable
-      renderer.setSize(Math.ceil(w / 2), Math.ceil(h / 2));
-      gl.canvas.style.width = w + 'px';
-      gl.canvas.style.height = h + 'px';
-      program.uniforms.iResolution.value.r = Math.ceil(w / 2);
-      program.uniforms.iResolution.value.g = Math.ceil(h / 2);
+      renderer.setSize(w, h);
+      program.uniforms.iResolution.value.r = w;
+      program.uniforms.iResolution.value.g = h;
       program.uniforms.iResolution.value.b = w / h;
     }
     window.addEventListener('resize', resize);
@@ -269,25 +266,20 @@ const Threads: React.FC<ThreadsProps> = ({
       container.addEventListener('mouseleave', onLeave);
     }
 
-    // Pause rendering when the hero section scrolls off-screen
+    // Skip rendering when off-screen but keep the rAF loop alive to avoid cold GPU restarts
     let isVisible = true;
-    let pausedAt = 0;   // iTime value when we paused
-    let timeOffset = 0; // accumulated offset to subtract from raw timestamp
+    let pausedAt = 0;
+    let timeOffset = 0;
     const observer = new IntersectionObserver(
       ([entry]) => {
         const wasVisible = isVisible;
         isVisible = entry.isIntersecting;
         if (!isVisible && wasVisible) {
-          // Record the shader time when we pause
           pausedAt = program.uniforms.iTime.value;
         }
-        // Resume the loop if it became visible again
         if (isVisible && !wasVisible) {
-          rafRef.current = requestAnimationFrame((t) => {
-            // Adjust offset so iTime continues from where it paused
-            timeOffset = t * 0.001 - pausedAt;
-            update(t);
-          });
+          // Will be picked up on the next already-scheduled frame
+          timeOffset = performance.now() * 0.001 - pausedAt;
         }
       },
       { threshold: 0 }
@@ -295,7 +287,9 @@ const Threads: React.FC<ThreadsProps> = ({
     observer.observe(container);
 
     function update(t: number) {
-      // Stop the loop entirely when off-screen — zero GPU cost
+      rafRef.current = requestAnimationFrame(update);
+
+      // Always loop, but skip rendering when off-screen — keeps GPU pipeline warm
       if (!isVisible) return;
 
       if (enableMouseInteraction) {
@@ -307,7 +301,6 @@ const Threads: React.FC<ThreadsProps> = ({
 
       program.uniforms.iTime.value = t * 0.001 - timeOffset;
       renderer.render({ scene: mesh });
-      rafRef.current = requestAnimationFrame(update);
     }
     rafRef.current = requestAnimationFrame(update);
 
